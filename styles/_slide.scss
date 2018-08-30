@@ -27,6 +27,10 @@ a {
   }
 }
 
+.inline {
+  display: inline !important;
+}
+
 .remark-code,
 .remark-inline-code {
   font-family: $font-mono;

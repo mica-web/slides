@@ -1,0 +1,29 @@
+img {
+
+  .center &,
+  .right &,
+  .left & {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .img-w-20 & {
+    width: 20%;
+  }
+
+  .img-w-25 & {
+    width: 25%;
+  }
+
+  .img-w-30 & {
+    width: 30%;
+  }
+
+  .img-w-40 & {
+    width: 40%;
+  }
+
+  .img-w-50 & {
+    width: 50%;
+  }
+}
