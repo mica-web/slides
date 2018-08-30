@@ -1,0 +1,26 @@
+.remark-slide {
+  background: $color-offwhite;
+  border-top: 12px solid $color-indigo;
+  border-bottom: 4px solid $color-marine;
+  color: $color-text-body;
+  font-family: $font-sans;
+}
+
+a {
+  color: rgba($color-text-link, 0.8);
+
+  &:hover,
+  &:active {
+    color: $color-text-link;
+  }
+
+  &:visited {
+    color: $color-text-link-visited;
+  }
+}
+
+.remark-code,
+.remark-inline-code {
+  font-family: $font-mono;
+  font-weight: 400;
+}

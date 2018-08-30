@@ -1,0 +1,55 @@
+.remark-slide {
+  box-sizing: border-box; }
+  .remark-slide *,
+  .remark-slide *::before,
+  .remark-slide *::after {
+    box-sizing: inherit; }
+
+.remark-slide {
+  font-size: 1em; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  line-height: 1.5625em;
+  margin: 0; }
+
+p + p {
+  margin-top: 0.78125em; }
+
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", Serif; }
+
+.heading {
+  font-family: "Cormorant Garamond", Serif;
+  font-size: 2.1875em; }
+  .heading.xl {
+    font-size: 3.4375em; }
+
+.remark-slide {
+  background: whitesmoke;
+  border-top: 12px solid #243149;
+  border-bottom: 4px solid #508ea1;
+  color: #1b203a;
+  font-family: "Fira Sans", Sans-Serif; }
+
+a {
+  color: rgba(80, 142, 161, 0.8); }
+  a:hover, a:active {
+    color: #508ea1; }
+  a:visited {
+    color: #404463; }
+
+.remark-code,
+.remark-inline-code {
+  font-family: "Fira Mono", monospace;
+  font-weight: 400; }
+
+/*# sourceMappingURL=styles.css.map */
