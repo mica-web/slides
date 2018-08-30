@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Internet 101</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Cormorant+Garamond:700i|Fira+Mono:400|Fira+Sans'>
+  <link rel='stylesheet' href='styles/styles.css'>
+</head>
+
+<body>
+  <textarea id="source">
+
+class: center, middle
+count: false
+
+![internet](01_internet-and-browsers/internet.gif)
+
+# How does the Internet do its thing?
+
+
+???
+
+Unspoken subtext for all of this:  and why do we care?
+At broad level, it's because the internet is the vector whereby we share the stuff we make
+Knowing a bit more detail about how it does it's thing enables us to make smarter choices about how we share our code
+
+---
+
+# Agenda
+
+1. Making requests
+1. Understanding responses
+1. Live example
+1. Web browsers + technologies
+
+
+
+---
+background-image: url(01_internet-and-browsers/step1.png)
+
+# It starts with your browser
+
+---
+background-image: url(01_internet-and-browsers/step2.png)
+count: false
+
+# It starts with your browser
+
+???
+URL: mica.edu
+
+---
+background-image: url(01_internet-and-browsers/step3.png)
+count: false
+
+# It starts with your browser
+
+???
+This is the start of a request; you've entered in an address and you have an expectation of something to be returned.
+
+---
+background-image: url(01_internet-and-browsers/request1.png)
+
+# !important
+
+???
+Let's pause for a moment to acknowledge the shortcomings of icons. 
+Not all requests come from something that looks like this. 
+
+---
+background-image: url(01_internet-and-browsers/request2.png)
+class: bkgd-contain
+
+???
+This isn't surprising to you as a user of the internet, you probably made several requests to web sites today alone from a pocket-sized computer.
+It's vitally important, however, for you as a creator on the web.
+
+---
+background-image: url(01_internet-and-browsers/step3.png)
+count: false
+
+# Making a request
+
+???
+OK. We were here. On a device, making a request.
+
+---
+background-image: url(01_internet-and-browsers/step4.png)
+count: false
+
+# Making a request
+
+???
+But where does that go to? 
+Again, my diagram is a dramatic over simplification because this request is not a straight line.
+
+---
+background-image: url(01_internet-and-browsers/step5.png)
+count: false
+
+# DNS lookup
+
+---
+background-image: url(01_internet-and-browsers/yellowpages.png)
+
+# DNS whatsit?
+
+???
+Here, I've introduced an acronym, so let's take a second to define that. DNS = Domain Name System
+
+In the early days of the internet, we said DNS worked like the Yellow Pages, but that's an outdated metaphor, surely.
+
+---
+background-image: url(01_internet-and-browsers/contactlist.jpg)
+
+???
+Instead, I can tell you it works a bit like the contacts list in your phone. Just like you know mica.edu, you know your friends' names...but probably don't know their phone numbers by heart. You rely on your smartphone to search through your friends and family and to keep that info for you.
+
+The Yellow Pages is a stronger metaphor because it represents some authority keeping that data and dispersing it, but a contact list is close enough for our purposes.
+
+Why do we care:  Setting up your DNS is part of buying a domain name and it takes time for that information to spread across the various DNS servers. 
+
+---
+background-image: url(01_internet-and-browsers/step5.png)
+
+# DNS lookup
+
+???
+Back to our diagram! We're in the position of making a request, but the computer doesn't know where to route it to. The request goes to a DNS server and comes back with 
+
+---
+background-image: url(01_internet-and-browsers/step6.png)
+count: false
+
+# DNS lookup
+
+???
+an IP address. IP, in this instance, stands for Internet Protocol.
+Google:  "ip address" to see your computer's current IP address
+Unlike the IP address of a web site, your computer's IP address is provided by the network you're on -- so the IP address you're seeing now will be different than the IP address you have when you're online at home or working from Starbucks
+
+So, we've traveled all this way, across several servers and services, getting directions along the way to finally have our request land at its destination
+
+---
+background-image: url(01_internet-and-browsers/step7.png)
+count: false
+
+# Getting a response
+
+???
+and we get our response back
+
+---
+background-image: url(01_internet-and-browsers/response1.png)
+
+# Digging into the response
+
+???
+What does that response look like? Usually, the server returns a file and headers -- info and details about that file
+If you've worked with photographs, maybe you're familiar with digital images having metadata
+
+---
+background-image: url(01_internet-and-browsers/response2.png)
+count: false
+
+# Digging into the response
+
+???
+In the case of HTML, it's extremely likely that THAT file will also create more requests...
+
+---
+background-image: url(01_internet-and-browsers/response3.png)
+count: false
+
+# Digging into the response
+
+???
+sending back to the server asking for different assets: CSS...
+
+---
+background-image: url(01_internet-and-browsers/response4.png)
+count: false
+
+# Digging into the response
+
+???
+...JS, image and other media files
+
+---
+background-image: url(01_internet-and-browsers/response5.png)
+count: false
+
+# Digging into the response
+
+???
+Why might this be important to consider when developing web sites?
+- Each file = a request
+- Only so many requests can go out at a time, like checkout lines at a grocery
+- Big files take up their slot for longer
+- Developer's job to minimize those downloads and, of those required, prioritize them and concatenate and minify where possible
+
+---
+class: center, middle
+
+# Let's see this all in action
+
+???
+Exploring Network tab for mica.edu; tinyPNG an example image
+Request types:
+- get 
+- post and put (includes a response body of its own)
+status codes : https://http.cat/ (roughly: 200s ok, 300s redirect, 400s error, 500 server error)
+
+---
+background-image: url(01_internet-and-browsers/questions.webp)
+
+???
+About to shift gears a bit; as you can see from the slide count, I'm nearly wrapped up, but this would still be a good time to clear up any confusion or further questions about this process
+
+---
+background-image: url(01_internet-and-browsers/evergreen-browsers.png)
+
+# Evergreen browsers
+
+???
+auto updating
+
+---
+background-image: url(01_internet-and-browsers/evergreen-stats.png)
+class: bkgd-contain
+
+# A year in the life of Chrome
+
+???
+What are the upsides/features of this?
+- More folks get newer features
+- Less fuss for the user
+Do you see potential downsides?
+- What if the latest doesn't work great on your machine? Maybe not broken, but just taxes it?
+- Code needs to keep up with things; because updates are pretty invisible/silent, sometimes the first time you know there's an issue is when a bug report is filed
+
+---
+
+# What makes up "the web"
+
+???
+We've talked a bit now about the wayfinding it takes to get a web page request to the right place and into your browser -- and also a bit about the qualities and issues of browsers
+
+This is going to be a theme throughout the semester:  browsers are important because it's where our work is experienced
+
+And just like a simple HTTP request has far more moving parts than we may think about or know of, we can sometimes have a simplistic view of what's happening in the browser, too
+
+I mentioned HTML, CSS and JS earlier -- and those will truly be the bulk of this class
+
+---
+background-image: url(01_internet-and-browsers/web-tech-stack.png)
+class: bkgd-contain
+count: false
+
+# What makes up "the web"
+
+???
+But those things don't represent all of the web tech stack -- and here I'm not even talking about JS frameworks or programming languages like PHP or Ruby -- but about the actual tech that is supported by and runs in our browsers.
+
+I'll be brutally honest: there's some things on this diagram I don't even know what they are. I hadn't seen the acronym HID before. And this state of awe and overwhelm about web development is really par for the course and something folks working in this field have to adapt to or even embrace.
+
+Sometimes it exhausts me, but mostly it's exciting, challenging and fun -- and I look forward to introducing you to those challenges this semester and hope you find some delight in it, too.
+
+---
+background-image: url(01_internet-and-browsers/thumbs-up.png)
+count: false
+
+    </textarea>
+  <script src="js/remark-latest.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    var slideshow = remark.create();
+
+  </script>
+</body>
+
+</html>
