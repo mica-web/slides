@@ -39,6 +39,10 @@ h3 {
   border-bottom: 4px solid #508ea1;
   color: #1b203a;
   font-family: "Fira Sans", Sans-Serif; }
+  .remark-slide-content.bkgd-contain {
+    background-size: contain; }
+  .remark-slide-content.bkgd-cover {
+    background-size: cover; }
 
 a {
   color: rgba(80, 142, 161, 0.8); }

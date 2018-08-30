@@ -4,6 +4,14 @@
   border-bottom: 4px solid $color-marine;
   color: $color-text-body;
   font-family: $font-sans;
+
+  &-content.bkgd-contain {
+    background-size: contain;
+  }
+
+  &-content.bkgd-cover {
+    background-size: cover;
+  }
 }
 
 a {
