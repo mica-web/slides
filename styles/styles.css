@@ -33,6 +33,20 @@ h3 {
   .heading.xl {
     font-size: 3.4375em; }
 
+.center img, .right img, .left img {
+  height: auto;
+  max-width: 100%; }
+.img-w-20 img {
+  width: 20%; }
+.img-w-25 img {
+  width: 25%; }
+.img-w-30 img {
+  width: 30%; }
+.img-w-40 img {
+  width: 40%; }
+.img-w-50 img {
+  width: 50%; }
+
 .remark-slide {
   background: whitesmoke;
   border-top: 12px solid #243149;
@@ -50,6 +64,9 @@ a {
     color: #508ea1; }
   a:visited {
     color: #404463; }
+
+.inline {
+  display: inline !important; }
 
 .remark-code,
 .remark-inline-code {
