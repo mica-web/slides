@@ -33,6 +33,12 @@ h3 {
   .heading.xl {
     font-size: 3.4375em; }
 
+.small {
+  font-size: 60%; }
+
+.xl {
+  font-size: 150%; }
+
 .center img, .right img, .left img {
   height: auto;
   max-width: 100%; }
@@ -42,10 +48,16 @@ h3 {
   width: 25%; }
 .img-w-30 img {
   width: 30%; }
+.img-w-35 img {
+  width: 35%; }
 .img-w-40 img {
   width: 40%; }
 .img-w-50 img {
   width: 50%; }
+.img-w-60 img {
+  width: 60%; }
+.img-w-75 img {
+  width: 75%; }
 
 .remark-slide {
   background: whitesmoke;
@@ -68,9 +80,24 @@ a {
 .inline {
   display: inline !important; }
 
+.right-float {
+  float: right; }
+
+.left-float {
+  float: left; }
+
+.bkgd-color {
+  background: rgba(64, 68, 99, 0.8);
+  color: whitesmoke;
+  padding: 2em 1em; }
+
 .remark-code,
 .remark-inline-code {
   font-family: "Fira Mono", monospace;
   font-weight: 400; }
+
+.remark-code {
+  font-size: 1.3em;
+  white-space: pre-wrap; }
 
 /*# sourceMappingURL=styles.css.map */

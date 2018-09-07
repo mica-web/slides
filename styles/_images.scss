@@ -19,11 +19,23 @@ img {
     width: 30%;
   }
 
+  .img-w-35 & {
+    width: 35%;
+  }
+
   .img-w-40 & {
     width: 40%;
   }
 
   .img-w-50 & {
     width: 50%;
+  }
+
+  .img-w-60 & {
+    width: 60%;
+  }
+
+  .img-w-75 & {
+    width: 75%;
   }
 }

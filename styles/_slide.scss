@@ -31,8 +31,27 @@ a {
   display: inline !important;
 }
 
+.right-float {
+  float: right;
+}
+
+.left-float {
+  float: left;
+}
+
+.bkgd-color {
+  background: rgba($color-eggplant, 0.8);
+  color: $color-offwhite;
+  padding: 2em 1em;
+}
+
 .remark-code,
 .remark-inline-code {
   font-family: $font-mono;
   font-weight: 400;
+}
+
+.remark-code {
+  font-size: 1.3em;
+  white-space: pre-wrap;
 }
