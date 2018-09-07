@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HTML Best Practices</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Cormorant+Garamond:700i|Fira+Mono:400|Fira+Sans'>
+  <link rel='stylesheet' href='styles/styles.css'>
+</head>
+
+<body>
+  <textarea id="source" class="testing">
+count: false
+
+.center[
+  ## While you're waiting:
+]
+
+1. Hop on Slack
+1. Send me a DM (`@Angelique Weger`) with your profiles on
+  - GitHub, e.g. `https://github.com/angeliquejw`, and
+  - CodePen, e.g. `https://codepen.io/angeliquejw/`
+1. Update your profile photo; please use a photo of yourself!
+.center.img-w-75[![Updating an avatar in Slack](02/slack-av-photo.gif)]
+
+---
+count: false
+
+# Today's agenda
+
+## HTML: Better, faster, more
+
+1. Q&A about Slack
+1. Discussion about the reading
+1. Share & compare your priority guides
+1. HTML best practices
+    - Q&A
+1. Convert your resume into HTML based on your priority guide
+1. CodePen tips & tricks
+1. Intro to Emmet
+
+---
+background-image: url(02/priority-guides.png)
+class: bkgd-contain, middle
+count: false
+
+--
+count: false
+
+.bkgd-color.left-float[
+## Priority guides _vs._ wireframes
+]
+
+???
+- Problems described with wireframes
+  * Who has made project/site wireframes before? Experience?
+- What does this look to resolve? Thoughts?
+
+---
+class: center, middle
+count: false
+
+![wireframes v priority guides](02/wireframes-priorityguides.png)
+
+---
+background-image: url(02/priority-guides.png)
+class: bkgd-contain, middle
+count: false
+
+.bkgd-color.right-float[
+## Share your examples
+]
+
+???
+- Share and compare priority guides
+- Count off 1-3 (groups of 3-4)
+
+---
+count: false
+
+## Share & compare .small[15m]
+
+???
+- Group member tasks:
+- keep an eye on the time and make sure everyone gets a chance to present and discuss
+- take notes and present to class after
+--
+count: false
+
+### To discuss
+
+.xl[
+- What were the sources of confusion?
+- How in depth are they?
+- What similarities? Differences?
+  - between priority guides
+  - _vs._ your existing resume
+]
+
+???
+15 minutes
+
+---
+background-image: url(02/resumes.png)
+class: bkgd-contain
+count: false
+
+## Typical resumes
+
+---
+count: false
+
+class: center, middle
+
+# HTML Best Practices
+
+---
+class: center, middle
+
+.xl[http://bit.ly/431-w2-sa]
+
+<iframe id="w2-poll" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTC5FsO1HZmlDoPcKnpaVcwYXRchsORRSKw_zkPGTor11uzoNMECBxMmhH8Zk_ORTk3cxwkL3LE6fYr/pubchart?oid=951358613&amp;format=interactive" height="90%" width="100%"></iframe>
+
+---
+background-image: url(02/html-refresh.png)
+class: bkgd-contain, center
+
+# Talking about HTML
+
+???
+- I'm going to be using these terms, so wanted to get everyone on the same page; not going to spend a lot of time on this, just one slide, a 20-sec refresher, if you will
+- HTML element: p, div, span
+- attribute: class, id, data-attributes, src for image files, href for links 
+- value: can be a string/word, a number, a file path
+
+---
+class: center, middle
+
+## Semantic
+
+???
+- may have encountered this word in other contexts
+- as in linguistics, here we're also concerned with meaning
+
+---
+class: center, middle
+count: false
+
+## Semantic HTML
+
+???
+- reinforces and describes the content and its meaning
+- unconcerned with presentation
+- removes ambiguity
+- improves accessibility
+- improves interoperability: making content understandable to search engines, rss readers, apps like flipboard, etc.
+    - `time` element is an example of this
+
+---
+
+## Semantic HTML elements
+--
+count: false
+
+- `header`
+--
+count: false
+
+- `footer`
+--
+count: false
+
+- `nav`
+--
+count: false
+
+- `aside`
+--
+count: false
+
+- `main`
+--
+count: false
+- `section`
+???
+- section: a thematic grouping of content, typically with a heading
+--
+count: false
+
+- `article`
+???
+- article: independent, self-contained, complete composition which is intended to be distributed/reusable (blog post, mag article); must have heading
+--
+count: false
+
+- `figure` & `figcaption`
+???
+- figure: an image, illustration, diagram, code snippet, etc. referenced by main document
+--
+count: false
+
+- `time`
+
+---
+
+## Avoid `DIV`itis
+
+.center.img-w-60[![divs as far as the eye can see](02/divitis.png)]
+
+???
+so, given all those elements, we don't want to write or see code that looks like this
+
+---
+count: false
+
+## Avoid `DIV`itis
+
+.center.img-w-60[![pre-HTML5 semantic markup](02/divitis2.png)]
+
+???
+even before HTML5 (which introduced the elements I just shared), some semantic HTMl was available to us
+
+---
+count: false
+
+## Avoid `DIV`itis
+
+.center.img-w-60[![HTML5 semantic markup](02/html5.png)]
+
+???
+- just simply easier to understand, both for humans and for computers
+- AGAIN:
+  - reinforces and describes the content and its meaning
+  - unconcerned with presentation
+  - removes ambiguity
+  - improves accessibility + interoperability
+
+---
+background-image: url(02/html5-flowchart.png)
+class: bkgd-contain
+
+???
+- always ask yourself if there's a better option
+- there are over 100 HTML elements, so it's possible
+
+---
+
+## Heading tags
+.center.img-w-40[![HTML headings](02/html-headings.png)]
+
+???
+- Browsers give these default styles, like what you're seeing here
+- Reset files, themes, frameworks or custom CSS may alter
+- Those styles should *not* influence your markup
+- Need to have semantic meaning
+    - impacts SEO
+    - used by screenreaders to generate a doc outline
+    - You can investigate this by using the W3C checker and selecting "show outline"
+- One `h1` per page, should represent the page title
+- Do not omit levels, jumping from `h2` to `h4`
+
+---
+
+## Heading classes
+
+<iframe height='520' scrolling='no' title='Semantic headings' src='//codepen.io/angeliquejw/embed/preview/rZmzxE/?height=520&theme-id=dark&default-tab=html,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/angeliquejw/pen/rZmzxE/'>Semantic headings</a> by Angelique (<a href='https://codepen.io/angeliquejw'>@angeliquejw</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+???
+- Use classes to extend the styles to other headings or elements (eg, `mimics-h2`)
+- questions?
+
+---
+
+## `alt` for `img`
+
+???
+- displays when an image can't be downloaded or user has images turned off
+- Benefits of ALT
+  - SEO
+  - improved experience for accessibility, for users with images turned off, for instances where image doesn't download
+
+--
+count: false
+
+```html
+<img
+  src="http://www.bmoreart.com/wp-content/uploads/2018/07/0.jpeg"
+>
+```
+
+???
+- in this example, a screenreader will read the file name :(
+
+--
+count: false
+
+.center.img-w-30[![broken image](02/broken-img1.png)]
+
+???
+- and this is what will be displayed in the browser if users have their images turned off or the image can't be downloaded
+
+---
+count: false
+
+## `alt` for `img`
+
+```html
+<img
+  src="http://www.bmoreart.com/wp-content/uploads/2018/07/0.jpeg"
+  alt="With ALT text! 💜"
+>
+```
+
+.center.img-w-75[![broken image](02/broken-img2.png)]
+
+???
+- of course, this is a horrible example of actual ALT text, so let's talk about that for a moment
+
+---
+
+# `alt` examples
+
+```html
+<img src="0.jpeg">
+```
+.center.img-w-25[![screenshot](02/overlooked1.png)]
+.right.small[SOURCE: http://www.bmoreart.com/events/inna-alesina-overlooked-2]
+
+???
+So, this is the source of the original image element I used. We already have a good idea why this is less than ideal.
+
+---
+count: false
+
+# `alt` examples
+
+```html
+<img
+  src="b0599282c0692a48d94ad.jpg"
+  alt="OVERLOOKED"
+>
+```
+.center.img-w-40[![screenshot](02/overlooked2.png)]
+.right.small[SOURCE: http://events.mica.edu/event/overlooked#.W41ZVJNKgZw]
+
+???
+Now, the same image on MICA's event calendar.
+Here we have ALT text, but it's a small victory. This text is just redundant, repeating the exhibition name and adding nothing new.
+
+---
+count: false
+
+# `alt` examples
+
+```html
+<img
+  src="27388-event-35328.jpg"
+  alt="Young man and mushrooms with overlaid text."
+>
+```
+.center.img-w-50[![screenshot](02/overlooked3.png)]
+.right.small[SOURCE: https://www.visitmaryland.org/event/overlooked-inna-alesina]
+
+???
+- Same exhibit, but different image
+- Here we have an actual description of the image, but it's still imperfect. Thoughts as to why?
+  - "overlaid text"
+  - W3C guidelines: "When an image contains words that are important to understanding the content, the alt text should include those words. This will allow the alt text to play the same function on the page as the image."
+  - A good thing:  ends with a period (forces the screenreader to pause!)
+
+---
+count: false
+
+# `alt` examples
+
+```html
+<img
+  src="IA_Postcard.jpg"
+  alt="A photograph by Elelna Volkova of a man behind textile sculptures of mushrooms, overlaid with design, including a logo that reads "overlooked," by inna alesina.">
+```
+.center.img-w-50[![screenshot](02/overlooked4.png)]
+.right.small[SOURCE: http://www.stevenson.edu/about/arts-cultural-programs/arts-cultural-events/event/01/04/2019/overlooked]
+
+???
+- Have someone read this version aloud
+- What do we think of this?
+  - Includes the period
+  - Includes the text in the image
+  - Point out issue with double quotes
+  - ALT shouldn't be used JUST for a photo's credits, but given this is for an art exhibit, probably makes sense here; also useful for SEO
+
+---
+count: false
+
+# `alt` examples
+
+```html
+<img
+  src="IA_Postcard.jpg"
+  alt="A photograph by Elelna Volkova of a man behind textile sculptures of mushrooms, overlaid with design, including a logo that reads 'overlooked,' by inna alesina.">
+```
+.center.img-w-50[![screenshot](02/overlooked4.png)]
+.right.small[SOURCE: http://www.stevenson.edu/about/arts-cultural-programs/arts-cultural-events/event/01/04/2019/overlooked]
+
+???
+- corrected markup
+
+---
+
+## Additional `alt` advice
+
+???
+- between 5-10 words
+- end with a period (forces the screenreader to pause!)
+- avoid being redundant
+- don't include "picture/photo of..." in your alt text
+--
+count: false
+
+```html
+alt=""
+```
+
+???
+- is it ever appropriate to do this?
+- if the image is truly trivial/decorative, include the attribute but leave it empty
+--
+count: false
+
+.img-w-30.center[![custom bullets](02/custom-bullets.png)]
+
+---
+count: false
+
+## Additional `alt` advice
+
+<iframe height='520' scrolling='no' title='Broken image' src='//codepen.io/angeliquejw/embed/preview/KxmyOx/?height=520&theme-id=dark&default-tab=html,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/angeliquejw/pen/KxmyOx/'>Broken image</a> by Angelique (<a href='https://codepen.io/angeliquejw'>@angeliquejw</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+???
+- this will also usually lead the browser to not display the broken image link
+- questions?
+
+---
+
+## `input` types
+
+.center[`<input type="text">`]
+
+.center.img-w-35[![input type=text](02/input-text.png)]
+
+.small.center[Try it yourself http://bit.ly/input-tests]
+
+???
+- correct inputs affect validation
+- this choice alters the keyboard users see on mobile
+
+---
+count: false
+
+## `input` types
+
+.center[`<input type="email">`]
+
+.center.img-w-35[![input type=email](02/input-email.png)]
+
+.small.center[Try it yourself http://bit.ly/input-tests]
+
+---
+count: false
+
+## `input` types
+
+.center[`<input type="tel">`]
+
+.center.img-w-35[![input type=tel](02/input-tel.png)]
+
+.small.center[Try it yourself http://bit.ly/input-tests]
+
+---
+count: false
+
+## `input` types
+
+.center[`<input type="number">`]
+
+.center.img-w-35[![input type=number](02/input-number.png)]
+
+.small.center[Try it yourself http://bit.ly/input-tests]
+
+---
+count: false
+
+## `input` types
+
+.center[`<input type="url">`]
+
+.center.img-w-35[![input type=url](02/input-url.png)]
+
+.small.center[Try it yourself http://bit.ly/input-tests]
+
+---
+
+## `placeholder != label`
+
+<iframe height='520' scrolling='no' title='Label v Placeholder' src='//codepen.io/angeliquejw/embed/preview/mGmpjX/?height=520&theme-id=dark&default-tab=html,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/angeliquejw/pen/mGmpjX/'>Label v Placeholder</a> by Angelique (<a href='https://codepen.io/angeliquejw'>@angeliquejw</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+???
+- placeholders shows text when the input is not filled in
+- intended to show example input, not replace a label
+- used that way b/c it creates a simpler, cleaner, more minimal design
+- it's a nightmare for accessibility, though: disappears when user enters text (or if they're editing an existing form), default color is fairly light, may be skipped by screenreaders and translation services
+- questions?
+
+---
+
+## `<br>`
+???
+- What is it? forces a line break
+- Don't use it for presentational/aesthetic purposes (use CSS instead)
+
+--
+count: false
+
+### Avoid
+
+```html
+Retsuko is an anthropomorphic red panda, 25 years old and single, who works in the accounting department of a Japanese trading firm.
+<br><br>
+Facing constant frustration every day from pushy superiors and annoying co-workers, Retsuko lets out her emotions by going to a karaoke bar every night and singing death metal.
+```
+
+---
+count: false
+
+## `<br>`
+
+### Do this instead
+
+```html
+<p>Retsuko is an anthropomorphic red panda, 25 years old and single, who works in the accounting department of a Japanese trading firm.</p>
+<p>Facing constant frustration every day from pushy superiors and annoying co-workers, Retsuko lets out her emotions by going to a karaoke bar every night and singing death metal.</p>
+```
+
+---
+
+## `<br>`
+
+### When to use
+--
+count: false
+
+```html
+<p>Your beats are wack<br>
+and your rap sucks<br>
+Why'd you go again?<br>
+Nobody wants to hear it!</p>
+```
+--
+count: false
+
+```html
+<address>
+  Sanrio Puroland<br>
+  1-31 Ochiai<br>
+  Tama, Tokyo 206-8588<br>
+  Japan
+</address>
+```
+
+???
+When might you use it?
+- Address blocks
+- Poetry, song lyrics
+
+---
+
+## `<hr>`
+
+???
+- stands for "horizontal rule" and is often used for that presentational purpose
+--
+count: false
+
+```html
+<p>This is above line.</p>
+<hr>
+<p>This is below the line.</p>
+```
+
+.img-w-50.center[![hr example](02/hr-example.png)]  
+
+???
+- but we said we wanted to write semantic html, yo
+- redefined in HTML5 to "represents a paragraph-level thematic break"
+- so, if that's your use case, awesome
+- otherwise, you should be creating lines and borders with CSS and skip this element
+- questions?
+
+---
+
+## HTML style
+
+--
+count: false
+
+- lowercase
+  - element names
+  - attributes
+  - values
+
+???
+Exception: filenames may need to include capital letters depending on your server
+--
+count: false
+
+- double quotes around attributes
+
+???
+- And single quotes within, as necessary, as we saw in the earlier ALT tag example
+- This may be different depending on your programming language
+--
+count: false
+- indent nested elements
+--
+count: false
+- no slash on self-closing elements
+???
+img, br, hr, embed, input
+--
+count: false
+- no values on Boolean attributes
+???
+button disabled, hidden, input readonly, input checked
+
+---
+count: false
+
+## HTML style
+
+<iframe height='520' scrolling='no' title='HTML Style' src='//codepen.io/angeliquejw/embed/preview/PdmRqP/?height=520&theme-id=dark&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/angeliquejw/pen/PdmRqP/'>HTML Style</a> by Angelique (<a href='https://codepen.io/angeliquejw'>@angeliquejw</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+---
+
+# Your turn
+
+## Convert your resume text into HTML
+
+???
+- Why your resume? Making this task simlple by using existing content
+- We'll work with new content later, but this gets us going faster
+
+--
+count: false
+
+- Use Codepen for this
+  - New to Codepen? Take the tour:
+  .center.xl[
+   https://codepen.io/pen/tour/welcome
+  ]
+- Organize per your priority guide
+- See resources section if you need a refresher on HTML:
+.center.xl[
+http://bit.ly/431-resources
+]
+
+
+    </textarea>
+  <script src="js/remark-latest.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    var slideshow = remark.create();
+
+  </script>
+</body>
+
+</html>
