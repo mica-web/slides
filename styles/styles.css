@@ -33,8 +33,11 @@ h3 {
   .heading.xl {
     font-size: 3.4375em; }
 
-.small {
+.text-xs {
   font-size: 60%; }
+
+.text-sm {
+  font-size: 75%; }
 
 .xl {
   font-size: 150%; }
@@ -85,6 +88,9 @@ a {
 
 .left-float {
   float: left; }
+
+.col-2 {
+  width: 48%; }
 
 .bkgd-color {
   background: rgba(64, 68, 99, 0.8);

@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CSS Best Practices</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Cormorant+Garamond:700i|Fira+Mono:400|Fira+Sans'>
+  <link rel='stylesheet' href='styles/styles.css'>
+</head>
+
+<body>
+  <textarea id="source">
+
+count: false
+
+.center[
+## While you're waiting:
+]
+
+1. Hop on Slack
+1. Vote on the two polls about last week's session
+
+---
+count: false
+
+# Today's agenda
+
+## 1. Slack checkin
+
+???
+- FYI, I'm checking the Slack at least once a day
+- `@everyone` or just leave it to fate?
+
+--
+count: false
+
+## 2. CSS
+
+- The cascade
+- Defaults to be aware of
+- Best practices
+- Structuring your CSS
+- Naming structures
+- Some gotchas
+- Sass: CSS superpowers
+
+---
+class: center, middle
+count: false
+
+# Deep dive into CSS
+
+---
+background-image: url(03/ruleset1.png)
+class: bkgd-contain, center
+
+## Talking about CSS
+
+---
+background-image: url(03/ruleset2.png)
+class: bkgd-contain, center
+count: false
+
+## Talking about CSS
+
+---
+background-image: url(03/ruleset3.png)
+class: bkgd-contain, center
+count: false
+
+## Talking about CSS
+
+---
+background-image: url(03/ruleset4.png)
+class: bkgd-contain, center
+count: false
+
+## Talking about CSS
+
+---
+
+## The cascade
+
+<iframe height='520' scrolling='no' title='CSS specificity' src='//codepen.io/angeliquejw/embed/preview/RYxQEp/?height=520&theme-id=15346&default-tab=css,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/angeliquejw/pen/RYxQEp/'>CSS specificity</a> by Angelique (<a href='https://codepen.io/angeliquejw'>@angeliquejw</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+???
+- Cascading stylesheets
+- From top to bottom in the stylesheet
+- Top to bottom in the order of declarations
+- Actual math to calculate the specificity of CSS selectors, but high level, what you need to know is:
+- `!important`
+- inline styles
+- IDs more weight than classes which have more weight than base elements
+- Don't use `!important` to get around understanding the cascade and controlling it with more expertise
+
+---
+
+## CSS defaults
+
+### Inline elements
+### Block-level elements
+
+???
+- There are other display settings in CSS, but these are the main defaults of elements you'll encounter
+- `table`, `list-item`
+
+---
+background-image: url(03/browser-defaults.gif)
+class: bkgd-contain
+
+## Browser defaults
+
+???
+font-size, padding, margins, appearance of form elements, buttons
+
+
+---
+
+## Best practices
+
+Use classnames over bare elements or IDs
+
+???
+- More often than not, you don't really intend to style all DIVs or SPANs in a project
+- Classes are reusable
+- We'll get into more detail about this later
+
+--
+count: false
+
+```html
+<h1 class="page-title cursive"></h1>
+```
+
+???
+- An element can have multiple classes
+- Remember that they are case sensitive
+
+--
+count: false
+
+Write your CSS lowercase and kebab case
+--
+count: false
+
+```css
+.page-title {
+  text-transform: uppercase;
+}
+
+```
+
+???
+- Resembles CSS itself
+- Exception: font names
+
+--
+count: false
+
+Transform case using CSS
+
+???
+- Less brittle
+- Can change all at once
+
+--
+count: false
+
+Remember your semicolon
+
+???
+- Technically, the last semicolon in a ruleset is optional
+- This causes more headaches than it's worth, so just always end with a semicolon
+
+---
+
+## Best practices
+
+Learn about methods of organizing CSS/Sass and use a system
+
+???
+- We'll talk more in depth about this shortly
+- Systems exist to help devs organize their code and name their classes/variables
+
+--
+count: false
+
+.left-float.col-2.text-sm[
+
+```css
+div {
+  background-color: whitesmoke;
+  border: 3px dotted #f9c7dd;
+  color: #444;
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 100%;
+  padding: 1em;
+}
+```
+
+]
+
+???
+- My strategy
+- Alphabetized by properties; can always tell if a thing has been set without searching
+- Minimizes chance of writing duplicate declarations
+
+--
+count: false
+
+.right-float.col-2.text-sm[
+
+```css
+div {
+  /* -- Box -- */
+  display: inline-block;
+  padding: 1em;
+
+  /* -- Border -- */
+  border: 3px dotted #f9c7dd;
+
+
+  /* -- Background -- */
+  background-color: whitesmoke;
+
+  /* -- Text -- */
+  color: #444;
+  font-family: "Montserrat", sans-serif;
+  font-size: 100%;
+}
+```
+
+]
+
+???
+- Also common to group properties by some common logic
+- Nice b/c like is with like
+- To me, just too much mental overhead to remember the categories and their order
+- Jonathon Snook's case for grouping declarations: https://smacss.com/book/formatting
+
+---
+
+## Best practices
+
+Use CSS comments
+
+???
+- Break things up
+- Make your organization more clear: I just did this in the previous example
+- Essential in teams
+- Also, helpful to future you!
+
+--
+count: false
+
+```css
+/*
+* === SITE HEADER ===
+*/
+```
+
+```css
+/*
+* --- Header nav ---
+*/
+
+```
+
+???
+- Break things up
+- Make your organization more clear: I just did this in the previous example
+- Essential in teams
+- Also, helpful to future you!
+
+---
+
+## Best practices
+
+Avoid `!important`
+
+???
+- Often what is called a "bad code smell"
+- Used b/c of a lack of understanding of how CSS works
+
+---
+
+## Best practices
+
+Avoid using empty `div`s to achieve your styles
+
+```html
+<div class="something-fancy"></div>
+```
+
+---
+
+## Best practices
+
+Measurements of zero don't need units
+
+--
+count: false
+
+.left-float.col-2[
+### Avoid
+
+```css
+div {
+  margin: 0px;
+  padding: 0px;
+  width: 0px;
+}
+```
+]
+
+.right-float.col-2[
+### Do this
+
+```css
+div {
+  margin: 0;
+  padding: 0;
+  width: 0;
+}
+```
+]
+
+---
+
+## Best practices
+
+Avoid overdoing your selectors and specificity
+
+--
+count: false
+
+.left-float.col-2.text-sm[
+
+```html
+<header class="site-header">
+  <nav class="nav-bar">
+    <ul class="nav-menu">
+      <li class="nav-menu__item"></li>
+      <li class="nav-menu__item"></li>
+      <li class="nav-menu__item"></li>
+    </ul>
+  </nav>
+</header>
+```
+
+]
+
+???
+Just b/c your HTML looks like this...
+
+--
+count: false
+
+.right-float.col-2.text-sm[
+
+### Avoid
+
+```css
+header.site-header nav.nav-bar ul.nav-menu li.nav-menu__item {}
+```
+
+]
+
+???
+...doesn't mean your CSS needs to look like this
+
+--
+count: false
+
+.right-float.col-2.text-sm[
+
+### Do this
+
+```css
+.nav-menu__item {}
+```
+
+.center[
+OR
+]
+
+```css
+.site-header .nav-menu__item {}
+```
+
+]
+
+???
+- Harder to maintain this CSS
+- Harder to override your CSS b/c you were too specific from the start
+
+---
+
+## Best practices
+
+Avoid making unnecessary assumptions about the markup
+
+
+### Avoid
+```html
+<span class="highlight"><a href='#'>Highlighted link</a></span>
+```
+
+```css
+.highlight a { background: yellow; }
+```
+
+--
+count: false
+
+### Do this
+
+```html
+<a href='#' class="highlight">Highlighted link</a>
+```
+
+```css
+.highlight { background: yellow; }
+```
+
+???
+- DOM and markup can and will change over time
+- Target the element you want to use from the start
+- Instead of “finding it” through its parents
+- If you don't control the markup, this may be out of your hands -- WordPress plugins, fr'ex--, but look for places to fix/avoid when you do have the full control
+
+---
+
+## Best practices
+
+Avoid writing CSS you don't need
+
+--
+count: false
+
+```css
+div { display: block; }
+```
+
+???
+- Don't restate default CSS values
+
+--
+count: false
+
+```css
+div { margin: 0 auto; }
+/* This is the margin shorthand. It's the equivalent of: */
+/*  margin-top: 0;      */
+/*  margin-right: auto; */
+/*  margin-bottom: 0; */
+/*  margin-left: auto; */
+```
+
+???
+- Don't set things to zero just to use the shorthand property
+
+---
+
+## Best practices
+
+Avoid writing CSS you're immediately going to override
+
+--
+count: false
+
+### Avoid
+
+```css
+li {
+  display: inline-block;
+  margin-left: 14px;
+}
+li::first-of-type { margin-left: 0; }
+```
+
+--
+count: false
+
+### Do this
+
+```css
+li { display: inline-block; }
+li + li { margin-left: 14px; }
+```
+
+???
+sibling selector
+
+---
+
+## Best practices
+
+Avoid making an HTTP request for a resource when you can easily replicate the element with CSS
+
+.left-float.col-2[
+### Avoid
+
+```css
+div::before {
+  content: url(green-circle.svg);
+}
+```
+
+]
+
+--
+count: false
+
+.right-float.col-2[
+### Do this
+
+```css
+div::before {
+  background: green;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+```
+
+  .text-xs[
+  View on CodePen: https://codepen.io/angeliquejw/pen/jvYvpy
+  ]
+]
+
+---
+
+## Structuring your CSS
+
+1. Reset
+--
+count: false
+
+1. Utilities/helpers
+--
+count: false
+
+1. Base
+--
+count: false
+
+1. Custom styles
+
+
+---
+
+## Learn about resets
+
+### Reset.css (group 1)
+  - Read about it: https://meyerweb.com/eric/tools/css/reset/
+  - View the code: https://codepen.io/angeliquejw/pen/BOmXNa?editors=0100
+
+### Normalize.css (group 2)
+  - Read about it: http://nicolasgallagher.com/about-normalize-css/
+  - View the code: https://codepen.io/angeliquejw/pen/rZYXOz?editors=0100
+
+Extra time? https://css-tricks.com/reboot-resets-reasoning/
+
+???
+- 1s and 2s
+- On your own:
+  - Read the first link
+  - 6 mins; if you have extra time, either read the code link or the CSS-Tricks article
+
+---
+count: false
+
+## Learn about resets
+
+1. Join your group
+--
+count: false
+
+2. Establish roles:
+  - Timekeeper
+  - Presenter
+--
+count: false
+
+3. As a group, spend 10 mins discussing:
+  - 3-5 main things to know
+  - 2 pros and 2 cons
+
+???
+- As your group:
+  - Pick someone to watch time time and someone to present (who should also take notes)
+  - Figure out 3-5 main things to know about reset/normalize
+  - 2 pros and 2 cons to using this
+  - 10 mins
+
+---
+
+## Reset
+
+<iframe height='520' scrolling='no' title='HTML5 Kitchen-sink' src='//codepen.io/angeliquejw/embed/preview/ZMvqBj/?height=520&theme-id=15346&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/angeliquejw/pen/ZMvqBj/'>HTML5 Kitchen-sink</a> by Angelique (<a href='https://codepen.io/angeliquejw'>@angeliquejw</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+.text-xs[
+  https://s.codepen.io/angeliquejw/debug/ZMvqBj
+]
+
+---
+
+## Utility classes
+
+<iframe height='520' scrolling='no' title='Utility classes example' src='//codepen.io/angeliquejw/embed/wEpvqN/?height=520&theme-id=15346&default-tab=css&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/angeliquejw/pen/wEpvqN/'>Utility classes example</a> by Angelique (<a href='https://codepen.io/angeliquejw'>@angeliquejw</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+.text-xs[
+  https://codepen.io/angeliquejw/pen/wEpvqN?editors=0100
+]
+
+???
+- Very simple styles that accomplish a single thing
+- Often have only 1 css rule with 'em
+
+---
+
+## Base styles
+
+--
+count: false
+
+```css
+html {
+  font-size: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+```
+
+???
+- Set the initial layout, including background color, font, font color
+- Styles applied to elements without classes, often table, input, button, headings
+
+---
+class: center, middle
+
+## Custom CSS
+
+???
+- Finally to the meat of what you probably think of when you think of writing CSS
+- Use classes
+- Group things when they are like for a reason, not like just because
+
+---
+
+## CSS Naming Conventions
+
+???
+- Follow a naming convention
+- Name things based on content/meaning/function vs look
+- BEM for beginners
+
+---
+class: center, middle
+
+## BEM
+--
+count: false
+
+### Block
+
+???
+- Independent component
+- Name describes its purpose, not what it looks like
+- Blocks can be nested inside blocks
+--
+count: false
+
+```css
+.block {}
+```
+--
+count: false
+
+### Element
+
+???
+- Child of the component, some bit that helps make it whole
+- Can't be used outside of its parent block
+- Don't string together children
+- Just because something is part of a parent block, does not necessarily mean it will be an element
+- Relationships are what matter here
+--
+count: false
+
+```css
+.block__element {}
+```
+--
+count: false
+
+### Modifier
+
+???
+Different state or version of the block
+- Overall, understand purpose and relationships more clearly
+--
+count: false
+
+```css
+.block--modifier {}
+.block__element--modifier {}
+```
+
+---
+
+## BEM examples
+
+```html
+<figure class="photo">
+  <img class="photo__img" src="me.jpg">
+  <figcaption class="photo__caption">C'est moi!</figcaption>
+</figure>
+```
+--
+count: false
+
+```css
+.photo {}
+.photo__img {}
+.photo__caption {}
+```
+
+---
+count: false
+
+## BEM examples
+
+```html
+<figure class="photo photo--featured">
+  <img class="photo__img" src="me.jpg">
+  <figcaption class="photo__caption">C'est moi!</figcaption>
+</figure>
+```
+--
+count: false
+
+```css
+.photo {}
+.photo__img {}
+.photo__caption {}
+
+.photo--featured {}
+.photo--featured .photo__img {}
+.photo--featured .photo__caption {}
+```
+
+---
+
+## BEM examples
+
+```html
+<form action="#" class="search-form">
+
+  <input class="search-form__input" type="search">
+  <button class="button search-form__button" type="submit"></button>
+
+</form>
+```
+
+???
+button is a block and and element here
+
+---
+
+## BEM variations
+
+### By the book
+
+```html
+<button class="button button--disabled" type="submit"></button>
+```
+
+```css
+.button {}
+.button--disabled {}
+```
+
+--
+count: false
+
+### Functional variation
+
+```html
+<button class="button" disabled type="submit"></button>
+```
+
+```css
+.button {}
+.button[disabled] {}
+```
+
+???
+Button can't just look disabled, must functionally be disabled
+
+---
+
+## BEM variations
+
+### By the book
+
+```html
+<section class="plans plans--hidden"></section>
+```
+
+```css
+.plans {}
+.plans--hidden {}
+```
+
+--
+count: false
+
+### Functional variation
+
+```html
+<section class="plans" hidden></section>
+```
+
+```css
+.plans {}
+.plans[hidden] {}
+```
+
+???
+Still use modifiers, but not if existing attributes can be leveraged
+---
+
+## Criticisms of BEM
+
+- Ugly
+
+???
+- I was in this camp, too, for a long time
+- Working as a team, just helpful to have some consensus about things
+--
+count: false
+
+- More typing
+
+???
+- Initially, yes
+- We'll talk more about workarounds when we start working on CSS
+- PROS:  helps you achieve the low-level specificity; encourages very reusable elements
+- Q&A
+
+    </textarea>
+  <script src="js/remark-latest.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    var slideshow = remark.create();
+
+  </script>
+</body>
+
+</html>
