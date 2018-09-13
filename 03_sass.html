@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sass: CSS with Superpowers</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Cormorant+Garamond:700i|Fira+Mono:400|Fira+Sans'>
+  <link rel='stylesheet' href='styles/styles.css'>
+</head>
+
+<body>
+  <textarea id="source">
+
+background-image: url(03/logo-sass.svg)
+class: center
+count: false
+
+## What Is
+
+---
+background-image: url(https://media.giphy.com/media/sTagKs58YUj1S/giphy.gif)
+class: bkgd-cover
+count: false
+
+---
+class: center, middle
+
+## Sass is a CSS preprocessor
+
+???
+a computer program that modifies data to conform with the input requirements of another program
+
+--
+count: false
+
+## originally written in Ruby
+
+???
+- Sass was originally a Ruby gem
+- Now the primary version is written in Dart (a lang developed at Google that compiles to JS)
+- Also available in a C/C++ port
+- Many folks still use the Ruby version, but new users should def use the Dart version
+
+--
+count: false
+
+## that compiles into CSS
+
+???
+the act of converting one computer program into another programming language
+
+---
+
+## 2 syntaxes
+
+--
+count: false
+
+.text-xl[
+  - *.sass
+]
+
+--
+count: false
+.text-xl[
+  - *.scss
+]
+
+???
+- Written like CSS—-lowest barrier to entry
+- Give an existing CSS file an SCSS extension and it just works
+- More libraries use SCSS
+- From here on out, I'm going to say Sass -- which is the name of the language -- and I always mean the SCSS syntax
+- This is fairly common, if confusing
+
+---
+background-image: url(03/logo-sass.svg)
+class: center
+
+## Why do I use
+
+---
+background-image: url(https://media.giphy.com/media/eYieKG19ZuaR2/giphy.gif)
+class: bkgd-cover, center
+count: false
+
+---
+
+## Sass magic: Variables
+
+--
+count: false
+
+```scss
+$variable: value;
+```
+
+--
+count: false
+
+```scss
+$font-mono: 'Fira Mono', monospace;
+```
+
+--
+count: false
+
+```scss
+.remark-code { font-family: $font-mono; }
+```
+
+--
+count: false
+
+```css
+.remark-code { font-family: 'Fira Mono', monospace; }
+```
+
+--
+count: false
+
+```scss
+$color-grey: #889094;
+$color-text: $color-grey;
+```
+
+--
+count: false
+
+```scss
+p { color: $color-text; }
+```
+
+???
+- Have you heard of CSS variables?
+- Not available when I started using Sass
+
+---
+
+## CSS Variables
+
+### Sass
+
+```scss
+$color-grey: #889094;
+$color-text: $color-grey;
+
+p { color: $color-text; }
+
+```
+
+--
+count: false
+
+### CSS
+
+```css
+:root {
+  --color-grey: #889094;
+  --color-text: var(--color-grey);
+}
+
+p { color: var(--color-text); }
+```
+
+???
+That's great, why are we learning about Sass then???
+
+---
+class: center, middle
+
+## CSS Variables
+
+<p class="ciu_embed" data-feature="css-variables" data-periods="future_1,current,past_1,past_2" data-accessible-colours="false">
+  <a href="http://caniuse.com/#feat=css-variables">Can I Use css-variables?</a> Data on support for the css-variables feature across the major browsers from caniuse.com.
+</p>
+
+???
+Introduce CanIUse.com
+
+---
+
+## Sass magic
+
+???
+- Of course, if you were going to use those values once, this wouldn't be useful.
+
+--
+count: false
+
+### Use variables when:
+.text-xl[
+  - the value is repeated at least twice
+]
+
+--
+count: false
+
+.text-xl[
+  - the value is likely to be updated at least once
+]
+
+--
+count: false
+
+.text-xl[
+  - all occurrences of the value are tied to the variable
+]
+
+???
+- These rules are true if you're using variables in Sass or CSS, tbh
+- Variables are helpful but limited
+- Like CSS, they're just declaring a thing
+- Sass can do much, much more
+
+---
+background-image: url(03/nesting.jpg)
+class: bkgd-cover, center
+
+## Nesting
+
+---
+
+## Sass magic: Nesting
+
+#### Sass
+```scss
+.ul {
+  padding: 0;
+
+  li { color: green; }
+}
+```
+
+--
+count: false
+
+```css
+.ul { padding: 0; }
+.ul li { color: green; }
+```
+
+---
+
+## Sass magic: Nesting
+
+.left-float.col-2.text-sm[
+
+```html
+<header class="site-header">
+  <nav class="nav-bar">
+    <ul class="nav-menu">
+      <li class="nav-menu__item"></li>
+      <li class="nav-menu__item"></li>
+      <li class="nav-menu__item"></li>
+    </ul>
+  </nav>
+</header>
+```
+
+]
+
+???
+Just b/c your HTML looks like this...
+
+--
+count: false
+
+.right-float.col-2[
+
+  #### CSS
+  .text-sm[
+    ```css
+    header.site-header nav.nav-bar ul.nav-menu li.nav-menu__item {}
+    ```
+  ]
+
+]
+
+???
+Previously said that if your html looked like this, you shouldn't write CSS like this
+
+--
+count: false
+
+.right-float.col-2[
+
+#### Sass
+.text-sm[
+```scss
+header.site-header {
+  nav.nav-bar {
+    ul.nav-menu {
+      li.nav-menu__item {}
+    }
+  }
+}
+```
+]
+]
+
+--
+count: false
+
+.center[
+  # Don't do this
+]
+
+---
+background-image: url(https://media.giphy.com/media/aImJnc9F8Omzu/giphy.gif)
+class: bkgd-cover, center, middle
+
+???
+This image familiar to anyone?
+
+--
+count: false
+
+.bkgd-color[
+  ## Inception rule
+]
+
+--
+count: false
+.bkgd-color[
+  ###Don't go more than 3 levels deep
+]
+
+---
+
+## Sass magic: Nesting
+
+```scss
+.element {
+  @media screen only and (min-width:600px) {
+    // media queries here
+  }
+}
+```
+
+???
+- Easier to understand code
+- Especially useful for retina images
+
+---
+background-image: url(https://media.giphy.com/media/xTiN0pn9UrktJMnThu/giphy.gif)
+class: bkgd-cover
+
+???
+The ampersand; this dude is about to be your best buddy
+
+---
+
+## Sass magic: Nesting + Ampersand
+
+???
+The & always refers to the parent selector when nesting. Think of the & as being removed and replaced with the parent selector.
+
+--
+count: false
+
+![ampersand: Sass to CSS](03/ampersand.gif)
+
+---
+
+## Sass magic: Nesting + Ampersand
+
+#### Sass
+```scss
+.class1 {
+  &.class2 {}
+}
+
+.class1 {
+  & .class2 {}
+}
+```
+
+--
+count: false
+
+#### CSS
+```css
+.class1.class2 {}
+
+.class1 .class2 {}
+```
+
+---
+
+## Sass magic: Ampersand + Pseudo classes + Pseudo elements
+
+```scss
+a {
+  &:link {}
+  &:visited {}
+  &:hover, &:focus {}
+  &:active {}
+}
+```
+
+---
+
+## Sass magic: Nesting + Ampersand
+
+```scss
+.class1 {
+  .class2 {
+    & .class3 { color: red; }
+  }
+}
+```
+
+--
+count: false
+
+```css
+.class1 .class2 .class3 { color: red; }
+```
+
+---
+
+## Sass magic: Nesting + Ampersand
+
+```scss
+.class1 {
+  .class2 & {
+    .class3 { color: red; }
+  }
+}
+```
+--
+count: false
+
+```css
+.class2 .class1 .class3 { color: red; }
+```
+
+---
+
+## Sass magic: Ampersand & BEM
+
+.left-float.col-2[
+#### CSS
+
+.text-sm[
+```css
+.photo {}
+.photo__img {}
+.photo__caption {}
+
+.photo--featured {}
+.photo--featured .photo__img {}
+.photo--featured .photo__caption {}
+```
+]
+
+]
+
+--
+count: false
+
+.right-float.col-2[
+#### Sass
+
+.text-sm[
+```scss
+.photo {
+  &__img {}
+  &__caption {}
+  &--featured {
+    .photo__img {}
+    .photo__caption {}
+  }
+}
+```
+]
+
+]
+
+---
+
+## Sass magic: Mixins
+
+???
+A mixin lets you make groups of CSS declarations that you want to reuse throughout your site. You can even pass in values to make your mixin more flexible.
+
+--
+count: false
+
+.text-xl[
+```scss
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+```
+]
+--
+count: false
+
+.text-xl[
+```scss
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+```
+]
+
+---
+## Sass magic: Functions
+
+.text-xl[
+```scss
+lighten($color, $percent)
+darken($color, $percent)
+rgba($color, $alpha)
+complement($color)
+invert($color)
+```
+]
+
+--
+count: false
+
+```scss
+p { color: rgba($color-text, 0.5); }
+p { color: rgba(green, 0.5); }
+```
+
+???
+Not a library, just built into the Sass core language
+
+---
+## Sass magic
+
+<iframe height='520' scrolling='no' title='Experiments with Sass Color Functions' src='//codepen.io/angeliquejw/embed/preview/VvPZOL/?height=520&theme-id=15346&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/angeliquejw/pen/VvPZOL/'>Experiments with Sass Color Functions</a> by Angelique (<a href='https://codepen.io/angeliquejw'>@angeliquejw</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+---
+
+## Sass magic
+
+<iframe height='520' scrolling='no' title='Color Blow Outs (refactored)' src='//codepen.io/angeliquejw/embed/preview/EVZxwx/?height=520&theme-id=15346&default-tab=result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/angeliquejw/pen/EVZxwx/'>Color Blow Outs (refactored)</a> by Angelique (<a href='https://codepen.io/angeliquejw'>@angeliquejw</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+---
+
+## Sass magic: Operators
+
+.left-float.col-3.center.text-xl[
+#### Calculation
+`+`
+
+`-`
+
+`*`
+
+`/`
+
+`%`
+]
+
+--
+count: false
+
+.left-float.col-3.center.text-xl[
+#### Comparison
+
+`>`
+
+`>=`
+
+`<` `<=`
+]
+
+--
+count: false
+
+.left-float.col-3.center.text-xl[
+#### Equality
+
+`==`
+
+`!=`
+
+]
+
+???
+Can evaluate all data types, not just numbers
+
+---
+
+## Sass magic: Operator example
+### What we're going for
+
+.center.img-w-75[
+  ![slideshow screenshot](03/slideshow-example.png)
+]
+
+---
+count: false
+
+## Sass magic: Operator example
+### What we're going for
+
+.center.img-w-40[
+  ![slideshow screenshot](03/slideshow-example.png)
+]
+
+```html
+<div class="slideshow">
+  <img alt="This is a placeholder image" class="slideshow__img" src="https://placebeyonce.com/500-500">
+  <button class="slideshow__button slideshow__button--prev" type="button"></button>
+  <button class="slideshow__button slideshow__button--next" type="button"></button>
+</div>
+```
+
+---
+
+## Sass magic: Operator example
+
+```scss
+@mixin arrow() {
+  @include size(20px);
+}
+```
+
+???
+A mixin inside a mixin? No problem!
+
+---
+## Sass magic: Operator example
+
+```scss
+@mixin arrow() {
+  position: absolute;
+  top: calc(50% - 10px);
+  @include size(20px);
+}
+```
+
+???
+- maybe we can't use flexbox, so let's postion the arrows absolutely
+- the top calc seems like a magic number, but not b/c???
+
+---
+
+## Sass magic: Operator example
+
+```scss
+@mixin arrow() {
+  // prev code plus this
+  &::before {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="100" version="1">
+      <path d="M10 0l50 50-50 50L0 90l40-40L0 10z" /></svg>') no-repeat center/contain;
+    content: '';
+    display: block;
+  }
+}
+```
+
+--
+count: false
+
+.center[
+  ![arrow svg](03/arrow.svg)
+]
+
+???
+This is what that SVG looks like. Going forward, I'm going to shorten that bit of the code to keep things simple.
+
+---
+
+## Sass magic: Operator example
+
+```scss
+@mixin arrow() {
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+}
+```
+
+---
+
+## Sass magic: Operator example
+
+```scss
+@mixin arrow() {
+  position: absolute;
+  top: calc(50% - 10px);
+  @include size(20px);
+  &:before {
+    background: url(SVG) no-repeat center/contain;
+    content: "";
+    display: block;
+    @include size(20px);
+  }
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+}
+```
+
+---
+
+## Sass magic: Operator example
+### Great, we got a button
+
+<iframe height='520' scrolling='no' title='Mixin: Slider Arrows (updated. single arrow)' src='//codepen.io/angeliquejw/embed/gdzqVa/?height=520&theme-id=15346&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/angeliquejw/pen/gdzqVa/'>Mixin: Slider Arrows (updated. single arrow)</a> by Angelique (<a href='https://codepen.io/angeliquejw'>@angeliquejw</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+---
+
+## Sass magic: Operator example
+### What we're going for
+
+.center.img-w-50[
+  ![slideshow screenshot](03/slideshow-example.png)
+]
+
+???
+Could use two images. But that's 2 resources, 2 downloads and we don't gotta
+
+--
+count: false
+
+```html
+<button class="slideshow__button slideshow__button--prev" type="button"></button>
+<button class="slideshow__button slideshow__button--next" type="button"></button>
+```
+
+---
+
+## Sass magic: Operator example
+
+```scss
+@mixin arrow($direction) {
+
+}
+```
+
+---
+count: false
+
+## Sass magic: Operator example
+
+```scss
+@mixin arrow($direction) {
+
+  @if $direction == right {
+    right: 0;
+  }
+
+}
+```
+
+--
+count: false
+
+.right[
+  ![arrow svg](03/arrow.svg)
+]
+
+---
+
+## Sass magic: Operator example
+
+```scss
+@mixin arrow($direction) {
+
+  @if $direction == right {
+    right: 0;
+  } @else if $direction == left {
+    left: 0;
+  }
+
+}
+```
+
+--
+count: false
+
+.left[
+  ![arrow svg](03/arrow.svg)
+]
+
+---
+count: false
+
+## Sass magic: Operator example
+
+```scss
+@mixin arrow($direction) {
+
+  @if $direction == right {
+    right: 0;
+  } @else if $direction == left {
+    left: 0;
+    transform: rotate(180deg);
+  }
+
+}
+```
+
+.left[
+  ![arrow svg](03/arrow2.svg)
+]
+
+---
+
+## Sass magic: Operator example
+
+```scss
+@mixin arrow($direction) {
+
+  @if $direction == right {
+    right: 0;
+  } @else if $direction == left {
+    left: 0;
+    transform: rotate(180deg);
+  }
+
+}
+```
+
+```scss
+.slideshow__button--prev {
+  @include arrow(left);
+}
+.slideshow__button--next {
+  @include arrow(right);
+}
+```
+
+---
+
+## Sass magic: Operator example
+
+```scss
+.slideshow__button--prev {
+  @include arrow();
+}
+```
+
+???
+What happens when we do this?
+
+---
+background-image: url(https://media.giphy.com/media/zH2UJxZ0OPDxu/giphy.gif)
+class: bkgd-cover, center, middle
+
+--
+count: false
+
+.bkgd-color[
+  # Does not compute
+]
+
+---
+
+## Sass magic: Operator example
+
+.col-2.left-float[
+```scss
+@mixin arrow($direction:right) {
+
+  @if $direction == right {
+    right: 0;
+  } @else if $direction == left {
+    left: 0;
+    transform: rotate(180deg);
+  }
+
+}
+```
+]
+
+--
+count: false
+
+.col-2.right-float[
+```scss
+@mixin arrow($direction:right) {
+
+  @if $direction == left {
+    left: 0;
+    transform: rotate(180deg);
+  } @else {
+    right: 0;
+  }
+
+}
+```
+]
+
+---
+
+## Sass magic: Operator example
+
+<iframe height='520' scrolling='no' title='Mixin: Slider Arrows (updated)' src='//codepen.io/angeliquejw/embed/preview/XPqooN/?height=520&theme-id=15346&default-tab=css,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/angeliquejw/pen/XPqooN/'>Mixin: Slider Arrows (updated)</a> by Angelique (<a href='https://codepen.io/angeliquejw'>@angeliquejw</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+---
+
+## Sass magic: Control directives
+
+--
+count: false
+
+.left-float.col-2.center.text-xl[
+
+  `@if`
+
+  `@else if`
+
+  `@else`
+
+  ]
+
+--
+count: false
+
+.right-float.col-2.center.text-xl[
+
+  `@each`
+
+  `@for`
+
+]
+
+???
+- each: For each item in a list or map
+- for: For this many instances
+
+
+  </textarea>
+  <script src="js/remark-latest.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    var slideshow = remark.create();
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/caniuse-embed.min.js"></script>
+</body>
+
+</html>

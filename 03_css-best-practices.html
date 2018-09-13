@@ -14,7 +14,7 @@
 count: false
 
 .center[
-## While you're waiting:
+  ## While you're waiting:
 ]
 
 1. Hop on Slack
@@ -383,7 +383,7 @@ count: false
 ```
 
 .center[
-OR
+  OR
 ]
 
 ```css
@@ -478,7 +478,7 @@ li {
   display: inline-block;
   margin-left: 14px;
 }
-li::first-of-type { margin-left: 0; }
+li:first-of-type { margin-left: 0; }
 ```
 
 --
@@ -504,7 +504,7 @@ Avoid making an HTTP request for a resource when you can easily replicate the el
 ### Avoid
 
 ```css
-div::before {
+li::before {
   content: url(green-circle.svg);
 }
 ```
@@ -518,7 +518,7 @@ count: false
 ### Do this
 
 ```css
-div::before {
+li::before {
   background: green;
   border-radius: 50%;
   content: "";
@@ -529,9 +529,14 @@ div::before {
 ```
 
   .text-xs[
-  View on CodePen: https://codepen.io/angeliquejw/pen/jvYvpy
+    View on CodePen: https://codepen.io/angeliquejw/pen/jvYvpy
   ]
 ]
+
+---
+class: center, middle
+
+## Best practices Q&A
 
 ---
 
@@ -551,6 +556,8 @@ count: false
 
 1. Custom styles
 
+???
+Reminder about the cascade
 
 ---
 
@@ -623,6 +630,7 @@ count: false
 ???
 - Very simple styles that accomplish a single thing
 - Often have only 1 css rule with 'em
+- Both resets and utility classes can be used in multiple projects; this is CSS you write once and use again and again
 
 ---
 
@@ -632,13 +640,16 @@ count: false
 count: false
 
 ```css
-html {
-  font-size: 100%;
+body {
+  background: whitesmoke;
+  color: #1b203a;
+  font-family: "Fira Sans", Sans-Serif;
+  margin: 0;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
+h1, h2, h3, h4, h5, h6, p, li {
+  line-height: 1.5625em;
+  margin: 0;
 }
 ```
 
@@ -655,6 +666,11 @@ class: center, middle
 - Finally to the meat of what you probably think of when you think of writing CSS
 - Use classes
 - Group things when they are like for a reason, not like just because
+
+---
+class: center, middle
+
+## Structuring your CSS Q&A
 
 ---
 
@@ -677,6 +693,7 @@ count: false
 ???
 - Independent component
 - Name describes its purpose, not what it looks like
+- Name can include a hyphen if it's two words
 - Blocks can be nested inside blocks
 --
 count: false
@@ -707,7 +724,7 @@ count: false
 ### Modifier
 
 ???
-Different state or version of the block
+- Not a thing, but a state or version of a block or element
 - Overall, understand purpose and relationships more clearly
 --
 count: false
@@ -759,6 +776,9 @@ count: false
 .photo--featured .photo__img {}
 .photo--featured .photo__caption {}
 ```
+
+???
+In general, BEM discourages nesting selectors, but this is a good use case for it -- the parent photo element has the modifier "featured" and this may or may not change the child elements
 
 ---
 
@@ -857,9 +877,55 @@ count: false
 - Initially, yes
 - We'll talk more about workarounds when we start working on CSS
 - PROS:  helps you achieve the low-level specificity; encourages very reusable elements
-- Q&A
 
-    </textarea>
+---
+
+## Naming things well
+
+???
+BEM provides a structure, a set of expectations for how to name things -- but there's still a lot to be considered as to what makes a good name
+
+--
+count: false
+
+- Understandable
+
+???
+Things that factor into this:  industry, your specific organization and product
+
+--
+count: false
+
+- Obvious
+
+???
+- Don't let a cute or clever idea get in the way of being understandable
+- Avoid overthinking it or applying another layer of abstraction
+
+--
+count: false
+
+- Functional
+
+???
+To clarify, ask what a component’s function is, and not how the component functions.
+
+--
+count: false
+
+- Consistent
+
+???
+BEM, fr'ex, prevents having a code base with the classes defaultButton and buttonDefault in it -- because it sets consistent expectations about naming
+
+---
+class: center, middle
+
+## Naming things Q&A
+
+---
+
+</textarea>
   <script src="js/remark-latest.min.js" type="text/javascript">
   </script>
   <script type="text/javascript">
