@@ -30,7 +30,7 @@ h3 {
 .heading {
   font-family: "Cormorant Garamond", Serif;
   font-size: 2.1875em; }
-  .heading.xl {
+  .heading.text-xl {
     font-size: 3.4375em; }
 
 .text-xs {
@@ -39,7 +39,7 @@ h3 {
 .text-sm {
   font-size: 75%; }
 
-.xl {
+.text-xl {
   font-size: 150%; }
 
 .center img, .right img, .left img {
@@ -91,6 +91,9 @@ a {
 
 .col-2 {
   width: 48%; }
+
+.col-3 {
+  width: 33%; }
 
 .bkgd-color {
   background: rgba(64, 68, 99, 0.8);

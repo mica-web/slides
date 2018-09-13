@@ -39,7 +39,7 @@ h3 {
   font-family: $font-serif;
   font-size: 1.4 * $leading;
 
-  &.xl {
+  &.text-xl {
     font-size: 2.2 * $leading;
   }
 }
@@ -52,6 +52,6 @@ h3 {
   font-size: 75%;
 }
 
-.xl {
+.text-xl {
   font-size: 150%;
 }
