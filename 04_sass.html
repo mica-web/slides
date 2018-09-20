@@ -32,7 +32,7 @@ count: false
 1. Sass + Sassy activities
 
 ---
-background-image: url(03/logo-sass.svg)
+background-image: url(04/logo-sass.svg)
 class: center
 count: false
 
@@ -95,7 +95,7 @@ count: false
 - This is fairly common, if confusing
 
 ---
-background-image: url(03/logo-sass.svg)
+background-image: url(04/logo-sass.svg)
 class: center
 
 ## Why do I use
@@ -235,7 +235,7 @@ count: false
 - Sass can do much, much more
 
 ---
-background-image: url(03/nesting.jpg)
+background-image: url(04/nesting.jpg)
 class: bkgd-cover, center
 
 ## Nesting
@@ -364,6 +364,19 @@ count: false
 - Especially useful for retina images
 
 ---
+
+## Q&A
+
+--
+count: false
+
+1. Fork your resume CodePen
+1. Update your pen's settings to use Sass (SCSS)
+.center[![Sass in CodePen](04/switch-to-sass.gif)]
+1. Update your now Sass-y CodePen to use at least one variable and, if appropriate, nest a selector
+  - Remember the _inception_ rule
+
+---
 background-image: url(https://media.giphy.com/media/xTiN0pn9UrktJMnThu/giphy.gif)
 class: bkgd-cover
 
@@ -380,7 +393,7 @@ The & always refers to the parent selector when nesting. Think of the & as being
 --
 count: false
 
-![ampersand: Sass to CSS](03/ampersand.gif)
+![ampersand: Sass to CSS](04/ampersand.gif)
 
 ---
 
@@ -393,7 +406,7 @@ count: false
 }
 
 .class1 {
-  & .class2 {}
+  .class2 {}
 }
 ```
 
@@ -405,6 +418,24 @@ count: false
 .class1.class2 {}
 
 .class1 .class2 {}
+```
+
+---
+
+## Sass magic: Nesting + Ampersand
+
+```scss
+.class1 {
+  .class2 & {
+    .class3 { color: red; }
+  }
+}
+```
+--
+count: false
+
+```css
+.class2 .class1 .class3 { color: red; }
 ```
 
 ---
@@ -426,46 +457,9 @@ a {
 
 ```scss
 a {
-&::before {}
-&::after {}
+  &::before {}
+  &::after {}
 }
-```
-
----
-
-## Sass magic: Nesting + Ampersand
-
-```scss
-.class1 {
-  .class2 {
-    & .class3 { color: red; }
-  }
-}
-```
-
---
-count: false
-
-```css
-.class1 .class2 .class3 { color: red; }
-```
-
----
-
-## Sass magic: Nesting + Ampersand
-
-```scss
-.class1 {
-  .class2 & {
-    .class3 { color: red; }
-  }
-}
-```
---
-count: false
-
-```css
-.class2 .class1 .class3 { color: red; }
 ```
 
 ---
