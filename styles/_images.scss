@@ -7,35 +7,28 @@ img {
     max-width: 100%;
   }
 
-  .img-w-20 & {
-    width: 20%;
-  }
+  $width-list: 20,
+  25,
+  30,
+  35,
+  40,
+  45,
+  50,
+  55,
+  60,
+  65,
+  70,
+  75,
+  80,
+  85,
+  90,
+  95;
 
-  .img-w-25 & {
-    width: 25%;
-  }
+  @each $width in $width-list {
+    $unit: $width + 0%;
 
-  .img-w-30 & {
-    width: 30%;
-  }
-
-  .img-w-35 & {
-    width: 35%;
-  }
-
-  .img-w-40 & {
-    width: 40%;
-  }
-
-  .img-w-50 & {
-    width: 50%;
-  }
-
-  .img-w-60 & {
-    width: 60%;
-  }
-
-  .img-w-75 & {
-    width: 75%;
+    .img-w-#{$width} & {
+      width: $unit;
+    }
   }
 }
