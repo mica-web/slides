@@ -31,6 +31,20 @@ a {
   display: inline !important;
 }
 
+.cf {
+
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
 .right-float {
   float: right;
 }
