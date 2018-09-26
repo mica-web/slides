@@ -34,9 +34,9 @@ There will be slides for this portion of the class, but they are not complete ye
 - Files Insert Final New Line = true
 
 
-## Adding VS Code plugins
+## Adding VS Code extensions
 
-In class, students will read about the following plugins and install them:
+In class, students will read about the following extensions and install them:
 
 1. **Beautify** by HookyQR
 1. **Live Server** by Ritwick Dey
@@ -59,7 +59,7 @@ In class, students will read about the following plugins and install them:
 1. Go to `File->Open` and open your `gd431` directory
 1. Open VS Code's integrated terminal:
     - `Control` + `` ` `` (the backtick character)
-    1. Note that, by default, VS Code's integrated terminal shows you as inside your project   directory: so helpful 🙌
+    1. Note that, by default, VS Code's integrated terminal shows you as inside your project directory: so helpful 🙌
 1. Type `git init` to make your project directory (`sites/gd431`) into a git repository
 1. Type `git status` in the integrated terminal to see details about your new repo and verify git is properly initialized
     - the `status` command makes no changes; it only provides info
@@ -79,6 +79,7 @@ In class, students will read about the following plugins and install them:
 1. In the integrated terminal, type `git status` again to see which file(s) you've staged
 1. In the "Message" input, type "Create repo" -- this is a "commit message" which will be logged in the repository's history of changes and updates
 1. After you've completed your message, press `Command` + `Enter` (macOS) or `Control` + `Enter` (Windows) to post your commit message and associated changes
+1. Is this on GitHub now? NO -- we haven't told GitHub about our repo; this was just committed to our _local_ git repo
 1. Inside your HTML file:
 
 ```
@@ -94,14 +95,16 @@ In class, students will read about the following plugins and install them:
 1. Click on `index.html` -- a `git diff` view opens up
     - This shows you the things you've added to your file in green and what you've removed in red
 1. After reviewing your changes, stage them and make a new commit: "Add project links"
-1. Inside `gd431`, create two more directories: `resume` and `poster`
-1. Create an `index.html` inside both the `resume` and `poster` directories. Create the boilerplate HTML and just add in an `h1` element that says "Resume" or "Poster", as appropriate
 1. In your VS Code status bar (the bottom line across your editor), click "Go Live"
     - Can't find the status bar? Review the [VS Code interface](https://code.visualstudio.com/docs/getstarted/userinterface)
-1. This will allow you to verify your links and understand the basics of the Live Server plugin. It's uncomplicated but oh-so helpful!
+    - Your links don't work yet b/c they point to content we haven't created yet, so let's do that
+1. Inside `gd431`, create two more directories: `resume` and `poster`
+1. Create an `index.html` inside both the `resume` and `poster` directories. Create the boilerplate HTML and just add in an `h1` element that says "Resume" or "Poster", as appropriate
+1. Now you can verify your links and understand the basics of the Live Server plugin. It's uncomplicated but oh-so helpful!
 1. Stage these changes and make a new commit: "Update project structure"
 1. `git log --oneline` to see history of your commits
-    - Press `q` (for "quit") to close the history
+
+## Q&A
 
 ## Adding your project to GitHub
 
@@ -109,9 +112,15 @@ In class, students will read about the following plugins and install them:
 - Follow steps 1-6 of [Create a repo](https://help.github.com/articles/create-a-repo/)
     - Name the repo "gd431" to match your project folder
 - After the repo is created, scroll down to "…or push an existing repository from the command line"
-- Copy the commands in that section
+- Copy the commands in the SSH section
 - Go back to VS Code and enter those commands in the integrated terminal
 - After you push your code, you should go back to the repo page on GitHub and refresh it to see your content and commits 🙌
+
+---
+
+# Go back to the slideshow to describe branches
+
+---
 
 ## Branches
 
@@ -120,8 +129,6 @@ In class, students will read about the following plugins and install them:
 - You can also see what branch you're working on in the the VS Code status bar, on the far left
 - Creating a new branch is like using "File save as..." on a document; it takes the current state of your repo and creates a duplicate of it
 - We use branches to isolate our work, especially when working on teams, and, in this course, to get feedback on things via pull requests (which is a request to have your branch be integrated or merged into the master branch)
-
-More info: https://guides.github.com/introduction/flow/
 
 1. In the integrated terminal, type `git branch migrate-from-codepen`
     - This will create a new branch with the name "migrate-from-codepen"
@@ -153,7 +160,7 @@ More info: https://guides.github.com/introduction/flow/
 ```
 
 - If you added any external stylesheets or pens to your CodePen, including  Google Fonts, you'll now need to add them to your project in VS Code.
-    - You can check this by going to the CSS Settings on your CodePen and   looking under "Add External Stylesheets/Pens"
+    - You can check this by going to the CSS Settings on your CodePen and looking under "Add External Stylesheets/Pens"
 
 
 # Best practices for commit messages
@@ -167,6 +174,3 @@ More info: https://guides.github.com/introduction/flow/
     - Fix typo in nav
     - Note tense: not updates or fixed
 - Doesn't need to mention which file you worked on; this info is tracked by git
-
-https://thenewstack.io/getting-legit-with-git-and-github-the-art-of-the-commit-message/
-
