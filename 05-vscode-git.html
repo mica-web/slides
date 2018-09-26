@@ -48,6 +48,9 @@ background-image: url(05/git1.png)
 class: bkgd-contain
 count: false
 
+???
+Let's do a quick walkthrough of how things might work for a web project without git
+
 ---
 background-image: url(05/git2.png)
 class: bkgd-contain
@@ -61,7 +64,6 @@ count: false
 ---
 background-image: url(05/git4.png)
 class: bkgd-contain
-count: false
 
 ## Without version control
 
@@ -93,20 +95,22 @@ count: false
 ## Without version control
 
 ---
-class: center
-count: false
-
-## `git init`
-
----
 background-image: url(05/git1.png)
-class: bkgd-contain, center
-count: false
+class: bkgd-contain
+
+---
+class: center
 
 ## `git init`
 
+.center.img-w-50[![empty directory](05/git1.png)]
+
+???
+- we talked before about track changes, but that only works for a single document/object
+- git isn't just for one file, but a snapshot of a whole project (which git calls a repository)
+
 ---
-background-image: url(05/git_init.png)
+background-image: url(05/git_init1.png)
 class: bkgd-contain, center
 count: false
 
@@ -120,14 +124,12 @@ count: false
 ## `git init`
 
 ???
-- not just for one file, but a snapshot of a whole project (which git calls a repository)
 - not limited by number of files or types of files
-- does not autosync; up to the user
+- changes in yr working directory do not autosync; up to the user
 
 ---
-background-image: url(05/git_add.png)
+background-image: url(05/git_add1.png)
 class: bkgd-contain, center
-count: false
 
 ## `git add`
 
@@ -138,27 +140,86 @@ count: false
 
 ## `git add`
 
+???
+can move a single file over
+
 ---
-background-image: url(05/git_commit.png)
+background-image: url(05/git_add3.png)
 class: bkgd-contain, center
 count: false
 
-## `git commit`
-
----
-
-# Getting started with git + GitHub
+## `git add`
 
 ???
-- git != github
+- or several/all
+- changes are still in this middle zone, not yet attached to the project
+- we do that via `git commit`
+
+---
+background-image: url(05/git_commit.png)
+class: bkgd-contain, center
+
+## `git commit`
+
+???
+- a commit is not the same as a save
+    - save is to your working directory, always local
+- commit submits your changes to the local repository, to the history of the project
+- we'll talk more in detail about commits shortly, but for now the important distinction is that a commit is to your project history, a save is to your working directory
+
+---
+class: center, middle
+
+# Q&A on git workflow or concepts
+
+???
+- version control
+- git init
+- git add
+- git commit
+- do students understand why we add AND commit?
+- everything we've touched on to date is local: on your machine, no outside resources
+
+
+---
+class: center, middle
+
+# Git `!=` GitHub
+
+???
+- everything we've touched on to date is local: on your machine, no outside resources
+
+--
+count: false
+
+.cf[.left-float[![git](05/git.png)] .right-float[![github](05/github.png)]]
+
+???
 - GH is a web site that hosts git repositories and provides a bunch of additional tools for social coding
 
 --
 count: false
 
+.cf[.left-float[![bitbucket](05/bitbucket.png)] .right-float[![gitlab](05/gitlab.png)]]
+
+
+???
+- gitlab, bitbucket other services that also use git in similar ways
+
+---
+
+# Getting started with git + GitHub
+
 - Install/verify git
 - Set up your username and email
 - Get/verify your SSH keys
+
+.center[
+    ## http://bit.ly/431-git
+]
+
+???
+If you have already pushed to GitHub from the machine you're using right now, you may be able to skip some steps here
 
 ---
 
@@ -167,6 +228,47 @@ count: false
 - Interface basics
 - Update some helpful settings of VS Code
 - Add some useful extensions to VS Code
+
+---
+
+## Extensions
+
+.left-float.col-2.text-lg[
+1. **Beautify** by HookyQR
+1. **Live Server** by Ritwick Dey
+1. **Live Sass Compiler** by Ritwick Dey
+1. **Intellisense for CSS class names in HTML** by Zignd
+1. **Path Intellisense** by Christian Kohler
+1. **scss-scan** by aaronphy
+1. **minify** by HookyQR
+1. **Auto Rename Tag** by Jun Han
+1. **Bracket Pair Colorizer** by CoenraadS
+]
+
+???
+1. Katie
+1. Yana
+1. Haley
+1. Emilia
+1. Stella
+1. Lauren
+1. Ekin
+1. Fiona
+1. Elena (bonus)
+
+--
+count: false
+
+.right-float.col-2.bkgd-color.text-xl[
+- What does this extension do?
+- What problem does it solve?
+- How is it helpful?
+]
+
+---
+class: center, middle
+
+# VS Code Q&A
 
 ---
 
@@ -185,8 +287,26 @@ count: false
 
 ## Git branches
 
+.text-xl.center[
+`git branch`
+]
+
+???
+- In the VS Code integrated terminal, type `git branch` to see a list of branches for your repo; right now, you should see only one: master
+- By default, git has created this initial branch for you
+
 --
 count: false
+
+.center[![branches in VS Code UI](05/branch-master.png)]
+
+???
+- You can also see what branch you're working on in the the VS Code status bar, on the far left
+
+
+---
+
+## Git branches
 
 .img-w-60.center[![creating a branch in git](05/branch1.png)]
 
@@ -205,10 +325,45 @@ count: false
 
 .center[![creating a branch in git](05/branch3.png)]
 
+???
+- So, this whole time we've been saving our commits to master; which is one way to go -- but it's less than ideal; let's explore another way
+- We use branches to isolate our work, especially when working on teams, and, in this course, to get feedback on things via pull requests (which is a request to have your branch be integrated or merged into the master branch)
+
 ---
-count: false
 
 ## Git branches
+
+???
+- Creating a new branch is like using "File save as..." on a document; it takes the current state of your repo and creates a duplicate of it
+
+--
+count: false
+
+.center[
+### `git branch {new-branch-name}`
+]
+
+???
+- branch names cannot have spaces in them
+- you'll be typing them a lot, so it helps to be brief
+- note that this command only creates the new branch; you're still inside of and working within the master branch
+
+--
+count: false
+
+.center[
+### `git checkout {new-branch-name}`
+]
+
+???
+- `checkout` switches which branch you're on
+- Note, the branch is always created based on the branch you're currently on
+- This seems obvious now b/c we've only been dealing with one branch, but it can def muck up your day if you forget it
+
+---
+
+## Git branches
+
 
 .center[![creating a branch in git](05/branch4.png)]
 
@@ -226,40 +381,217 @@ count: false
 
 ## Git branches
 
+???
+- Of course, while master and our new branch have diverged, at some point we're going to want to connect them back up together again
+- We do this via a process called merging
+
 ---
 
+# Migrating from CodePen to VS Code
 
-- Move existing projects over
+--
+count: false
+
+.center.text-xl[
+`git branch migrate-from-codepen`
+
+`git checkout migrate-from-codepen`
+]
+
+--
+count: false
+
+.text-xl[
+1. Copy over most recent version of resume
+    - `resume/index.html`
+    - `resume/styles/styles.scss`
+]
+
+???
+- going forward, no changes directly to **master**
+- create `styles` directories inside `resume` and `poster`
+- **REMEMBER**
+    - You'll need to link to your styles from your HTML in the `head`
+        - `link` + `tab` in Emmet
+    - You'll also need to link to or maybe recreate any external stylesheets used
+        - Google Fonts
+        - my utilities classes
+        - check by going to the CSS Settings on your CodePen and looking under "Add External Stylesheets/Pens"
+
+---
+count: false
+
+# Migrating from CodePen to VS Code
+
+- Copy over most recent version of resume
+    - `resume/index.html`
+    - `resume/styles/styles.scss`
+
+.text-xl[
+1. "Go Live" to view in browser
+1. "Watch Sass" to compile Sass
+]
+
+---
+count: false
+
+# Migrating from CodePen to VS Code
+
+- Copy over most recent version of resume
+    - `resume/index.html`
+    - `resume/styles/styles.scss`
+- "Go Live" to view in browser
+- "Watch Sass" to compile Sass
+
+.text-xl[
+1. Stage your changes
+1. Make a new commit
+]
+
+???
+- Before you commit, get into the habit of verifying that you're working on your new branch, not master!
+
+---
+count: false
+
+# Migrating from CodePen to VS Code
+
+- Copy over most recent version of resume
+    - `resume/index.html`
+    - `resume/styles/styles.scss`
+- "Go Live" to view in browser
+- "Watch Sass" to compile Sass
+- Stage your changes
+- Make a new commit
+
+.text-xl[
+1. Repeat the process for your poster project
+    - copy
+    - verify
+    -  then commit
+]
+
+---
+count: false
+
+# Migrating from CodePen to VS Code
+
+.center.text-xl[
+`git push origin migrate-from-codepen`
+] 
+
+???
+- `git push` is the command to take code from your local git repo and share it with GitHub in the cloud
+- `origin` is the name of your remote repo
+    - this is the default set when you originally connected up your project on GitHub
+    - git and GitHub are full of useful defaults (remember how you had a master branch without ever creating it?)
+- `migrate-from-codepen` is the name of your branch
+- so, broken down, this command says, hey, git, take the changes from my current branch and push them to a similarly named branch on GitHub
+
+--
+count: false
+
+.center.img-w-45[![git push from UI](05/git-push.png)]
+
+???
+- you can also do this through the UI
+- click the three dots on the far right of the source control sidebar
+- verify on GitHub.com
+
+---
+class: center, middle
+
+# Q&A for branches & workflow
+
+---
+class: center, middle
+
+# Best practices for commits
+
+---
+
+## A commit represents work that is
+
+.text-xl[
+- Modular
+- Connected
+]
+
+???
+- A unit of work; note that we treated the migration of each project as its own commit; it doesn't make sense to commit changes to 2 homework assignments at once
+- A commit is not a reference to a working period (e.g., "Friday's work") because you would never want to undo a whole day; you'd much more likely want to undo discrete bits of that day's work
+- We just treated the whole migration from CodePen for your projects project as two commits; how else could this have been broken up?
+
+--
+count: false
+
+.text-xl[
+1. Add web fonts
+1. Add JS for flyout menu
+1. Make header responsive
+1. Fix typo
+]
+
+???
+- Do we see how these things are modular?
+- Flyout menu JS may in fact be used in making the header responsive, but since it involves making a new file, it should be in its own commit
+- Separate, when possible, making new files vs modifying existing
+- Separate renaming files, deleting files
+
+
+---
+
+## Tasks as commits
+
+???
+- Common issue for new git users is to get lost in the work and forget to commit; this muddies the water and makes it harder to understand your changes, your intent and definitely impacts your ability to undo things
+- If it helps, write out a task list _before_ you start coding; each one of those tasks could be a commit
+
+--
+count: false
+
+.text-xl[
+1. Add web fonts
+1. Add JS for flyout menu
+1. Make header responsive
+1. Fix typo
+]
+
+???
+- You can even do this in your git repo!
+- `todo.md`
+- Go to code editor to explain this
 
 ---
 
 ## Best practices for commit messages
 
-- Commit early
-- Commit often
+.text-xl[
 - Be useful
 - Be brief (~50 char)
-- Start with a verb in the present tense, like giving a command:
-- Update body font to Roboto
-- Fix typo in nav
-- Note tense: not updates or fixed
-- Doesn't need to mention which file you worked on
+]
 
-https://thenewstack.io/getting-legit-with-git-and-github-the-art-of-the-commit-message/
+--
+count: false
+
+.text-xl[
+- Start with a verb in the present tense, like giving a command:
+    - Update body font to Roboto
+    - Fix typo in nav
+    - Note tense: not updates or fixed
+]
+
+--
+count: false
+
+.text-xl[
+- Doesn't need to mention which file you worked on
+]
 
 ---
+class: center, middle
 
-# VS Code + git
-
-- Create a repo for your class projects
-- branches vs master
-- pull requests
-- merging
-
-
-
-
-
+# Commits Q&A
 
     </textarea>
     <script src="js/remark-latest.min.js" type="text/javascript">
