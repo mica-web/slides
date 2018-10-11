@@ -12,6 +12,31 @@
   &-content.bkgd-cover {
     background-size: cover;
   }
+
+  table {
+    border-collapse: collapse;
+    margin-top: 2em;
+    table-layout: fixed;
+    width: 100%;
+
+    th {
+      text-align: left;
+    }
+
+    td {
+      padding: 0.5em;
+    }
+
+    tbody {
+      tr {
+        &:nth-of-type(odd) {
+          background-color: rgba(#ccc, 0.25);
+        }
+      }
+    }
+
+
+  }
 }
 
 a {

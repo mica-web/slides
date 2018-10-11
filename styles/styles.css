@@ -148,6 +148,25 @@ h3 {
   background-size: cover;
 }
 
+.remark-slide table {
+  border-collapse: collapse;
+  margin-top: 2em;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.remark-slide table th {
+  text-align: left;
+}
+
+.remark-slide table td {
+  padding: 0.5em;
+}
+
+.remark-slide table tbody tr:nth-of-type(odd) {
+  background-color: rgba(204, 204, 204, 0.25);
+}
+
 a {
   color: rgba(80, 142, 161, 0.8);
 }
