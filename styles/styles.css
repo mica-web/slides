@@ -148,6 +148,11 @@ h3 {
   background-size: cover;
 }
 
+.remark-slide hr {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
 .remark-slide table {
   border-collapse: collapse;
   margin-top: 2em;
