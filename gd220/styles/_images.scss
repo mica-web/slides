@@ -1,0 +1,34 @@
+img {
+
+  .center &,
+  .right &,
+  .left & {
+    height: auto;
+    max-width: 100%;
+  }
+
+  $width-list: 20,
+  25,
+  30,
+  35,
+  40,
+  45,
+  50,
+  55,
+  60,
+  65,
+  70,
+  75,
+  80,
+  85,
+  90,
+  95;
+
+  @each $width in $width-list {
+    $unit: $width + 0%;
+
+    .img-w-#{$width} & {
+      width: $unit;
+    }
+  }
+}

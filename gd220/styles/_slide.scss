@@ -1,0 +1,110 @@
+.remark-slide {
+  background: $color-offwhite;
+  border-top: 12px solid $color-indigo;
+  border-bottom: 4px solid $color-marine;
+  color: $color-text-body;
+  font-family: $font-sans;
+
+  &-content.bkgd-contain {
+    background-size: contain;
+  }
+
+  &-content.bkgd-cover {
+    background-size: cover;
+  }
+
+  hr {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin-top: 2em;
+    table-layout: fixed;
+    width: 100%;
+
+    th {
+      text-align: left;
+    }
+
+    td {
+      padding: 0.5em;
+    }
+
+    tbody {
+      tr {
+        &:nth-of-type(odd) {
+          background-color: rgba(#ccc, 0.25);
+        }
+      }
+    }
+
+
+  }
+}
+
+a {
+  color: rgba($color-text-link, 0.8);
+
+  &:hover,
+  &:active {
+    color: $color-text-link;
+  }
+
+  &:visited {
+    color: $color-text-link-visited;
+  }
+}
+
+.inline {
+  display: inline !important;
+}
+
+.cf {
+
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+.right-float {
+  float: right;
+}
+
+.left-float {
+  float: left;
+}
+
+
+.col-2 {
+  width: 48%;
+}
+
+.col-3 {
+  width: 33%;
+}
+
+.bkgd-color {
+  background: rgba($color-eggplant, 0.8);
+  color: $color-offwhite;
+  padding: 2em 1em;
+}
+
+.remark-code,
+.remark-inline-code {
+  font-family: $font-mono;
+  font-weight: 400;
+}
+
+.remark-code {
+  font-size: 1.3em;
+  white-space: pre-wrap;
+}

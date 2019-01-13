@@ -1,0 +1,232 @@
+.remark-slide {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.remark-slide *,
+.remark-slide *::before,
+.remark-slide *::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.remark-slide {
+  font-size: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  line-height: 1.5625em;
+  margin: 0;
+}
+
+p + p {
+  margin-top: 0.78125em;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", Serif;
+}
+
+.heading {
+  font-family: "Cormorant Garamond", Serif;
+  font-size: 2.1875em;
+}
+
+.heading.text-xl {
+  font-size: 3.4375em;
+}
+
+.text-xs {
+  font-size: 60%;
+}
+
+.text-sm {
+  font-size: 75%;
+}
+
+.text-lg {
+  font-size: 120%;
+}
+
+.text-xl {
+  font-size: 150%;
+}
+
+.center img,
+.right img,
+.left img {
+  height: auto;
+  max-width: 100%;
+}
+
+.img-w-20 img {
+  width: 20%;
+}
+
+.img-w-25 img {
+  width: 25%;
+}
+
+.img-w-30 img {
+  width: 30%;
+}
+
+.img-w-35 img {
+  width: 35%;
+}
+
+.img-w-40 img {
+  width: 40%;
+}
+
+.img-w-45 img {
+  width: 45%;
+}
+
+.img-w-50 img {
+  width: 50%;
+}
+
+.img-w-55 img {
+  width: 55%;
+}
+
+.img-w-60 img {
+  width: 60%;
+}
+
+.img-w-65 img {
+  width: 65%;
+}
+
+.img-w-70 img {
+  width: 70%;
+}
+
+.img-w-75 img {
+  width: 75%;
+}
+
+.img-w-80 img {
+  width: 80%;
+}
+
+.img-w-85 img {
+  width: 85%;
+}
+
+.img-w-90 img {
+  width: 90%;
+}
+
+.img-w-95 img {
+  width: 95%;
+}
+
+.remark-slide {
+  background: whitesmoke;
+  border-top: 12px solid #243149;
+  border-bottom: 4px solid #508ea1;
+  color: #1b203a;
+  font-family: "Fira Sans", Sans-Serif;
+}
+
+.remark-slide-content.bkgd-contain {
+  background-size: contain;
+}
+
+.remark-slide-content.bkgd-cover {
+  background-size: cover;
+}
+
+.remark-slide hr {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.remark-slide table {
+  border-collapse: collapse;
+  margin-top: 2em;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.remark-slide table th {
+  text-align: left;
+}
+
+.remark-slide table td {
+  padding: 0.5em;
+}
+
+.remark-slide table tbody tr:nth-of-type(odd) {
+  background-color: rgba(204, 204, 204, 0.25);
+}
+
+a {
+  color: rgba(80, 142, 161, 0.8);
+}
+
+a:hover, a:active {
+  color: #508ea1;
+}
+
+a:visited {
+  color: #404463;
+}
+
+.inline {
+  display: inline !important;
+}
+
+.cf::before, .cf::after {
+  content: ' ';
+  display: table;
+}
+
+.cf::after {
+  clear: both;
+}
+
+.right-float {
+  float: right;
+}
+
+.left-float {
+  float: left;
+}
+
+.col-2 {
+  width: 48%;
+}
+
+.col-3 {
+  width: 33%;
+}
+
+.bkgd-color {
+  background: rgba(64, 68, 99, 0.8);
+  color: whitesmoke;
+  padding: 2em 1em;
+}
+
+.remark-code,
+.remark-inline-code {
+  font-family: "Fira Mono", monospace;
+  font-weight: 400;
+}
+
+.remark-code {
+  font-size: 1.3em;
+  white-space: pre-wrap;
+}
+/*# sourceMappingURL=styles.css.map */

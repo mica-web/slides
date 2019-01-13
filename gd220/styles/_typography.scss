@@ -1,0 +1,61 @@
+//
+// SCALE
+//
+$base-font-size: 1em;
+$scale: 1.25;
+$line-height: $scale;
+$leading: $scale * $base-font-size * $line-height;
+
+// this uses MAJOR THIRD type scale, or exponents of 1.25
+.remark-slide {
+  font-size: $base-font-size;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  line-height: $leading;
+  margin: 0;
+}
+
+p {
+  +p {
+    margin-top: $leading / 2;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-serif;
+}
+
+.heading {
+  font-family: $font-serif;
+  font-size: 1.4 * $leading;
+
+  &.text-xl {
+    font-size: 2.2 * $leading;
+  }
+}
+
+.text-xs {
+  font-size: 60%;
+}
+
+.text-sm {
+  font-size: 75%;
+}
+
+.text-lg {
+  font-size: 120%;
+}
+
+.text-xl {
+  font-size: 150%;
+}
