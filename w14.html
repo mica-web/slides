@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Using Nunjucks to be Awesome</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Cormorant+Garamond:700i|Fira+Mono:400|Fira+Sans'>
+  <link rel='stylesheet' href='styles/styles.css'>
+</head>
+
+<body>
+  <textarea id="source">
+
+# Agenda
+
+- Feedback notes
+- Loops and other helpful Eleventy/Nunjucks tricks
+- Coding a carousel that:
+  - is responsive
+  - is inclusively designed
+  - anticipates keyboard and touch navigation
+  - performant
+- Project wrap up
+  - rubric
+  - due date
+  - etc
+
+---
+background-image: url(14/hidden-why.png)
+
+---
+class: middle, center
+
+```
+<button type="button"></button>
+```
+
+---
+
+
+---
+- Remember every page should have an h1 and that heading tags should be in numerical order, no skipping around
+- Button elements need to include a `type` because the default type is "submit." This could catch you unawares
+MDN : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+
+---
+
+```markdown
+---
+layout: layouts/default.njk
+title: 404 | Site Name
+---
+```
+
+Repetition of site title; good to do this for SEO and UX, but don't need to do it manually; let's update default.njk to do some of the work for us
+
+```njk
+<title>{% if title %}{{ title }} | {% endif %}Site Name</title>
+```
+
+---
+
+```njk
+{% include "_nav.html" %}
+{% include "_header.html" %}
+<section class="site-wrapper">
+Some content.
+</section>
+{% include "_footer.html" %}
+```
+
+Again, move repeated items to the default.njk file. Should look something like this:
+
+```njk
+<body>
+
+  {% include "_header.html" %}
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  {% include "_footer.html" %}
+
+  <!-- JS goes here -->
+</body>
+```
+
+What's missing? Nav partial? 
+You can either add that here or to your header partial!
+
+---
+
+Getting an active class in your navigation
+
+```markdown
+---
+layout: layouts/default.njk
+tags: nav
+title: Your Page Title
+---
+```
+
+Use the "nav" tag to identify which pages are part of your nav
+
+Then, in your nav partial, list out those pages:
+
+```njk
+<nav>
+  <ul>
+    {% for nav in collections.nav %}
+    <li>{{ nav.data.title }}</li>
+    {% endfor %}
+  </ul>
+</nav>
+```
+
+Add the links:
+
+```njk
+<nav>
+  <ul>
+    {% for nav in collections.nav %}
+    <li><a href="{{ nav.url }}">{{ nav.data.title }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+```
+
+Add the active class:
+
+```njk
+<nav>
+  <ul>
+    {% for nav in collections.nav %}
+    <li {% if (page.url==nav.url) %}class="active" {% endif %}><a href="{{ nav.url }}">{{ nav.data.title }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+```
+
+Requires this fix to the title in default.njk:
+
+```njk
+<title>{% if (title != "Home") %}{{ title }} | {% endif %}Site Name</title>
+```
+
+---
+
+Slideshow JS and Nunjucks
+
+---
+
+Review rubric for grading, including peer and self assessments
+
+Final turn in PR: Tues Dec 11 by EOD
+
+Discuss presentation
+
+---
+
+    </textarea>
+  <script src="js/remark-latest.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    var slideshow = remark.create();
+  </script>
+</body>
+
+</html>

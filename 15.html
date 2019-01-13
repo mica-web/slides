@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Week 15</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Cormorant+Garamond:700i|Fira+Mono:400|Fira+Sans'>
+  <link rel='stylesheet' href='styles/styles.css'>
+</head>
+
+<body>
+  <textarea id="source">
+
+# Agenda
+
+.text-xl[
+
+1. Final project expectations &mdash; done!
+1. JS in your projects
+1. Sidebar convos
+  - freelancing
+  - your portfolios
+  - real-life team work
+1. MICA course evaluation &mdash; done!
+1. Week 15 assessment &mdash; done!
+1. Work & assistance with projects
+]
+
+---
+
+## JS in your projects
+
+1. Concatenation
+1. Dynamic loading
+
+---
+
+## JS in your projects
+### Concatenation
+
+In your `package.json`:
+
+```
+"concat": "cat src/js/back.js src/js/faq.js src/js/resources.js > src/js/scripts.js" 
+```
+
+---
+
+## JS in your projects
+### Dynamic loading
+
+```
+{% if javascript %}
+<script type="text/javascript" src="/scripts/{{ javascript }}.js"></script>
+{% endif %}
+```
+
+---
+class: middle, center
+
+# Questions?
+
+    </textarea>
+  <script src="js/remark-latest.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    var slideshow = remark.create();
+  </script>
+</body>
+
+</html>
