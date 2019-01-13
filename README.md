@@ -1,5 +1,7 @@
-# GD 431 Slides
+# Web design + dev at MICA
 
 These slides were prepared using Markdown and a JS slide generator ([Remark](https://github.com/gnab/remark/) 👍).
 
-If you are looking for PDF versions of the slides, they are included after class in the [weekly schedule](https://mica-web.github.io/#schedule).
+The following slides can be found in this repo:
+- GD 220 (taught spring 2019)
+- GD 431 (taught fall 2018)
