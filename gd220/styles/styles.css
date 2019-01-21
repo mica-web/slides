@@ -10,134 +10,100 @@
           box-sizing: inherit;
 }
 
-.remark-slide {
-  font-size: 1em;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-li {
-  line-height: 1.5625em;
-  margin: 0;
-}
-
-p + p {
-  margin-top: 0.78125em;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Cormorant Garamond", Serif;
-}
-
-.heading {
-  font-family: "Cormorant Garamond", Serif;
-  font-size: 2.1875em;
-}
-
-.heading.text-xl {
-  font-size: 3.4375em;
-}
-
-.text-xs {
-  font-size: 60%;
-}
-
-.text-sm {
-  font-size: 75%;
-}
-
-.text-lg {
-  font-size: 120%;
-}
-
-.text-xl {
-  font-size: 150%;
-}
-
-.center img,
-.right img,
-.left img {
+.remark-slide img {
   height: auto;
   max-width: 100%;
 }
 
-.img-w-20 img {
-  width: 20%;
+.remark-slide {
+  font-size: 28px;
 }
 
-.img-w-25 img {
-  width: 25%;
+.remark-slide-content {
+  font-size: 1em;
 }
 
-.img-w-30 img {
-  width: 30%;
+.remark-slide-content h1,
+.remark-slide-content h2,
+.remark-slide-content h3,
+.remark-slide-content h4,
+.remark-slide-content h5,
+.remark-slide-content h6 {
+  font-weight: normal;
 }
 
-.img-w-35 img {
-  width: 35%;
+.remark-slide-content h1,
+.remark-slide-content h2,
+.remark-slide-content h3,
+.remark-slide-content h4,
+.remark-slide-content h5,
+.remark-slide-content h6,
+.remark-slide-content p,
+.remark-slide-content li {
+  line-height: 1.5625em;
+  margin: 0;
 }
 
-.img-w-40 img {
-  width: 40%;
+.remark-slide-content p + p,
+ul + .remark-slide-content p,
+ol + .remark-slide-content p {
+  margin-top: 0.78125em;
 }
 
-.img-w-45 img {
-  width: 45%;
+.remark-slide-content h1,
+.remark-slide-content h2 {
+  font-family: NeueAlteGrotesk-Bold;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.04167em;
+  margin-top: 0.78125em;
+  margin-bottom: 0.78125em;
 }
 
-.img-w-50 img {
-  width: 50%;
+.remark-slide-content h1 {
+  font-size: 2.6rem;
 }
 
-.img-w-55 img {
-  width: 55%;
+.remark-slide-content h2 {
+  font-size: 1.8rem;
 }
 
-.img-w-60 img {
-  width: 60%;
+.remark-slide-content h3 {
+  font-family: NeueAlteGrotesk-Semibold;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5rem;
+  opacity: 0.8;
+  text-transform: uppercase;
 }
 
-.img-w-65 img {
-  width: 65%;
+.remark-slide-content:not(.title) > h1 {
+  background-image: linear-gradient(transparent calc(100% - 2px), #F6F930 2px);
+  background-position: left 100%;
+  background-repeat: no-repeat;
+  background-size: 75% 100%;
+  font-family: Native-Regular;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.6rem;
+  margin-bottom: 1em;
+  padding-bottom: 2px;
+  text-transform: uppercase;
 }
 
-.img-w-70 img {
-  width: 70%;
-}
-
-.img-w-75 img {
-  width: 75%;
-}
-
-.img-w-80 img {
-  width: 80%;
-}
-
-.img-w-85 img {
-  width: 85%;
-}
-
-.img-w-90 img {
-  width: 90%;
-}
-
-.img-w-95 img {
-  width: 95%;
+.remark-slide-content.title > h1 {
+  font-family: NeueAlteGrotesk-Black;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 4rem;
 }
 
 .remark-slide {
-  background: whitesmoke;
-  border-top: 12px solid #243149;
-  border-bottom: 4px solid #508ea1;
-  color: #1b203a;
-  font-family: "Fira Sans", Sans-Serif;
+  background-color: #FCFCFC;
+  color: #22333B;
+  font-family: NeueAlteGrotesk-Regular;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .remark-slide-content.bkgd-contain {
@@ -148,40 +114,41 @@ h3 {
   background-size: cover;
 }
 
-.remark-slide hr {
-  margin-top: 2em;
-  margin-bottom: 2em;
+.remark-slide::before {
+  background-image: linear-gradient(to right, #22333B 50%, transparent 50%), linear-gradient(#F6F930, transparent 8px);
+  background-position: left top, left 100%;
+  background-repeat: repeat-x, no-repeat;
+  background-size: 20px 3px, 120% 100%;
+  content: '';
+  height: 8px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 65%;
 }
 
-.remark-slide table {
-  border-collapse: collapse;
-  margin-top: 2em;
-  table-layout: fixed;
+.remark-slide-content {
+  height: 100%;
   width: 100%;
 }
 
-.remark-slide table th {
-  text-align: left;
-}
-
-.remark-slide table td {
-  padding: 0.5em;
-}
-
-.remark-slide table tbody tr:nth-of-type(odd) {
-  background-color: rgba(204, 204, 204, 0.25);
+.remark-slide-number {
+  font-family: Native-Regular;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
 }
 
 a {
-  color: rgba(80, 142, 161, 0.8);
+  color: rgba(10, 9, 8, 0.8);
 }
 
 a:hover, a:active {
-  color: #508ea1;
+  color: #0A0908;
 }
 
 a:visited {
-  color: #404463;
+  color: #22333B;
 }
 
 .inline {
@@ -205,24 +172,11 @@ a:visited {
   float: left;
 }
 
-.col-2 {
-  width: 48%;
-}
-
-.col-3 {
-  width: 33%;
-}
-
-.bkgd-color {
-  background: rgba(64, 68, 99, 0.8);
-  color: whitesmoke;
-  padding: 2em 1em;
-}
-
 .remark-code,
 .remark-inline-code {
-  font-family: "Fira Mono", monospace;
-  font-weight: 400;
+  font-family: Native-Regular;
+  font-weight: normal;
+  font-style: normal;
 }
 
 .remark-code {

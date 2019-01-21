@@ -1,9 +1,7 @@
 .remark-slide {
-  background: $color-offwhite;
-  border-top: 12px solid $color-indigo;
-  border-bottom: 4px solid $color-marine;
+  background-color: $color-offwhite;
   color: $color-text-body;
-  font-family: $font-sans;
+  @include font-grotesk();
 
   &-content.bkgd-contain {
     background-size: contain;
@@ -13,35 +11,28 @@
     background-size: cover;
   }
 
-  hr {
-    margin-top: 2em;
-    margin-bottom: 2em;
+  &::before {
+    background-image: linear-gradient(to right, $color-text-body 50%, transparent 50%), linear-gradient($color-yellow, transparent 8px);
+    background-position: left top, left 100%;
+    background-repeat: repeat-x, no-repeat;
+    background-size: 20px 3px, 120% 100%;
+    content: '';
+    height: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 65%;
   }
+}
 
-  table {
-    border-collapse: collapse;
-    margin-top: 2em;
-    table-layout: fixed;
-    width: 100%;
+.remark-slide-content {
+  height: 100%;
+  width: 100%;
+}
 
-    th {
-      text-align: left;
-    }
-
-    td {
-      padding: 0.5em;
-    }
-
-    tbody {
-      tr {
-        &:nth-of-type(odd) {
-          background-color: rgba(#ccc, 0.25);
-        }
-      }
-    }
-
-
-  }
+.remark-slide-number {
+  @include font-mono();
+  font-size: 1rem;
 }
 
 a {
@@ -83,25 +74,9 @@ a {
   float: left;
 }
 
-
-.col-2 {
-  width: 48%;
-}
-
-.col-3 {
-  width: 33%;
-}
-
-.bkgd-color {
-  background: rgba($color-eggplant, 0.8);
-  color: $color-offwhite;
-  padding: 2em 1em;
-}
-
 .remark-code,
 .remark-inline-code {
-  font-family: $font-mono;
-  font-weight: 400;
+  @include font-mono();
 }
 
 .remark-code {

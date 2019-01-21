@@ -8,54 +8,82 @@ $leading: $scale * $base-font-size * $line-height;
 
 // this uses MAJOR THIRD type scale, or exponents of 1.25
 .remark-slide {
+  font-size: 28px;
+}
+
+.remark-slide-content {
   font-size: $base-font-size;
-}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-li {
-  line-height: $leading;
-  margin: 0;
-}
 
-p {
-  +p {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: normal;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li {
+    line-height: $leading;
+    margin: 0;
+  }
+
+  p {
+
+    +p,
+    ul+&,
+    ol+& {
+      margin-top: $leading / 2;
+    }
+  }
+
+  h1,
+  h2 {
+    @include font-grotesk('Bold');
+    line-height: $leading / 1.5;
     margin-top: $leading / 2;
+    margin-bottom: $leading / 2;
   }
-}
 
-h1,
-h2,
-h3 {
-  font-family: $font-serif;
-}
-
-.heading {
-  font-family: $font-serif;
-  font-size: 1.4 * $leading;
-
-  &.text-xl {
-    font-size: 2.2 * $leading;
+  h1 {
+    font-size: 2.6rem;
   }
-}
 
-.text-xs {
-  font-size: 60%;
-}
+  h2 {
+    font-size: 1.8rem;
+  }
 
-.text-sm {
-  font-size: 75%;
-}
+  h3 {
+    @include font-grotesk('Semibold');
+    font-size: 1.5rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+  }
 
-.text-lg {
-  font-size: 120%;
-}
+  &:not(.title)>h1 {
+    background-image: linear-gradient(transparent calc(100% - 2px), $color-yellow 2px);
+    background-position: left 100%;
+    background-repeat: no-repeat;
+    background-size: 75% 100%;
+    @include font-mono;
+    font-size: 1.6rem;
+    margin-bottom: 1em;
+    padding-bottom: 2px;
+    text-transform: uppercase;
+  }
 
-.text-xl {
-  font-size: 150%;
+  &.title {
+    >h1 {
+      @include font-grotesk('Black');
+      font-size: 4rem;
+    }
+  }
 }

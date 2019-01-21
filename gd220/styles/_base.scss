@@ -6,4 +6,9 @@
   *::after {
     box-sizing: inherit;
   }
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
 }
