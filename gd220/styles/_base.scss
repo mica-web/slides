@@ -9,6 +9,11 @@
 
   img {
     height: auto;
+    max-height: 520px;
     max-width: 100%;
+  }
+
+  del {
+    opacity: 0.6;
   }
 }

@@ -12,11 +12,16 @@
 
 .remark-slide img {
   height: auto;
+  max-height: 520px;
   max-width: 100%;
 }
 
+.remark-slide del {
+  opacity: 0.6;
+}
+
 .remark-slide {
-  font-size: 28px;
+  font-size: 32px;
 }
 
 .remark-slide-content {
@@ -40,14 +45,14 @@
 .remark-slide-content h6,
 .remark-slide-content p,
 .remark-slide-content li {
-  line-height: 1.5625em;
+  line-height: 2em;
   margin: 0;
 }
 
 .remark-slide-content p + p,
 ul + .remark-slide-content p,
 ol + .remark-slide-content p {
-  margin-top: 0.78125em;
+  margin-top: 1em;
 }
 
 .remark-slide-content h1,
@@ -55,9 +60,9 @@ ol + .remark-slide-content p {
   font-family: NeueAlteGrotesk-Bold;
   font-weight: normal;
   font-style: normal;
-  line-height: 1.04167em;
-  margin-top: 0.78125em;
-  margin-bottom: 0.78125em;
+  line-height: 1.33333em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .remark-slide-content h1 {

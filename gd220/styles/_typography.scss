@@ -3,12 +3,12 @@
 //
 $base-font-size: 1em;
 $scale: 1.25;
-$line-height: $scale;
+$line-height: 1.6;
 $leading: $scale * $base-font-size * $line-height;
 
 // this uses MAJOR THIRD type scale, or exponents of 1.25
 .remark-slide {
-  font-size: 28px;
+  font-size: 32px;
 }
 
 .remark-slide-content {
