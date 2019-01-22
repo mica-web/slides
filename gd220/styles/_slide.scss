@@ -77,9 +77,10 @@ a {
 .remark-code,
 .remark-inline-code {
   @include font-mono();
+  text-transform: initial;
 }
 
 .remark-code {
-  font-size: 1.3em;
+  font-size: 1em;
   white-space: pre-wrap;
 }
