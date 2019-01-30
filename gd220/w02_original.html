@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Week 2 // GD 220</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel='stylesheet' href='styles/styles.css'>
+</head>
+
+<body>
+  <textarea id="source">
+count: false
+
+# While you're waiting
+
+- Did you complete the intro week survey?
+- Do you have your questions, comments/insights, and quotes for the assigned reading?
+- Do you have VS Code open to the directory we created last week?
+
+
+---
+count: false
+
+# Agenda
+
+1. Slack Q&A
+1. Discuss reading
+1. Understanding git
+1. VS Code + git + GitHub
+1. Intro to HTML
+
+
+---
+class: center, middle, title
+
+# Slack Q&A
+
+???
+- @timer=5m
+
+
+---
+
+# Reading
+
+### A brief history of web design for designers
+
+
+???
+- quotes
+- questions
+- commments/insights
+- addendums
+- @timer=10m/15m
+
+
+--
+count: false
+
+### Git and Github in Plain English
+
+
+???
+- quotes
+- comments/insights
+- questions (last, as they will impact what we do next)
+
+- @timer=10m/25
+- temperature check: how well do folks feel like they understand git at this point?
+
+
+---
+
+# Benefits of git
+
+
+???
+- what do you think the benefits of git are for you, not generically?
+- any examples you can think of and share where git might have saved you?
+- @timer=5m/30
+- reading used an author, but that's obviously  not the common or only use case
+
+
+--
+count: false
+
+![finalfinal.psd](img/02_finalfinal.png)
+
+
+---
+
+# Benefits of git
+
+![code review](img/02_git_help1.png)
+
+
+???
+- one of the reasons I'm keen to use git + GitHub here is for code review.
+- examples of code review from last semester
+
+
+---
+count: false
+
+# Benefits of git
+
+![code review](img/02_git_help2.png)
+
+
+???
+- w/o GH, I just have to send you a doc and make comments like "on line 33, you xyz"...but, line 33 may be different for you locally vs the code I'm reviewing if you've made changes :(
+- so, while getting new dev environments set up is difficult, stressful and a rough way to start a course, I really really believe it will be worthwhile for all of us
+- @timer=5m/35
+
+
+---
+class: center, middle, title
+count: false
+
+# Intro to git
+
+
+---
+
+# Before git
+
+.center[![empty directory](img/02_git2.png)]
+
+
+???
+We have a directory of our project files: multiple files, can even include other directories. In no way limited by file type.
+
+
+---
+class: center, middle, title
+
+# `git init`
+
+
+???
+- `init` is short for "initialize"
+- the `git init` command says "This directory is now a git repo, git commands should work in here and maintain a record of changes"
+
+
+---
+background-image: url(img/02_git_add1.png)
+class: bkgd-contain, center
+count: false
+
+## `git init`
+
+
+???
+- `init` also gives us some git concepts: working directory, staging area and repo
+- these are all **CONCEPTS**, not actual folders
+- not about creating v1, v2, v3 of a file -- but identifying and knowing how git is tracking things
+- working directory: where git is initialized, where you do your work
+- there are commands to activate the other 2 concepts (staging and repo), so let's dig into those next
+- @timer=5m/40
+
+
+---
+background-image: url(img/02_git_add1.png)
+class: bkgd-contain, center
+
+## `git add`
+
+???
+- there are commands to activate the other 2 concepts (staging and repo), so let's dig into those next
+- activates the **staging area**
+- staging area: a holding cell for files you're going to add to your repo
+
+
+---
+background-image: url(img/02_git_add2.png)
+class: bkgd-contain, center
+count: false
+
+## `git add`
+
+
+???
+- can move a single file over
+
+
+---
+background-image: url(img/02_git_add3.png)
+class: bkgd-contain, center
+count: false
+
+## `git add`
+
+
+???
+- or several/all
+- you do this every time you want to add your changes to the repo
+- changes are still in this middle zone, not yet attached to the project repo
+- we do that via `git commit`
+- @timer=5m/45
+
+
+---
+background-image: url(img/02_git_commit.png)
+class: bkgd-contain, center
+
+## `git commit`
+
+
+???
+- we do that via `git commit`
+- a **commit** applies all the changes in your staging area to the local repository and to the history of the project
+- **repo**: git's current version of your project
+- a commit is not the same as a save
+- save is to your working directory, always local
+- we'll talk more in detail about commits shortly, but for now the important distinction is that a commit is to your project history, a save is to your working directory
+- if it's helpful, think of your code like prepping a care package:
+    - add/staging is the prep before you mail the package, gathering up all the things that are going to go in your envelope or box
+    - a commit is actually mailing the thing
+    - while you can see a commit as the conclusion to a narrative, it's not that final: you can still send further letters/packages! 
+- @timer=5m/50
+
+
+---
+
+# Q&A on git workflow or concepts
+
+
+--
+count: false
+
+- `init`
+
+
+---
+
+# Q&A on git workflow or concepts
+
+
+- `init` in your working directory
+
+
+--
+count: false
+
+- `add`
+
+
+---
+
+# Q&A on git workflow or concepts
+
+- `init` in your working directory
+- `add` to staging area
+
+
+--
+count: false
+
+- `commit`
+
+
+---
+
+# Q&A on git workflow or concepts
+
+- `init` in your working directory
+- `add` to staging area
+- `commit` to repository
+
+
+???
+- do students understand why we add AND commit?
+- everything we've touched on to date is local: on your machine, no outside resources
+- @timer=5m/55
+- @break=10m/65
+
+
+---
+class: center, middle
+
+# Git `!=` GitHub
+
+
+???
+- everything we've touched on to date is local: on your machine, no outside resources
+
+
+--
+count: false
+
+.cf[.left-float[![git](img/02_git.png)] .right-float[![github](img/02_github.png)]]
+
+
+???
+- GH is a web site that hosts git repositories and provides a bunch of additional tools for social coding
+
+
+--
+count: false
+
+.cf[.left-float[![bitbucket](img/02_bitbucket.png)] .right-float[![gitlab](img/02_gitlab.png)]]
+
+
+???
+- gitlab, bitbucket other services that also use git in similar ways
+- This really isn't important for you right now, but since we're only working in GitHub, I want to make it clear that you have other options down the road
+- @timer=5m/70
+
+
+---
+
+# Getting started with git + GitHub
+
+
+???
+- open up VS Code
+
+
+--
+count: false
+
+- `git --version`
+
+
+???
+- open up VS Code
+- make terminal visible
+- control + tilda/` on mac
+- control + ` (backtick) on win
+- most of what we'll do w/ git in VS Code can be done via the GUI vs command line, but this requires the command line/terminal
+- asking your computer if it knows about the command "git" and, if so, what version is installed
+
+
+--
+count: false
+
+![I don't know her](https://media1.tenor.com/images/af5b58ee7a3b8e2822a332a18033482d/tenor.gif)
+
+
+---
+count: false
+
+# Getting started with git + GitHub
+
+- `git --version`
+- install git
+
+
+--
+count: false
+
+### http://bit.ly/gd220-install-git
+
+
+--
+count: false
+
+- verify git: `git --version`
+
+???
+- put up a post-it note when you're done and verified!
+- @timer=10m/80
+
+
+---
+count: false
+
+# Getting started with git + GitHub
+
+- set up your username and email
+
+
+???
+- open up VS Code
+- make terminal visible
+- control + tilda/` on mac
+- control + ` (backtick) on win
+
+
+--
+count: false
+
+### `git config --global user.name "Angelique Weger"`
+
+--
+count: false
+
+### `git config --global user.email "aweger@mica.edu"`
+
+
+???
+- you can also verify these things by doing `git config user.email`
+- put up a post-it note when you're done and verified!
+- @timer=5m/85
+
+
+---
+
+# VS Code + git
+
+
+???
+1. in the browser, go to GitHub and log in
+1. create a GH repo
+    - to keep things simple, make the repo name == the directory name
+1. post it note verify
+
+- @timer=5m/90
+
+1. in VS Code, open your directory from last week
+  - Sites/GD220
+1. push an existing repository from the command line
+  > `git remote add origin https://github.com/mica-web/test2.git`
+
+  > `git push -u origin master`
+- https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+  > `git config --global github.user USERNAME`
+
+  > `git config --global github.token YOUR_TOKEN`
+
+- @timer=5m/95
+
+1. make a change: **README.md**
+1. `git status`
+1. add and commit via UI
+1. diff via UI
+1. push again via UI
+1. verify on GitHub
+
+- @timer=5m/100
+
+
+---
+
+# Best practices for commits
+
+
+--
+count: false
+
+- Be useful
+- Be brief (~50 char)
+
+
+--
+count: false
+
+1. `Add new font files`
+1. `Make header responsive`
+1. `Fix typo`
+
+
+???
+- useful = what does this change?
+- brief and starts with a verb in the present tense, like giving a command
+- does **not** need to mention which file you worked on
+- @timer=3m/103
+
+
+---
+count: false
+
+# Best practices for commit messages
+
+
+- **not** `Thursday's work`
+
+
+???
+- why is this less than ideal?
+> A commit is not a reference to a working period (e.g., "Friday's work") because you would never want to undo a whole day; you'd much more likely want to undo discrete bits of that day's work
+- commit represents a task or chunk of work that is somehow connected
+- common issue for new git users is to get lost in the work and forget to commit; this muddies the water and makes it harder to understand your changes, your intent and definitely impacts your ability to undo things
+- if it helps, write out a task list _before_ you start working/coding; each one of those tasks could be a commit
+- @timer=3m/106
+
+
+---
+class: center, middle, title
+
+# Commits Q&A
+
+
+???
+- @timer=5m/111
+
+
+---
+
+# git branches
+
+
+???
+- when we created our repo, GH gave us a default branch, which is titled "master"
+
+
+--
+count: false
+
+![creating a branch in git](img/02_branch2.png)
+
+
+???
+- any commits we've added to date, have gone to this master branch
+
+
+---
+count: false
+
+# Git branches
+
+.center[![creating a branch in git](img/02_branch3.png)]
+
+
+???
+- this is one way to go -- but it's less than ideal:
+    - master is considered the authoritative source / production code
+    - while I can look at your commits to master, it's not the best way to handle code review
+- @timer=5m/116
+
+
+---
+count: false
+
+# Git branches
+
+
+???
+- let's explore another way
+- we use branches to isolate our work, especially when working on teams, and, in this course, to get feedback on things via pull requests (which is a request to have your branch be integrated or merged into the master branch)
+
+
+---
+count: false
+
+# Git branches
+
+.center[![creating a branch in git](img/02_branch4a.png)]
+
+
+???
+- creating a new branch is like using "File save as..." on a document; it takes the current state of your repo and creates a duplicate of it
+
+
+---
+count: false
+
+# Git branches
+
+.center[![creating a branch in git](img/02_branch4b.png)]
+
+
+???
+- you can commit to a branch just like we did to master
+- @timer=5m/121
+
+
+---
+count: false
+
+# Git branches
+
+.center[![creating a branch in git](img/02_branch5.png)]
+
+
+---
+background-image: url(img/02_branch6.png)
+class: bkgd-contain
+count: false
+
+# Git branches
+
+
+???
+- while master and our new branch have diverged, at some point we're going to want to connect them back up together again
+- we do this via a process called merging
+
+
+---
+
+# Git branches in VS Code
+
+.center[![branches in VS Code UI](img/02_branch-master.png)]
+
+
+???
+- in VS Code, you can see what branch you're working on in the the status bar, on the far left
+- and can create new branches via UI
+- branch names cannot have spaces in them
+
+
+---
+count: false
+
+# Git branches in VS Code
+
+.center[![git push from UI](img/02_git-push.png)]
+
+
+???
+- you can also do this through the UI
+- click the three dots on the far right of the source control sidebar
+- verify on GitHub.com
+- @timer=5m/126
+
+
+---
+class: center, middle, title
+
+# Q&A for branches & workflow
+
+
+???
+- @timer=10m/131
+- @break for dinner?
+
+
+---
+count: false
+
+# Agenda
+
+1. ~~Slack Q&A~~
+1. ~~Discuss reading~~
+1. ~~Understanding git~~
+1. ~~VS Code + git + GitHub~~
+1. Intro to HTML
+
+
+---
+class: center, middle, title
+count: false
+
+# Intro to HTML
+
+---
+
+# Intro to HTML
+
+--
+count: false
+
+Hypertext
+
+--
+count: false
+
+Markup
+
+--
+count: false
+
+Language
+
+
+???
+- provides structure and meaning to the content of web pages
+- semantics vs aesthetics
+- @timer=4m/135
+
+
+---
+
+# You're already familiar
+
+
+???
+- some HTML elements are pretty familiar to you already, both from the web and other document design:
+    - paragraphs, links, headings, block or pull quotes
+
+--
+count: false
+
+![typography](img/02_type_elements.jpg)
+
+
+???
+- paragraphs
+- headings, subheadings, hierarchy
+
+---
+
+# You're already familiar
+
+
+![typography](img/02_type_pullquote.png)
+
+
+???
+- pullquote
+- @timer=5m/140
+
+
+---
+
+# The paragraph element
+
+![makeup of an html element + tag](img/02_html_element.png)
+
+
+???
+- @timer=3m/143
+
+
+---
+
+# Lists
+
+## 2 types
+
+- bulleted/unordered
+- numbered/ordered
+
+
+???
+or, put another way...
+
+
+---
+count: false
+
+# Lists
+
+## 2 types
+
+1. bulleted/unordered
+1. numbered/ordered
+
+
+???
+- we used ordered lists when the order of the items is important: a top 5 list or step-by-step instructions
+
+
+---
+
+# Lists
+
+List tags are **nested**
+
+
+--
+count: false
+
+```html
+<ul>
+  <li>tacos</li>
+  <li>sharks</li>
+  <li>Beyonce</li>
+</ul>
+```
+
+
+???
+- wrapping tag sets what kind of list it is
+- LI identifies each list item
+
+
+---
+
+# Lists
+
+
+```html
+<ol>
+  <li>Step 1!</li>
+  <li>Step 2?</li>
+  <li>PROFIT!!</li>
+</ol>
+```
+
+???
+- @timer=5m/148
+
+
+---
+
+# Let's code
+
+Add the following:
+
+1. 2 paragraphs of text
+  - something other than generic Lorem Ipsum please 🙏🏻
+1. an **ordered** list of the 3 websites you visit most often
+1. an **unordered** list of five objects you spot in the room
+
+
+???
+- Go to Codepen and make a new pen
+- put up a post-it flag if you need assistance
+- @timer=5-8m/156
+
+
+---
+
+# Links
+
+???
+We've covered the markup language part, but not the hypertext yet...
+
+--
+count: false
+
+```html
+<a>MICA</a>
+```
+
+
+???
+a = anchor
+
+
+---
+count: false
+
+# Links
+
+```html
+<a href="http:\\mica.edu">MICA</a>
+```
+
+
+???
+- `href` = hypertext reference
+- `href` is an **attribute** of the anchor element
+
+
+
+---
+count: false
+
+# Links
+
+```html
+<a href="http:\\mica.edu" target="_blank">MICA</a>
+```
+
+
+???
+attributes
+- provide additional info about the element
+- always assoc w/ opening tag
+- generally have a name + value
+- value wrapped in double quotes
+- @timer=5m/161
+- back in CodePen, add 3 links to your existing ordered list
+- verify the links in the preview panel
+- @timer=5m/166
+
+
+---
+count: false
+
+# Links
+
+
+???
+what are some other things a link can do?
+- links within a page (e.g., ToC, back to top)
+- send an email
+- link to file/download
+- initiate JS
+
+
+--
+count: false
+
+```html
+<p>This link to <a href="http:\\mica.edu" target="_blank">MICA</a> is nested inside a paragraph.</p>
+```
+
+
+???
+- nesting elements
+
+
+---
+
+# Paths
+
+- absolute
+
+
+--
+count: false
+
+### `http://mica.edu`
+### `http://www.google.com`
+
+
+--
+count: false
+
+- relative
+
+
+--
+count: false
+
+### `/images/beyonce.png`
+### `images/beyonce.png`
+
+
+???
+- this will be relevant when we add images to our pages, too
+- @timer=5m/171
+
+
+---
+
+# Headings
+
+
+???
+- establish hierarchy
+
+
+--
+count: false
+
+```html
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+```
+
+
+???
+- six rankings
+- establish hierarchy
+- should always follow their order, ie, no h4 if there's not an h3
+- @timer=5m/180
+- back in CodePen, add all six heading styles to the top of your document
+- @timer=3m/183
+- What do you notice about the headings?
+  - Browser default styles
+- @timer=5m/188
+
+
+---
+
+# Blockquotes
+
+
+
+???
+- nested
+- cite
+- @timer=5m/188
+
+
+---
+
+# Bold & italics
+
+http://html5doctor.com/i-b-em-strong-element/
+
+
+???
+- @timer=10m/200
+
+
+---
+
+# Comments
+
+
+???
+- organize, provide context, links, info
+- also "comment out" code that you don't want showing up right now
+- @timer=5m/205
+
+
+---
+
+# HTML doc structure
+
+- back to VS code
+
+
+???
+- @timer=12m/217
+
+
+---
+
+# Homework
+
+https://gist.github.com/angeliquejw/b3885856a671975033ea213c34b977fa
+
+
+---
+</textarea>
+  <script src="/js/remark-latest.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    var slideshow = remark.create();
+  </script>
+</body>
+
+</html>
