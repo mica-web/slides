@@ -103,6 +103,10 @@ ol + .remark-slide-content p {
   font-size: 4rem;
 }
 
+.remark-slide-content .text-smaller {
+  font-size: 65%;
+}
+
 .remark-slide {
   background-color: #FCFCFC;
   color: #22333B;
