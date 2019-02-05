@@ -86,6 +86,9 @@ $leading: $scale * $base-font-size * $line-height;
       font-size: 4rem;
     }
   }
+  .text-larger {
+    font-size: 130%;
+  }
   .text-smaller {
     font-size: 65%;
   }
