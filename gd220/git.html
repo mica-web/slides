@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Week ? // GD 220</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel='stylesheet' href='styles/styles.css'>
+</head>
+
+<body>
+  <textarea id="source">
+count: false
+
+# While you're waiting
+
+- Do you have VS Code open to the directory we created in Week 1?
+
+
+---
+count: false
+
+# Agenda
+
+1. Understanding git
+1. VS Code + git + GitHub
+
+
+---
+# Reading
+
+### Git and Github in Plain English
+
+
+???
+- quotes
+- comments/insights
+- questions (last, as they will impact what we do next)
+
+- @timer=10m/25
+- temperature check: how well do folks feel like they understand git at this point?
+
+
+---
+
+# Benefits of git
+
+
+???
+- what do you think the benefits of git are for you, not generically?
+- any examples you can think of and share where git might have saved you?
+- @timer=5m/30
+- reading used an author, but that's obviously  not the common or only use case
+
+
+--
+count: false
+
+![finalfinal.psd](img/02_finalfinal.png)
+
+
+---
+
+# Benefits of git
+
+![code review](img/02_git_help1.png)
+
+
+???
+- one of the reasons I'm keen to use git + GitHub here is for code review.
+- examples of code review from last semester
+
+
+---
+count: false
+
+# Benefits of git
+
+![code review](img/02_git_help2.png)
+
+
+???
+- w/o GH, I just have to send you a doc and make comments like "on line 33, you xyz"...but, line 33 may be different for you locally vs the code I'm reviewing if you've made changes :(
+- so, while getting new dev environments set up is difficult, stressful and a rough way to start a course, I really really believe it will be worthwhile for all of us
+- @timer=5m/35
+
+
+---
+class: center, middle, title
+count: false
+
+# Intro to git
+
+
+---
+
+# Before git
+
+.center[![empty directory](img/02_git2.png)]
+
+
+???
+We have a directory of our project files: multiple files, can even include other directories. In no way limited by file type.
+
+
+---
+class: center, middle, title
+
+# `git init`
+
+
+???
+- `init` is short for "initialize"
+- the `git init` command says "This directory is now a git repo, git commands should work in here and maintain a record of changes"
+
+
+---
+background-image: url(img/02_git_add1.png)
+class: bkgd-contain, center
+count: false
+
+## `git init`
+
+
+???
+- `init` also gives us some git concepts: working directory, staging area and repo
+- these are all **CONCEPTS**, not actual folders
+- not about creating v1, v2, v3 of a file -- but identifying and knowing how git is tracking things
+- working directory: where git is initialized, where you do your work
+- there are commands to activate the other 2 concepts (staging and repo), so let's dig into those next
+- @timer=5m/40
+
+
+---
+background-image: url(img/02_git_add1.png)
+class: bkgd-contain, center
+
+## `git add`
+
+???
+- there are commands to activate the other 2 concepts (staging and repo), so let's dig into those next
+- `git add` activates the **staging area**
+- staging area: a holding cell for files you're going to add to your repo
+
+
+---
+background-image: url(img/02_git_add2.png)
+class: bkgd-contain, center
+count: false
+
+## `git add`
+
+
+???
+- can move a single file over
+
+
+---
+background-image: url(img/02_git_add3.png)
+class: bkgd-contain, center
+count: false
+
+## `git add`
+
+
+???
+- or several/all
+- you do this every time you want to add your changes to the repo
+- changes are still in this middle zone, not yet attached to the project repo
+- we do that via `git commit`
+- @timer=5m/45
+
+
+---
+background-image: url(img/02_git_commit.png)
+class: bkgd-contain, center
+
+## `git commit`
+
+
+???
+- we do that via `git commit`
+- a **commit** applies all the changes in your staging area to the local repository and to the history of the project
+- **repo**: git's current version of your project
+- a commit is not the same as a save
+- save is to your working directory, always local
+- we'll talk more in detail about commits shortly, but for now the important distinction is that a commit is to your project history, a save is to your working directory
+- if it's helpful, think of your code like prepping a care package:
+
+  -working directory: you have some things in the house for the package, you may have things you bought
+  - add/staging is the prep before you mail the package, gathering up all the things that are going to go in your envelope or box
+  - a commit is actually mailing the thing
+- while you can see a commit as the conclusion to a narrative, it's not that final: you can still send further letters/packages! 
+- @timer=5m/50
+
+
+---
+
+# Q&A on git workflow or concepts
+
+
+--
+count: false
+
+- `init`
+
+
+---
+
+# Q&A on git workflow or concepts
+
+
+- `init` in your working directory
+
+
+--
+count: false
+
+- `add`
+
+
+---
+
+# Q&A on git workflow or concepts
+
+- `init` in your working directory
+- `add` to staging area
+
+
+--
+count: false
+
+- `commit`
+
+
+---
+
+# Q&A on git workflow or concepts
+
+- `init` in your working directory
+- `add` to staging area
+- `commit` to repository
+
+
+???
+- do students understand why we add AND commit?
+- everything we've touched on to date is local: on your machine, no outside resources
+- @timer=5m/55
+- @break=10m/65
+
+
+---
+class: center, middle
+
+# Git `!=` GitHub
+
+
+???
+- everything we've touched on to date is local: on your machine, no outside resources
+
+
+--
+count: false
+
+.cf[.left-float[![git](img/02_git.png)] .right-float[![github](img/02_github.png)]]
+
+
+???
+- GH is a web site that hosts git repositories and provides a bunch of additional tools for social coding
+
+
+--
+count: false
+
+.cf[.left-float[![bitbucket](img/02_bitbucket.png)] .right-float[![gitlab](img/02_gitlab.png)]]
+
+
+???
+- gitlab, bitbucket other services that also use git in similar ways
+- This really isn't important for you right now, but since we're only working in GitHub, I want to make it clear that you have other options down the road
+- @timer=5m/70
+
+
+---
+
+# Getting started with git
+
+## Open the terminal in VS Code
+
+--
+
+.text-larger[
+  ```
+  Ctrl  `
+  ```
+]
+
+
+???
+- with VS Code open, press control and backtick to make the terminal visible
+- backtick is character on the tilda key
+- please do not work ahead during this section
+- not something I'd normally request
+- I know it can be frustrating to wait while I troubleshoot someone else's issue, but getting ahead of yourself here and/or assuming you know what I want you to do next will only cause frustration
+
+---
+
+# Getting started with git
+
+
+???
+- most of what we'll do w/ git in VS Code can be done via the GUI vs command line, but a handful of commands we're going to use today will require command line/terminal
+
+
+--
+count: false
+
+- `git --version`
+
+
+???
+- asking your computer if it knows about the command "git" and, if so, what version is installed
+- @timer=3m/73
+
+
+--
+count: false
+
+![I don't know her](https://media1.tenor.com/images/af5b58ee7a3b8e2822a332a18033482d/tenor.gif)
+
+
+---
+count: false
+
+# Getting started with git
+
+`git --version`
+
+## Install git
+
+
+--
+count: false
+
+### http://bit.ly/gd220-install-git
+
+
+--
+count: false
+
+## Verify installation
+
+`git --version`
+
+???
+- put up a post-it note when you're done and verified!
+- @timer=10m/83
+
+
+---
+count: false
+
+# git + VS Code
+
+- Open up your course projects directory
+
+
+???
+- `Sites/GD2` or `Sites/GD220`
+- Should only have a mostly blank `index.html` file
+
+--
+count: false
+
+- In the terminal:
+
+`git status`
+
+
+???
+Even though you just installed git, this should still deliver an error because we haven't told git about this directory.
+
+
+--
+count: false
+
+- Open Source Control explorer
+
+
+???
+- `git init` via UI
+- now this sidebar acts like `git status`
+- add `index.html` and make first commit
+- only a local copy of your code and its changes, which is good, but of limited help -- both for code review and cloud backups
+- @timer=5m/88
+
+
+---
+count: false
+
+# git + VS Code + GitHub
+
+
+???
+1. in the browser, go to GitHub and log in
+1. create a new GH repo
+    - to keep things simple, make the repo name == the directory name
+1. post it note verify
+
+- @timer=5m/93
+
+
+--
+count: false
+
+## remotes
+
+
+???
+This part we all want to do in sync b/c I *am* expecting some error messages and/or hiccups
+
+
+--
+count: false
+
+### `git remote add origin https://github.com/mica-web/gd2.git`
+
+
+???
+You don't need to type this out you can copy and paste it from GitHub
+
+
+---
+count: false
+
+# git + VS Code + GitHub
+
+## authentication
+
+
+--
+count: false
+
+### `git config --global user.name "Angelique Weger"`
+
+
+???
+Username here does _not_ mean your GH username; it's the name you are signing your commits with. My GH username is angeliquejw, but I sign my commits with my full name.
+
+
+--
+count: false
+
+### `git config --global user.email "aweger@mica.edu"`
+
+
+???
+- Doesn't have to be the email you signed up for GH with, but it's easier if it is. If you opt to use a different email address, put up a post-it.
+- you can also verify these things by doing `git config user.email`
+- put up a post-it note when you're done and verified!
+
+
+
+---
+count: false
+
+# git + VS Code + GitHub
+
+## authentication
+
+### http://bit.ly/gd220-gh-token
+
+- Read, then complete steps 1-9
+
+
+???
+Put up a post it note when you finish step 9
+
+
+--
+count: false
+
+### `git config --global github.token YOUR_TOKEN`
+
+
+???
+- Creating a token: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
+- Read the steps under "creating a token," then complete steps 1-9
+  > `git config --global github.user USERNAME`
+  > `git config --global github.token YOUR_TOKEN`
+
+- @timer=5m/95
+
+
+--
+count: false
+
+## add remote again
+
+--
+count: false
+
+
+### `git push` via UI
+
+
+???
+- Will ask if you want to publish this branch, say yes
+- Verify on GitHub
+- @timer=3m/98
+
+
+---
+
+# Best practices for commits
+
+
+--
+count: false
+
+- Be useful
+- Be brief (~50 char)
+
+
+--
+count: false
+
+1. `Add new font files`
+1. `Make header responsive`
+1. `Fix typo`
+
+
+???
+- useful = what does this change?
+- brief and starts with a verb in the present tense, like giving a command
+- does **not** need to mention which file you worked on
+- @timer=3m/101
+
+
+---
+count: false
+
+# Best practices for commit messages
+
+
+- **not** `Thursday's work`
+
+
+???
+- why is this less than ideal?
+> A commit is not a reference to a working period (e.g., "Friday's work") because you would never want to undo a whole day; you'd much more likely want to undo discrete bits of that day's work
+- commit represents a task or chunk of work that is somehow connected
+- common issue for new git users is to get lost in the work and forget to commit; this muddies the water and makes it harder to understand your changes, your intent and definitely impacts your ability to undo things
+- if it helps, write out a task list _before_ you start working/coding; each one of those tasks could be a commit
+- @timer=3m/104
+
+
+---
+class: center, middle, title
+
+# Commits Q&A
+
+
+???
+- @timer=5m/109
+
+
+---
+
+# git branches
+
+
+???
+- when we created our repo, GH gave us a default branch, which is titled "master"
+
+
+--
+count: false
+
+![creating a branch in git](img/02_branch2.png)
+
+
+???
+- any commits we've added to date, have gone to this master branch
+
+
+---
+count: false
+
+# Git branches
+
+.center[![creating a branch in git](img/02_branch3.png)]
+
+
+???
+- this is one way to go -- but it's less than ideal:
+    - master is considered the authoritative source / production code
+    - while I can look at your commits to master, it's not the best way to handle code review
+- @timer=5m/114
+
+
+---
+count: false
+
+# Git branches
+
+
+???
+- let's explore another way
+- we use branches to isolate our work, especially when working on teams, and, in this course, to get feedback on things via pull requests (which is a request to have your branch be integrated or merged into the master branch)
+
+
+---
+count: false
+
+# Git branches
+
+.center[![creating a branch in git](img/02_branch4a.png)]
+
+
+???
+- creating a new branch is like using "File save as..." on a document; it takes the current state of your repo and creates a duplicate of it
+
+
+---
+count: false
+
+# Git branches
+
+.center[![creating a branch in git](img/02_branch4b.png)]
+
+
+???
+- you can commit to a branch just like we did to master
+- @timer=5m/119
+
+
+---
+count: false
+
+# Git branches
+
+.center[![creating a branch in git](img/02_branch5.png)]
+
+
+---
+background-image: url(img/02_branch6.png)
+class: bkgd-contain
+count: false
+
+# Git branches
+
+
+???
+- while master and our new branch have diverged, at some point we're going to want to connect them back up together again
+- we do this via a process called merging
+
+
+---
+
+# Git branches in VS Code
+
+.center[![branches in VS Code UI](img/02_branch-master.png)]
+
+
+???
+- in VS Code, you can see what branch you're working on in the the status bar, on the far left
+- and can create new branches via UI
+- branch names cannot have spaces in them
+
+
+---
+count: false
+
+# Git branches in VS Code
+
+.center[![git push from UI](img/02_git-push.png)]
+
+
+???
+- you can also do this through the UI
+- click the three dots on the far right of the source control sidebar
+- verify on GitHub.com
+- @timer=5m/124
+
+
+---
+class: center, middle, title
+
+# Q&A for branches & workflow
+
+
+???
+- @timer=10m/134
+- @break for dinner?
+
+</textarea>
+  <script src="/js/remark-latest.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    var slideshow = remark.create();
+  </script>
+</body>
+
+</html>
