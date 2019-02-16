@@ -14,6 +14,7 @@ count: false
 # While you're waiting
 
 - Do you have VS Code open to the directory we created in Week 1?
+- Refresh your memory of W02 reading: Git + GitHub in Plain English
 
 
 ---
@@ -291,7 +292,19 @@ count: false
 
 # Getting started with git
 
+
+???
+- please do **not** work ahead during this section
+- not something I'd normally request
+- I know it can be frustrating to wait while I troubleshoot someone else's issue, but getting ahead of yourself here and/or assuming you know what I want you to do next will only cause frustration
+- everyone take 2 postit notes: blue, everything is groovy and done; pink, ran into an issue or error
+
+
+--
+count: false
+
 ## Open the terminal in VS Code
+
 
 --
 
@@ -305,9 +318,7 @@ count: false
 ???
 - with VS Code open, press control and backtick to make the terminal visible
 - backtick is character on the tilda key
-- please do **not** work ahead during this section
-- not something I'd normally request
-- I know it can be frustrating to wait while I troubleshoot someone else's issue, but getting ahead of yourself here and/or assuming you know what I want you to do next will only cause frustration
+
 
 ---
 
@@ -519,61 +530,6 @@ count: false
 
 ---
 
-# Best practices for commits
-
-
---
-count: false
-
-- Be useful
-- Be brief (~50 char)
-
-
---
-count: false
-
-1. `Add new font files`
-1. `Make header responsive`
-1. `Fix typo`
-
-
-???
-- useful = what does this change?
-- brief and starts with a verb in the present tense, like giving a command
-- does **not** need to mention which file you worked on
-- @timer=5m/85
-
-
----
-count: false
-
-# Best practices for commit messages
-
-
-- **not** `Thursday's work`
-
-
-???
-- why is this less than ideal?
-> A commit is not a reference to a working period (e.g., "Friday's work") because you would never want to undo a whole day; you'd much more likely want to undo discrete bits of that day's work
-- commit represents a task or chunk of work that is somehow connected
-- common issue for new git users is to get lost in the work and forget to commit; this muddies the water and makes it harder to understand your changes, your intent and definitely impacts your ability to undo things
-- if it helps, write out a task list _before_ you start working/coding; each one of those tasks could be a commit
-- @timer=5m/90
-
-
----
-class: center, middle, title
-
-# Commits Q&A
-
-
-???
-- @timer=5m/95
-
-
----
-
 # git branches
 
 
@@ -603,7 +559,7 @@ count: false
 - this is one way to go -- but it's less than ideal:
     - master is considered the authoritative source / production code
     - while I can look at your commits to master, it's not the best way to handle code review
-- @timer=5m/100
+- @timer=5m/85
 
 
 ---
@@ -639,7 +595,7 @@ count: false
 
 ???
 - you can commit to a branch just like we did to master
-- @timer=5m/105
+- @timer=5m/90
 
 
 ---
@@ -674,7 +630,7 @@ count: false
 - in VS Code, you can see what branch you're working on in the the status bar, on the far left
 - and can create new branches via UI
 - branch names cannot have spaces in them
-- @timer=5m/110
+- @timer=5m/95
 
 
 ---
@@ -685,9 +641,9 @@ class: center, middle, title
 
 ???
 ???
-- @timer=10m/120
+- @timer=10m/105 -- break
 - is it before or after 6?
-    - before: actually go through the process of creating proj1 branch
+    - before: actually go through the process of creating proj1 branch, talking about commits
     - after:  @break for dinner?
 
 
@@ -820,7 +776,7 @@ count: false
 ???
 - questions or objections?
 - @timer = 10m
-- 10 critiques @ 8m each = 80m/90m (8:30ish?)
+- 10 critiques @ 8m each = @timer 80m/90m (8:30ish?)
 - @break = 10m / 100m
 
 
@@ -889,15 +845,12 @@ count: false
 
 ---
 
-# CSS selectors
+<!-- # CSS selectors
 
 <iframe height="460" style="width: 100%;" scrolling="no" title="Intro to classes" src="//codepen.io/angeliquejw/embed/preview/JxvVJe/?height=460&theme-id=36101&default-tab=html,result&editable=true" frameborder="no" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href='https://codepen.io/angeliquejw/pen/JxvVJe/'>Intro to classes</a> by Angelique
   (<a href='https://codepen.io/angeliquejw'>@angeliquejw</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
-
----
+</iframe> -->
 
 # CSS properties: Typography
 
@@ -936,32 +889,6 @@ count: false
 - hue goes from 0 360 (color wheel); saturation and lightness 0 - 100%
 - example of why opacity can be crappy
 - @timer = 10m/120
-
-
----
-
-- creating your first stylesheet
-- live server
-- @timer = 10m/130
-- the cascade
-- multiple selectors
-- @timer = 10m/140
-- organizing your CSS
-- comments
-- @timer = 10m/150
-- font-family
-- font stacks
-- google fonts, others
-- @timer = 15m/165
-- figure, figcaption, img
-- relative/absolute links
-- @timer = 15m/180
-
-- READ: https://www.webstyleguide.com/11-images.html
-- update markup based on html5 elements you learned last week and fig/figcaption this week
-- add styles based on what you learned today
-- create a PR before EOD 2/16 (saturday) and DM me the link to your PR via Slack
-
 
 </textarea>
   <script src="/js/remark-latest.min.js" type="text/javascript">
