@@ -19,72 +19,405 @@ count: false
 
 # Agenda
 
+- PR Q&A
+- CSS Q&A
+- 4 things to work on
+- Code review and assistance
+- More about CSS
+- Review Project 1 rubric
 
 ---
 
-# Best practices for commits
+# Q&A
+
+- PRs and git workflow
+
+
+???
+- Do not merge PRs while we are still working on a project; you will only merge _after_ final grading
 
 
 --
 count: false
 
-- Be useful
-- Be brief (~50 char)
+- CSS
+
+---
+
+# 4 things
+### to consider & work on
+### followed by 
+### code review & assistance
+
+---
+# Thing #1: `q` _vs._ `blockquote` _vs._ pull quote
 
 
 --
 count: false
 
-1. `Add new font files`
-1. `Make header responsive`
-1. `Fix typo`
+## `q`
 
 
 ???
-- useful = what does this change?
-- brief and starts with a verb in the present tense, like giving a command
-- does **not** need to mention which file you worked on
-- @timer=5m/85
+used for an inline quote
+
+--
+count: false
+
+```html
+<p><q>“It suggests the octopus is carrying these tools around because it has some understanding they may be useful in the future,”</q> said <cite>Mr. Amodio, a graduate student studying animal intelligence at the University of Cambridge in Britain</cite>.</p>
+```
+
+???
+- quote stays in the flow of the p tag; inline
+- nice to have, but you'll see it's pretty optional and not commonly used
+
+---
+# Thing #1: `q` _vs._ `blockquote` _vs._ pull quote
+
+## `q`
+## `blockquote`
+
+
+???
+An _extended_ quotation, usually indented or set aside from the body
+
+
+--
+count: false
+
+.text-smaller[
+```html
+<p>One is known as the ecological intelligence hypothesis. It holds that intelligence evolves as an adaptation for finding food. While some animals have a reliable food supply, others have to cope with unpredictability.</p>
+
+<blockquote><p>“If you eat fruit, you have to remember where the fruiting trees are and when they’re ripe,” said <cite>Mr. Amadio</cite>. “It can be much more cognitively challenging than eating leaves.”</p></blockquote>
+
+<p>Tools allow animals to get to food that they couldn’t reach otherwise. And if they can make plans for the future, they can store food to survive hard times.</p>
+```
+]
 
 
 ---
 count: false
 
-# Best practices for commit messages
+# Thing #1: `q` _vs._ `blockquote` _vs._ pull quote
+
+## `blockquote`
+
+![blockquote example](img/05_blockquote.png)
+### https://cdpn.io/pen/pGGRar
 
 
-- **not** `Thursday's work`
+---
+count: false
+
+# Thing #1: `q` _vs._ `blockquote` _vs._ pull quote
+
+## `q`
+## `blockquote`
+## pull quote
+
+???
+- q and blockquote are both HTML elements; pull quote is not
+- block quotation and pull quote are _also_ graphic design concepts
+- a blockquote is in the flow of the document and usually set off by indenting
+- a pull quote is lifted from the flow of the document to highlight a concept or otherwise be a lure for the reader
+- the original quote is still in the flow of the document and the pull quote may be abbreviated
+
+---
+count: false
+
+# Thing #1: Pull quote examples
+
+![an example pull quote](img/05_pullquote1.png)
+
+???
+- Simplest design wise
+- But also a bit confusing b/c it's laid out more like a blockquote, but as you can see from the highlight, it is actually pulling a quote from earlier in the text
+- Also, it's not actually a quote from a source -- it's quoting the article author
+
+
+---
+count: false
+
+# Thing #1: Pull quote examples
+
+![an example pull quote](img/05_pullquote2.png)
+
+
+---
+count: false
+
+# Thing #1: Pull quote examples
+
+![an example pull quote](img/05_pullquote3.png)
 
 
 ???
-- why is this less than ideal?
-> A commit is not a reference to a working period (e.g., "Friday's work") because you would never want to undo a whole day; you'd much more likely want to undo discrete bits of that day's work
-- commit represents a task or chunk of work that is somehow connected
-- common issue for new git users is to get lost in the work and forget to commit; this muddies the water and makes it harder to understand your changes, your intent and definitely impacts your ability to undo things
-- if it helps, write out a task list _before_ you start working/coding; each one of those tasks could be a commit
-- @timer=5m/90
+- Since pull quote _isn't_ an HTML element, how should we mark it up?
+
+---
+count: false
+
+# Thing #1: Pull quote markup
+
+```html
+<aside>
+  <blockquote>
+    <p>There's a big part of me that's like, would I have made it in this career if I had student loans?</p>
+  </blockquote>
+</aside>
+```
+
+???
+- aside is a hint that this isn't necessary to the main content
+- blockquote
+- optional p tag
+
+---
+count: false
+
+# Thing #1: Pull quote markup
+
+```html
+<aside>
+  <blockquote>There's a big part of me that's like, would I have made it in this career if I had student loans?</blockquote>
+</aside>
+```
+
+???
+- Why use the extra markup?
+- If you have styles on your p element that you want to also use for your blockquote, this saves you repeating those styles or dealing with conflicts
+
+
+---
+# Thing #2: Specifying fonts
+
+
+--
+count: false
+
+- `font-size`
+- `font-style`
+- `font-weight`
+
+
+???
+Already discussed last week; font size is the most obvious, font style controls if the font should be normal or italic; font weight controls how bold or thin the font displays
+
+--
+count: false
+
+- `font-family`
+
+--
+count: false
+
+### https://cdpn.io/pen/VggjgZ
+[![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/VggjgZ?editors=0100)
+
+
+---
+count: false
+
+# Thing #2: Specifying fonts
+
+- `font-size`
+- `font-style`
+- `font-weight`
+- `font-family`
+  - font stacks
+  - web fonts: https://fonts.google.com/
+
+
+---
+
+# Thing #3: `i` vs. `em` vs. `b` vs. `strong`
+
+### `i`
+
+???
+- set off from the text for some reason:
+  - technical terms
+  - foreign language phrases
+  - fictional character's thoughts
+
+
+---
+count: false
+
+# Thing #3: `i` vs. `em` & `b` vs. `strong`
+
+### `i` vs. `em`
+
+
+???
+- em is for stress emphasis
+
+
+---
+count: false
+
+# Thing #3: `i` vs. `em` & `b` vs. `strong`
+
+### `b`
+
+
+???
+- text you want to draw attention to but doesn't have the importance of, say, a heading tag
+- keywords, first sentence (lede) in an article, product names
+
+
+---
+count: false
+
+# Thing #3: `i` vs. `em` & `b` vs. `strong`
+
+### `b` vs `strong`
+
+
+???
+- strong importance, seriousness, or urgency for its contents
+- none of these should be used just because you want the text to be bold or italic; we'll discuss how to do that with span elements and CSS going forward
+- you should always be able to point to the WHY when you use any of these 4 elements
+
+
+---
+count: false
+
+# Thing #3: Solve for `X`
+
+### Example #1
+
+```html
+Dinosaurs <X>eat</X> man...woman inherits the earth.
+```
+
+![Ellie Sattler in Jurassic Park](img/05_jp1.gif)
+
+
+???
+`em` : represents stress emphasis on the content
+
+
+---
+count: false
+
+# Thing #3: Solve for `X`
+
+### Example #2
+
+```html
+<X>Lex Murphy:</X> It's a UNIX system, I know this!
+```
+
+![Lex Murphy in Jurassic Park](img/05_jp2.jpg)
+
+
+???
+`b` : represents character name in dialog
+
+
+---
+count: false
+
+# Thing #3: Solve for `X`
+
+### Example #3
+
+```html
+You see a <X>Tyrannosaur</X> doesn't follow a set pattern or park schedules, the essence of chaos.
+```
+
+![Ian Malcolm in Jurassic Park](img/05_jp3.png)
+
+
+???
+`i` : represents scientific name
+
+
+---
+count: false
+
+# Thing #3: Solve for `X`
+
+### Example #4
+
+```html
+Shoot her! <X>SHOOT HER!!</X>
+```
+
+![Jurassic Park velociraptor](img/05_jp4.webp)
+
+
+???
+`strong` : represents seriousness, urgency
+
+
+---
+
+# Thing #4: Consistent color values
+
+```css
+h1 {
+  color: #B11C00;
+}
+h2 {
+  color: rgb(177, 28, 0);
+}
+h3 {
+  color: hsl(9.5, 100%, 34.7%);
+}
+```
+
+---
+count: false
+
+# Thing #4: Consistent color values
+
+![they're all the same color, yo](img/05_color-values.png)
+
+
+???
+If you use an assortment of color values, it becomes very difficult to tell when a color is repeated or reused or which color is which. We'll delve into this more later today.
 
 
 ---
 class: center, middle, title
 
-# Commits Q&A
+# More about CSS
 
 
 ???
-- @timer=5m/95
+- Organizing your CSS + the cascade
+- use comments to make the structure of your CSS clear
+- alphabetize your properties
+- makes it easy to catch duplication and know what you've already written
+- not as crucial when you only have two properties, but much more so the more CSS you write
 
 
-- font-family
-- font stacks
-- google fonts, others
-- relative/absolute links
+---
 
-- the cascade
-- comments
-- organizing your CSS
-- multiple selectors
-- classnames
+# Naming things in css
+
+https://mica-web.github.io/gd-220/hints/naming-classes
+
+
+???
+- Multiple selectors and classnames
+- Naming things
+- Box model: margin, padding, height, width, box-sizing
+- Troubleshooting CSS
+  - relative/absolute links
+
+---
+
+# Rubric
+
+???
+- For this assignment, will only get "in development" mark on HTML and CSS if you fail to correct something I have already pointed out in your code review
+- This, unfortunately, cannot apply to you if you did not give me a PR checkin to review this weekend
 
 
 
