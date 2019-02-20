@@ -11,12 +11,6 @@
   <textarea id="source">
 count: false
 
-# While you're waiting
-
-
----
-count: false
-
 # Agenda
 
 - PR Q&A
@@ -25,6 +19,7 @@ count: false
 - Code review and assistance
 - More about CSS
 - Review Project 1 rubric
+
 
 ---
 
@@ -42,6 +37,7 @@ count: false
 
 - CSS
 
+
 ---
 
 # 4 things
@@ -49,7 +45,9 @@ count: false
 ### followed by 
 ### code review & assistance
 
+
 ---
+
 # Thing #1: `q` _vs._ `blockquote` _vs._ pull quote
 
 
@@ -62,6 +60,7 @@ count: false
 ???
 used for an inline quote
 
+
 --
 count: false
 
@@ -69,11 +68,14 @@ count: false
 <p><q>“It suggests the octopus is carrying these tools around because it has some understanding they may be useful in the future,”</q> said <cite>Mr. Amodio, a graduate student studying animal intelligence at the University of Cambridge in Britain</cite>.</p>
 ```
 
+
 ???
 - quote stays in the flow of the p tag; inline
 - nice to have, but you'll see it's pretty optional and not commonly used
 
+
 ---
+
 # Thing #1: `q` _vs._ `blockquote` _vs._ pull quote
 
 ## `q`
@@ -118,6 +120,7 @@ count: false
 ## `blockquote`
 ## pull quote
 
+
 ???
 - q and blockquote are both HTML elements; pull quote is not
 - block quotation and pull quote are _also_ graphic design concepts
@@ -125,12 +128,14 @@ count: false
 - a pull quote is lifted from the flow of the document to highlight a concept or otherwise be a lure for the reader
 - the original quote is still in the flow of the document and the pull quote may be abbreviated
 
+
 ---
 count: false
 
 # Thing #1: Pull quote examples
 
 ![an example pull quote](img/05_pullquote1.png)
+
 
 ???
 - Simplest design wise
@@ -157,6 +162,7 @@ count: false
 ???
 - Since pull quote _isn't_ an HTML element, how should we mark it up?
 
+
 ---
 count: false
 
@@ -170,10 +176,12 @@ count: false
 </aside>
 ```
 
+
 ???
 - aside is a hint that this isn't necessary to the main content
 - blockquote
 - optional p tag
+
 
 ---
 count: false
@@ -185,6 +193,7 @@ count: false
   <blockquote>There's a big part of me that's like, would I have made it in this career if I had student loans?</blockquote>
 </aside>
 ```
+
 
 ???
 - Why use the extra markup?
@@ -206,10 +215,12 @@ count: false
 ???
 Already discussed last week; font size is the most obvious, font style controls if the font should be normal or italic; font weight controls how bold or thin the font displays
 
+
 --
 count: false
 
 - `font-family`
+
 
 --
 count: false
@@ -235,7 +246,18 @@ count: false
 
 # Thing #3: `i` vs. `em` vs. `b` vs. `strong`
 
+
+???
+While you may think to yourself that b stands for bold, i for italic, none of these should be used simply to achieve those font styles and weights.
+1. Markup should be used for a _reason_.
+2. If you rely on these tags, you generally have less control over the font vs specifying something in CSS -- ie, b may give you bold, but maybe you actually want the black font weight.
+
+
+--
+count: false
+
 ### `i`
+
 
 ???
 - set off from the text for some reason:
@@ -261,6 +283,7 @@ count: false
 
 # Thing #3: `i` vs. `em` & `b` vs. `strong`
 
+### `i` vs. `em`
 ### `b`
 
 
@@ -274,13 +297,12 @@ count: false
 
 # Thing #3: `i` vs. `em` & `b` vs. `strong`
 
+### `i` vs. `em`
 ### `b` vs `strong`
 
 
 ???
-- strong importance, seriousness, or urgency for its contents
-- none of these should be used just because you want the text to be bold or italic; we'll discuss how to do that with span elements and CSS going forward
-- you should always be able to point to the WHY when you use any of these 4 elements
+- seriousness or urgency
 
 
 ---
@@ -384,22 +406,42 @@ If you use an assortment of color values, it becomes very difficult to tell when
 
 
 ---
+count: false
+
+# Troubleshooting & assistance
+
+.text-smaller[
+**1. Review your current code:**
+  - Are you using `blockquote` for your pull quotes?
+  - Are your pull quotes _true_ pull quotes?
+  - Are you using `b`, `em`, `i`, `strong` with good reason?
+    - If not, replace with a span and we'll learn how to use those for applying italics and varied font weights later today.
+  - Are you using a consistent type of color value?
+
+**2. Add web fonts, if you haven't already.**
+  - If you already have a web font in place, do you have the weights and styles you need?
+
+**3. Continue to work on styling your article.**
+]
+
+---
 class: center, middle, title
 
 # More about CSS
 
 
-???
-- Organizing your CSS + the cascade
-- use comments to make the structure of your CSS clear
-- alphabetize your properties
-- makes it easy to catch duplication and know what you've already written
-- not as crucial when you only have two properties, but much more so the more CSS you write
-
-
 ---
 
-# Naming things in css
+# CSS: More about selectors
+
+### https://cdpn.io/pen/JxvVJe
+[![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/JxvVJe?editors=0100)
+
+
+--
+count: false
+
+# CSS: Guidelines for creating class names
 
 https://mica-web.github.io/gd-220/hints/naming-classes
 
@@ -407,18 +449,26 @@ https://mica-web.github.io/gd-220/hints/naming-classes
 ???
 - Multiple selectors and classnames
 - Naming things
-- Box model: margin, padding, height, width, box-sizing
-- Troubleshooting CSS
-  - relative/absolute links
+
+
+---
+
+# CSS: Organization & specificity
+
+
+---
+
+# CSS: Box model
+
 
 ---
 
 # Rubric
 
+
 ???
 - For this assignment, will only get "in development" mark on HTML and CSS if you fail to correct something I have already pointed out in your code review
 - This, unfortunately, cannot apply to you if you did not give me a PR checkin to review this weekend
-
 
 
 </textarea>
