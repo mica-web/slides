@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Week 6 // GD 220</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel='stylesheet' href='styles/styles.css'>
+</head>
+
+<body>
+  <textarea id="source">
+count: false
+
+# Agenda
+- Prep for presentations + critique of card designs
+- Present your designs
+- CSS layout + troubleshooting
+- Hands-on with CSS layout
+- Set up project 2
+
+
+---
+count: false
+
+# First things first
+
+1. Add style tiles and designs to Google Drive
+.text-smaller[
+  - `assignments > proj2 > your_first_name`
+- must be in PDF, PNG or JPG
+]
+2. Read visual hierarchy article
+3. Figure out what you want to say about your designs to provide context for critique, ~2-3mins
+4. Review each of your colleagues' designs
+
+
+???
+https://99designs.com/blog/tips/6-principles-of-visual-hierarchy/
+Think, specifically, about how to apply these principles to your existing designs and in your critiques
+@timer = 25m
+
+
+---
+
+# Our agreements
+
+1. Be present and undistracted
+1. Listen before speaking
+1. Ask questions, don't rely only on statements
+1. Know the **WHY**
+
+
+???
+- When _giving_ feedback, remember to focus on the problem and the why, not providing a solution
+- When _receiving_ feedback, remember to listen to your body -- know if/when you're getting defensive -- and that you should go into this **expect** to get critical feedback -- everyone here has room to grow and learn
+@timer = 2m / 27
+presentations & critiques 9 x 10 = @timer 90m / 117
+break for dinner?
+
+
+---
+background-image: url(img/06_boxmodel.jpg)
+
+# Box model
+
+
+???
+- last week we talked about the box model: that each HTML element is a rectangle that is influenced by its margins, border, padding and content size
+- keep this in mind as we move on to coding layouts
+
+
+---
+# Box model
+
+![box model diagram of a generic site layout](img/06_boxmodel-sitelayout.png)
+
+
+???
+- layouts are built out of these same blocks
+
+
+---
+# Box model
+
+![box model diagram of a photo gallery](img/06_boxmodel-gallery.png)
+
+
+---
+# CSS Layout
+
+
+???
+Let's move on to learning the CSS to handle multiple components and how they relate to each other
+
+
+--
+count: false
+
+- `display`
+- `position`
+- `z-index`
+
+
+???
+@timer = 5m
+
+
+---
+
+- display
+    - block
+      - takes up 100% of its parent element unless that's overridden in some other way
+      - they are laid out on their own line
+    - inline
+      - only takes up as much space as its content, padding and border need
+      - width and height calculated by browsers based on content; you can not declare a height and width on an inline element
+    - inline-block
+      - like above, but with more control
+      - can declare height, width, margins, padding
+
+    https://codepen.io/angeliquejw/pen/YgKwGe?editors=1100
+    @timer = 10m / 15
+
+- position
+    - static (default)
+    - relative to its normal position
+    - absolute
+    - containers
+    - example: https://codepen.io/angeliquejw/pen/bZbEvP?editors=1100
+    @timer = 10m / 25
+
+
+---
+background-image: url(img/06_examples.png)
+class: bkgd-contain
+
+# Try it
+
+
+???
+- start here: https://codepen.io/angeliquejw/pen/a75364461e08496b5a1750f5fb77de89?editors=1100
+- solution: https://codepen.io/angeliquejw/pen/b536d0410e38e54052f883363d8fa503?editors=1100
+@timer = 20m / 45
+
+
+---
+
+- z-index
+    - Use example 5 above
+    - @timer = 5m / 50
+
+- avoid float now if anything else will work
+- and remember to use clearfix if you use floats
+- @timer = 5m / 55
+- explicit vs relative sizing
+- vertical-align
+- @timer = 10m / 65
+- min- and max- height and width
+- vh, vw
+- @timer = 10m / 75
+
+
+---
+
+# Wrapping Project 1
+
+## First question
+
+Do you want to update your project based on my feedback?
+
+### ✅ Yes
+- Take notes, but no action
+
+### 🚫 No
+- Carry on to the next step!
+ 
+
+---
+count: false
+
+# Wrapping Project 1
+
+## Next question
+
+Do you have any local changes **not** on GH?
+
+- `git status`
+- check source control explorer in VS Code
+
+---
+count: false
+
+# Wrapping Project 1
+
+## Next question
+
+Do you have any local changes **not** on GH?
+
+### ✅ Yes
+- Commit and push changes, then carry on!
+
+### 🚫 No
+- Let's see if we can merge your changes!
+
+
+---
+count: false
+
+# Wrapping Project 1
+
+## Last question
+
+Can we merge?
+
+### ✅ Yes
+![no conflicts](img/06_merge-noconflicts.png)
+
+### 🚫 No
+![has conflicts](img/06_merge-conflicts.png)
+
+
+???
+If you have conflicts, put up a post-it note on your laptop
+- @timer = 5m / 80
+
+
+---
+
+# Merging Project 1
+
+![merge button](img/06_merge-button.png)
+
+### https://help.github.com/en/articles/merging-a-pull-request
+
+
+???
+https://help.github.com/en/articles/merging-a-pull-request#merging-a-pull-request-on-github
+
+
+---
+
+# Merging Project 1
+
+After merging, you're 👌🏻 to delete the branch, too
+
+
+???
+- @timer = 5m / 85
+
+
+---
+
+# Project 2 set up
+
+--
+count: false
+
+.text-smaller[
+1. Open VS Code
+1. Pull from your GH repo
+1. Create a new branch ➡️ `project2`
+    - Remember there can be no spaces in branch names
+    - Make sure the `origin` is master
+1. Switch to the new `project2` branch
+1. Create a `project2` directory for your card markup, styles and assets 
+1. Create an `index.html` inside the `project2` directory
+1. Commit and push changes of new branch to GH
+1. Verify your changes on GH
+  - Should see an option to create a new PR; do so 🎉
+]
+
+
+???
+- @timer = 10m / 100
+
+
+---
+
+# Troubleshooting CSS
+
+
+---
+
+# Remainder of class
+
+.text-smaller[
+- Work on markup for your card
+- Start styles for card
+]
+
+# Next week
+
+.text-smaller[
+- Two homework readings
+- Checkin on progress + troubleshooting
+- Project will be due next Sunday, March 10
+]
+
+💡.text-smaller[Remember to use HTML and CSS comments to note any questions or problems]
+
+</textarea>
+  <script src="/js/remark-latest.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    var slideshow = remark.create();
+  </script>
+</body>
+
+</html>
