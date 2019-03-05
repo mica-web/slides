@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Week 7 // GD 220</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <base target="_blank">
+  <link rel='stylesheet' href='styles/styles.css'>
+</head>
+
+<body>
+  <textarea id="source">
+count: false
+
+# Agenda
+
+- Discuss reading
+- Troubleshooting
+- Learn about:
+    - CSS variables
+    - Image formats + considerations
+- Principles of web design
+- Completing Project 2 + rubric
+
+
+---
+
+# Discuss on readings
+
+## Beyond the interface
+## Make it boring
+
+
+---
+
+# Troubleshooting
+
+
+--
+count: false
+
+- Slack
+
+
+???
+You are getting Slack notifications, via app or email.
+This is the primary way I will reach out to you outside of class and expect you to be responsive.
+Responsive doesn't mean you reply in 10, 30 mins. But within a day or two feels reasonable?
+
+
+--
+count: false
+
+- In-class pushes
+
+
+???
+When we all push a branch and PR to GitHub in class, everyone does that thing.
+This prevents you from having issues with your PR outside of class and being unable to resolve them.
+Since PRs are what is graded, you must create them in class with everyone else.
+
+
+--
+count: false
+
+Questions or issues?
+
+
+---
+
+# CSS variables
+
+
+???
+First thing's first...
+
+
+--
+count: false
+
+- What's a **variable**?
+
+
+???
+shorthand, alias, nickname
+
+
+--
+count: false
+
+- Why would we use variables?
+
+
+???
+reduce repetition, reduce errors
+
+
+---
+
+# CSS variables
+
+- What do they look like?
+
+```css
+--color-crimson: hsl(360, 90%, 15%);
+```
+
+???
+- two dashes in front of name
+- no spaces in name
+- variable name is case sensitive
+
+
+---
+count: false
+
+# CSS variables
+
+## Global
+
+```css
+:root {
+  --color-crimson: hsl(360, 90%, 15%);
+}
+```
+
+--
+count: false
+
+## Scoped
+
+```css
+.your-class {
+--color-crimson: hsl(360, 90%, 15%);
+}
+```
+
+---
+count: false
+
+# CSS variables
+
+## Referencing
+
+.text-smaller[
+```css
+:root {
+  --color-crimson: hsl(360, 90%, 15%);
+}
+```
+]
+
+```css
+p {
+  color: --color-crimson;
+}
+```
+
+???
+replaces traditional value
+
+
+---
+count: false
+
+# CSS variables
+
+## Referencing
+
+.text-smaller[
+```css
+:root {
+  --font-bold: 'NeueAlteGrotesk-Bold', sans-serif;
+  --color-crimson: hsl(360, 90%, 15%);
+}
+```
+]
+
+```css
+p {
+  color: --color-crimson;
+  font-family: --font-bold;
+}
+```
+
+
+???
+My examples were all around color and this or font names is how I recommend starting to use varibles, but they are not limited to these things!
+
+
+---
+# CSS variables
+
+[![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/drpgJx?editors=1100#0)
+
+### https://cdpn.io/drpgJx
+
+
+???
+- cascade
+
+
+---
+class: center, middle, title
+
+# CSS Variables Q&A
+
+
+---
+
+# Web Style Guide on Images
+
+![screenshot of reading](img/07_reading.png)
+
+
+???
+anyone remember this reading?
+
+
+---
+
+# Image types
+
+- raster _vs._ vector
+
+
+???
+raster, fine grid of pixels; used for photos, artwork
+vector, mathematical; used for diagrams, charts, icons
+
+
+--
+count: false
+
+# Image formats
+
+- GIF
+- JPG
+- PNG
+
+
+???
+What do they have in common? (raster)
+When to use which?
+- GIF
+  - pros: animated, flat expanses of a single color field, can remove colors not in use
+  - cons: weak concept of transparency (based on single color, not area), shading/gradients/photography (256 colors)
+    - interlaced vs non-interlaced?
+- JPG
+    - pros: great for photos (16.8m colors)
+    - cons: lossy, no transparency
+- PNG
+    - pros: designed for the web, sophisticated transparency
+    - cons: lossless (yay data, boo file size)
+
+    
+--
+count: false
+
+- SVG
+
+
+???
+- pros: scaleable, transparency, works simply on retina and other displays
+- cons: more complicated to integrate, more choices, accessibility (no `alt` text)
+
+
+---
+
+# Image size
+
+- width + height
+- resolution
+- file size
+
+
+???
+- resize images to be a reasonable width relative to your layout
+- for proj 2, max-width of 640px so no reason for any images to be wider than that
+- resolution; generally a nonissue, but can set it 96ppi if you're just looking for an answer
+- file size, the most important
+    - even after "save/export for web" use additional compression tools
+    - def want below 100k
+
+---
+
+# Project 1 Images: Originals
+
+![proj 1 image file sizes](img/07_p1-filesize.png)
+
+
+???
+top 5 largest images from project 1; largest over 7mb and nearly 5k pixel wide
+
+
+---
+
+# Project 1 Images: Resized
+
+![proj 1 images resized](img/07_p1-resized.png)
+
+
+???
+resized each to 600px wide and ran through compressor
+only one still over limit (sneaky, 107.6kb, but still a 95%-plus decrease from the original)
+
+
+---
+
+# Why does this matter?
+
+[![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/KEgebo?editors=1100)
+
+### https://cdpn.io/pen/KEgebo
+
+???
+show network tab and throttle to 4g
+
+
+---
+# Compressing images
+
+![tinypng](img/07_tinypng.png)
+
+### https://tinypng.com/
+
+
+---
+
+# Inline images
+
+[![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/BbLrgG)
+
+### https://cdpn.io/pen/BbLrgG
+
+
+---
+
+# Background images
+
+CSS properties
+
+- `background-repeat`
+- `background-size`
+
+[![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/BbLrgG)
+
+### https://cdpn.io/pen/BbLrgG
+
+
+---
+class: center, middle, title
+
+# Images Q&A
+
+
+---
+
+# SVGs
+
+[![codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/eXdLgz)
+
+### https://cdpn.io/pen/eXdLgz
+
+---
+# Compressing SVGs
+
+![SVG OMG](img/07_svgomg.png)
+
+### https://jakearchibald.github.io/svgomg/
+
+
+---
+# Icon fonts
+
+[![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/EMgLaN)
+
+### https://cdpn.io/pen/EMgLaN
+
+### https://fontawesome.com/
+
+
+---
+class: center, middle, title
+
+# SVGs & Icons Q&A
+
+
+---
+
+
+
+</textarea>
+  <script src="/js/remark-latest.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    var slideshow = remark.create();
+  </script>
+</body>
+
+</html>
