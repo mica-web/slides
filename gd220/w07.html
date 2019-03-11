@@ -19,8 +19,11 @@ count: false
 - Learn about:
     - CSS variables
     - Image formats + considerations
-- Principles of web design
-- Completing Project 2 + rubric
+- Wrapping  up Project 2
+
+
+???
+Before we start, any general questions about grading & proj 1?
 
 
 ---
@@ -28,7 +31,16 @@ count: false
 # Discuss on readings
 
 ## Beyond the interface
+
+
+--
+count: false
+
 ## Make it boring
+
+
+???
+@timer 10m ea / 20
 
 
 ---
@@ -43,9 +55,9 @@ count: false
 
 
 ???
-You are getting Slack notifications, via app or email.
 This is the primary way I will reach out to you outside of class and expect you to be responsive.
 Responsive doesn't mean you reply in 10, 30 mins. But within a day or two feels reasonable?
+Make sure you are getting Slack notifications, via app or email.
 
 
 --
@@ -64,6 +76,11 @@ Since PRs are what is graded, you must create them in class with everyone else.
 count: false
 
 Questions or issues?
+
+
+???
+@timer 5m / 25
+@timer 60m / 85
 
 
 ---
@@ -105,6 +122,7 @@ reduce repetition, reduce errors
 --color-crimson: hsl(360, 90%, 15%);
 ```
 
+
 ???
 - two dashes in front of name
 - no spaces in name
@@ -135,12 +153,13 @@ count: false
 }
 ```
 
+
 ---
 count: false
 
 # CSS variables
 
-## Referencing
+## Using your variable
 
 .text-smaller[
 ```css
@@ -152,12 +171,17 @@ count: false
 
 ```css
 p {
-  color: --color-crimson;
+  color: var(--color-crimson);
 }
 ```
 
+
 ???
 replaces traditional value
+
+like CSS classes -- you have to create them in the HTML, then attach styles to them in your stylesheet -- here you have to create and define the variable before you can use it
+
+@timer 10m / 10
 
 
 ---
@@ -178,14 +202,16 @@ count: false
 
 ```css
 p {
-  color: --color-crimson;
-  font-family: --font-bold;
+  color: var(--color-crimson);
+  font-family: var(--font-bold);
 }
 ```
 
 
 ???
 My examples were all around color and this or font names is how I recommend starting to use varibles, but they are not limited to these things!
+
+Limitations: Can only be used as property values NOT property names
 
 
 ---
@@ -198,12 +224,31 @@ My examples were all around color and this or font names is how I recommend star
 
 ???
 - cascade
+@timer 10m / 20
 
 
 ---
 class: center, middle, title
 
 # CSS Variables Q&A
+
+
+???
+@timer 5m / 25
+
+
+---
+count: false
+
+# Agenda
+
+- ~~Discuss reading~~
+- ~~Troubleshooting~~
+- Learn about:
+  - ~~CSS variables~~
+  - Image formats + considerations
+- Wrapping up Project 2
+
 
 
 ---
@@ -215,6 +260,7 @@ class: center, middle, title
 
 ???
 anyone remember this reading?
+bit lengthy, but let's dive into 3 specific bits: image types, image formats and image size
 
 
 ---
@@ -261,9 +307,10 @@ count: false
 
 
 ???
-- pros: scaleable, transparency, works simply on retina and other displays
-- cons: more complicated to integrate, more choices, accessibility (no `alt` text)
-
+- SVG
+  - pros: scaleable, transparency, works simply on retina and other displays
+  - cons: more complicated to integrate, more choices, accessibility (no `alt` text)
+@timer 10m / 35
 
 ---
 
@@ -276,11 +323,13 @@ count: false
 
 ???
 - resize images to be a reasonable width relative to your layout
-- for proj 2, max-width of 640px so no reason for any images to be wider than that
+  - for proj 2, max-width of 640px so no reason for any images to be wider than that
 - resolution; generally a nonissue, but can set it 96ppi if you're just looking for an answer
 - file size, the most important
     - even after "save/export for web" use additional compression tools
-    - def want below 100k
+    - aim for 100k or lower
+
+@timer 5m / 40
 
 ---
 
@@ -313,8 +362,10 @@ only one still over limit (sneaky, 107.6kb, but still a 95%-plus decrease from t
 
 ### https://cdpn.io/pen/KEgebo
 
+
 ???
 show network tab and throttle to 4g
+@timer 5m / 45
 
 
 ---
@@ -348,10 +399,18 @@ CSS properties
 ### https://cdpn.io/pen/BbLrgG
 
 
+???
+@timer 10m / 55
+
+
 ---
 class: center, middle, title
 
 # Images Q&A
+
+
+???
+@break 10m / 65
 
 
 ---
@@ -361,6 +420,11 @@ class: center, middle, title
 [![codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/eXdLgz)
 
 ### https://cdpn.io/pen/eXdLgz
+
+
+???
+@timer 15m / 95
+
 
 ---
 # Compressing SVGs
@@ -380,14 +444,70 @@ class: center, middle, title
 ### https://fontawesome.com/
 
 
+???
+@timer 10m / 105
+
+
+---
+class: center, middle
+
+## Browser support
+
+
+### https://caniuse.com/
+
+
+???
+@timer 5m / 110
+
+
 ---
 class: center, middle, title
 
 # SVGs & Icons Q&A
 
 
+???
+@timer 5m / 115
+
+
 ---
 
+# Project 2
+
+## 1. Rubric
+
+
+???
+@timer 5m / 120
+
+
+--
+count: false
+
+## 2. Due date
+Sunday, March 10 @ EOD
+
+
+???
+- requirements
+- best practices
+- rubric
+
+
+--
+count: false
+
+_plus_ 2 readings for next week
+
+--
+count: false
+
+_and_ 1-2 example web sites ✨designed well✨ for mobile users
+
+
+???
+8:30? rest of the time to work in class
 
 
 </textarea>
