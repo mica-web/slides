@@ -10,13 +10,19 @@
 
 <body>
   <textarea id="source">
+class: center, middle, title
+count: false
+
+# Welcome back 👋🏻
+
+---
 count: false
 
 # Agenda
 
 - Proj2 Follow Up
-- Proj3 Checkin
 - Interaction + animation
+- Proj3 Checkin
 - Working on Proj3
 - Proj3 rubric + PR template
 
@@ -116,14 +122,7 @@ count: false
 
 [![CodePen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/b3c8cc66d0067ca5124f8285963374f1)
 
-### cdpn.io/pen/b3c8cc66d0067ca5124f8285963374f1
-
-
----
-
-# Proj3 Checkin
-  - content/timelines
-  - media queries, responsive design
+### https://cdpn.io/pen/b3c8cc66d0067ca5124f8285963374f1
 
 
 ---
@@ -160,6 +159,10 @@ count: false
 ## `a:hover`
 
 
+???
+You already know at least one pseudoclass -- hover on the link element. Pseudoclasses reflect a specific _state_ of an existing selector.
+
+
 ---
 count: false
 
@@ -171,19 +174,186 @@ count: false
 ## `a:active`
 
 
+???
+There are many others and most of them relate to form elements -- for example, distinguishing a disabled form input from an enabled one. 
+
+
 ---
-- Interaction + animation
-- Working on Proj3
-- Proj3 rubric + PR template
-- pseudo classes
-- pseudo elements
-- interaction
-- animation
-- aos library
-- proj 3 rubric + best practices
+count: false
+
+# Pseudoclass
+
+[![link to CodePen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/pYBjWL)
+### https://cdpn.io/pen/pYBjWL
+
+
+---
+
+# Pseudoelement
+
+`li::before`
+
+`div::after`
+
+
+---
+count: false
+
+# Pseudoelement
+
+[![link to CodePen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/vPMLYg)
+### https://cdpn.io/pen/vPMLYg
+
+
+---
+
+# `transition`
+
+[![link to CodePen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/EMJRPW)
+### https://cdpn.io/pen/EMJRPW
+
+
+---
+
+# `transition-property`
+
+- which property should be affected
+
+
+---
+
+# `transition-duration`
+
+- how long should transition last
+- provide value in `s` or `ms`
+
+
+---
+
+# `transition-timing-function`
+
+- speed and style of transition
+- use the keywords: `ease`, `ease-in`, `ease-out`, `ease-in-out`, `linear`
+- optional! default is `ease`
+
+
+---
+
+# `transition-delay`
+
+- when should transition start _relative to_ the trigger (e.g.,hover)
+- optional! default is zero
+
+
+---
+
+# `transition` shorthand
+
+`transition: [property] [duration] [timing-function] [delay];`
+
+.text-smaller[💡brackets are just for display -- do not include them in your code!]
+
+_must_ include property and duration:
+`transition: all 1s;`
+
+
+---
+
+# 2 reminders about `transition`
+
+1. Not all properties can be transitioned
+1. Use the shorthand if you want
+    - _must_ include property and duration
+    - other properties are optional
+1. Skip vendor prefixes
+    ### https://caniuse.com/#feat=css-transitions
+
+
+---
+
+# Trying out `transition`
+
+### https://cdpn.io/pen/xBeQLm
+
+
+---
+
+# transform
+
+[![CodePen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/xBNVzP)
+
+### https://cdpn.io/pen/xBNVzP
+
+
+---
+
+# Trying out `transform`
+
+### https://cdpn.io/pen/NJVNQG
+
+
+---
+
+# Proj3 Checkin
+- content/timelines
+- media queries, responsive design
+
+
+---
+
+# Animate on Scroll
+
+[![CodePen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/rRgjvK)
+
+### https://cdpn.io/pen/rRgjvK
+
+
+---
+
+# Animate on Scroll
+
+## Customize your animations!
+
+[![CodePen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/EMzZEd)
+
+### https://cdpn.io/pen/EMzZEd
+
+
+---
+
+# Using AOS in your projects
+
+Add the following links to your `head`:
+
+1. Library JS file:
+  .text-smaller[```html
+  <script src="https://unpkg.com/aos@2.3.0/dist/aos.js">
+  ```]
+2. Library CSS file:
+   .text-smaller[```html
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css">
+  ```]
+
+
+---
+count: false
+
+# Using AOS in your projects
+
+Add the JS and CSS links _before_ your custom stylesheet!
+
+Docs and more info here: http://michalsnik.github.io/aos/
+
+
+---
+
+# Project 3
+
+- Rubric
 - PR template
 
 
+---
 
 </textarea>
   <script src="/js/remark-latest.min.js" type="text/javascript">
