@@ -242,6 +242,14 @@ ol + .remark-slide-content p {
   width: 65%;
 }
 
+.remark-slide ::-moz-selection {
+  background-color: #A2F1C1;
+}
+
+.remark-slide ::selection {
+  background-color: #A2F1C1;
+}
+
 .remark-slide-content {
   height: 100%;
   width: 100%;

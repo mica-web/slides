@@ -23,6 +23,11 @@
     left: 0;
     width: 65%;
   }
+
+  ::selection {
+    background-color: $color-mint;
+  }
+
 }
 
 .remark-slide-content {
