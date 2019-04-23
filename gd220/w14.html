@@ -38,10 +38,21 @@ count: false
 
 # What do we know
 
-
 ???
 - What have you feel you already know about accessibile web design?
 - Expect: alt text, screen readers, color contrast?
+
+
+--
+count: false
+
+- `alt` text
+- color contrast
+- screen readers
+
+
+???
+What makes good `alt` text?
 
 
 ---
@@ -54,6 +65,11 @@ count: false
 ### Semantic
 ### As
 ### Possible
+
+
+???
+This is why I've dialed in and commented on overuse of DIVs or misusing heading elements
+
 
 ---
 
@@ -98,9 +114,30 @@ count: false
 
 
 ---
+
+# Readability
+
+## Body font size
+
+### 14-20px
+
+
+--
+count: false
+
+## Underline
+
+### Use only for links
+
+
+---
 # Color contrast
 
 ### contrastchecker.com
+
+
+???
+- be super thoughtful about text in light grey
 
 
 ---
@@ -143,40 +180,138 @@ count: false
 
 
 ---
+
+# Use labels on forms
+
+![example of using labels as placeholders -- don't do this](img/14_use-labels.jpeg)
+
+
+???
+Explain placeholders and labels; placeholder intended to show **example input** not replace label
+
 ---
 
+# Focus states
 
-- color contrast
-- don't use just color to make critical info understandable
-- avoid red/green and blue/yellow combinations
-- be super thoughtful about text in light grey
-- focus states
-- don't undo them
-- keep labels, not replaced by placeholders
-- alt text
-- keyboard navigation
-- There are over 56 million people in the United States (nearly 1 in 5) and over 1 billion people worldwide who have a disability.
+--
+count: false
 
-- accessibility is
-- performance
-- your site working in multiple browers
-- understandable language
-- temporary impairments
-- situational impairments
-- designed for touch, keyboards
-  - 44x44 px per Apple guidelines
-  - 45-57px square per MIT Touch Lab; 72px for thumb
-    - https://www.smashingmagazine.com/2012/02/finger-friendly-design-ideal-mobile-touchscreen-target-sizes/
+![example of focus state](img/14_focus-input.png)
+
+
+???
+- communicates where someone is on the page
+- esp beneficial for those who use keyboard to navigate
+
+--
+count: false
+
+```css
+:focus {
+outline: 0;
+}
+```
+
+
+???
+Used to be common to see this, don't do this
+
+
+---
+class: center, middle, title
+
+# What else should we think about when we think about accessibility?
+
+
+???
+So far, we've considered and discussed how our choices might improve or hinder how folks with a vision impairment -- from color blindness to true blindness -- experience a web site and talked about folks using keyboard navigation, which could be related to a mobility impairment or be out of personal preference.
+
+This, in my mind, is a very narrow scope and expectation about what it means to make the information and experiences of the  web accessibile.
+
+
+---
+
+# Inclusive Design
+
+![Microsoft inclusive design toolkit](img/14_inclusive-design.png)
+
+
+???
+Let's expand the parameters of the convo together
+- 15m to read, make notes about anything that surprises you/feels new/like an A HA or any examples you can come up with related to the reading
+- Discuss reading and examples
+
+
+---
+
+# Designing inclusively
+
+- thinking of impairments as permanent _and_ situational _and_ temporary
+
+
+---
+count: false
+
+# Designing inclusively
+
+- your site works in multiple browsers
+
+
+---
+count: false
+
+# Designing inclusively
+
+- your site works in a variety of network situations or without connectivity
+
+
+---
+count: false
+
+# Designing inclusively
+
+- your content is written in an understandable, approachable way
+
+
+---
+
+# Designing for touch
+
+
+???
+- 44x44px per Apple guidelines
+- 45-57px square per MIT Touch Lab; 72px for thumb
+- https://www.smashingmagazine.com/2012/02/finger-friendly-design-ideal-mobile-touchscreen-target-sizes/
+
+
+--
+count: false
+
+![touch guidelines examle](img/14_touch-target-57.jpg)
+
+
+???
   - smaller requires more accuracy, forces user to change their finger position
   - target is hidden when we touch it
   - time to hit target is longer if target is smaller
-- typography
-  - body font size at least 14-20px
-  - don't underline text that isn't a link
+
+  
+---
+
+# Workflow
+
+
+???
+accessibility is an attribute, while inclusive design is a method
+
 
 Accessibility, not sprinkled on, not added on later; not nice to have
 Don't assume someone else owns this or is thinking about this
 Needs to be baked into the process
+
+
+Every decision we make can raise or lower barriers to participation in society.
+
 
 ADA Lawsuits
 - Beyonce 2019
@@ -188,25 +323,8 @@ But, legit, we shouldn't do good out of fear
 As designers, you can endeavor to make things pretty
 Or you can do so much more
 
-inclusive design
-
-
-Designing for inclusivity not only opens up our products and services to more people, it also reflects how people really are. All humans grow and adapt to the world around them and we want our designs to reflect that.
-
-Every decision we make can raise or lower barriers to participation in society.
-
-accessibility is an attribute, while inclusive design is a method
-
-mismatches between individuals and their environments, situations, and society as a whole
-
-
 Elevators, curb cuts, Braille
 
-- Inclusive Design manual from Microsoft
-- 12m to read, make notes about anything that surprises you/feels new/like an A HA or any examples you can come up with related to the reading
-
-
----
 
 - ARIA (Accessible Rich Internet Applications)
 - https://lkopacz.github.io/aria-presentation/
