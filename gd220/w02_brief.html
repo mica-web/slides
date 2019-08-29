@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Week 2 // GD 220</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel='stylesheet' href='styles/styles.css'>
+</head>
+
+<body>
+  <textarea id="source">
+class: center, middle, title
+
+# Intro to HTML
+
+---
+
+# Intro to HTML
+
+
+**HTML** stands for
+
+**H**yper**t**ext **M**arkup **L**anguage
+
+HTML provides **structure** and **meaning** to the content of web pages
+
+
+---
+
+# You're already familiar
+
+Some HTML elements are pretty familiar to you already, both from the web and other document design:
+  - paragraphs
+  - links
+  - headings
+  - block or pull quotes
+
+  
+---
+
+# You're already familiar
+
+![typography](img/02_type_elements.jpg)
+
+
+---
+
+# You're already familiar
+
+
+![typography](img/02_type_pullquote.png)
+
+
+---
+
+# The paragraph element
+
+![makeup of an html element + tag](img/02_html_element.png)
+
+
+---
+
+# Lists
+
+## 2 types
+
+- bulleted
+- unordered
+
+
+---
+
+# Lists
+
+## 2 types
+
+1. numbered
+1. ordered
+
+
+---
+
+# Lists
+
+List tags are **nested**.
+
+```html
+<ul>
+  <li>tacos</li>
+  <li>sharks</li>
+  <li>Beyonce</li>
+</ul>
+```
+
+- the outer wrapping tag (here `ul`) sets what kind of list it is
+- a `li` identifies each list item
+
+
+---
+
+# Lists
+
+
+```html
+<ol>
+  <li>Step 1!</li>
+  <li>Step 2?</li>
+  <li>PROFIT!!</li>
+</ol>
+```
+
+We used **ordered** lists when the order of the items is important.
+
+For example, a top 5 list or step-by-step instructions.
+
+
+---
+
+# Links
+
+We've covered the **markup language** part, but not the **hypertext** yet...
+
+The anchor tag (`a`) creates links, like so:
+
+```html
+<a href="http://mica.edu">MICA</a>
+```
+
+- `href` = hypertext reference
+- `href` is an **attribute** of the anchor element
+
+
+---
+
+# Attributes
+
+- provide extra info about the element
+- always associated with the opening tag
+- generally have a **name** and a **value**
+- the value should be wrapped in double quotes
+
+```html
+href="http://mica.edu"
+```
+
+Here, `href` is the attribute name and _http://mica.edu_ is the value.
+
+---
+
+# Links
+
+```html
+<a href="http://mica.edu" target="_blank">MICA</a>
+```
+
+Here, an additional **attribute** of `target` is added.
+
+This attribute tells the link to open in a new window/tab of the user's browser.
+
+
+---
+
+# Links
+
+In addition to linking to web pages (like in the previous example), we can also achieve the following with the `a` tag:
+
+- link within a page (e.g., ToC, back to top)
+- send an email
+- link to file/download
+- initiate JavaScript
+
+
+---
+
+# Links
+
+You can **nest** a link inside other elements, like so:
+
+
+```html
+<p>This link to <a href="http://mica.edu">MICA</a> is nested inside a paragraph.</p>
+```
+
+
+---
+
+# Paths
+
+**Paths** refer to the structure of the location of a link or file. Paths can be either:
+
+- absolute
+
+### `http://mica.edu`, `http://www.google.com`
+
+- relative
+
+### `/images/beyonce.png`, `images/beyonce.png`
+
+👉🏻 [Learn more](https://css-tricks.com/quick-reminder-about-file-paths/)
+
+
+---
+
+# Headings
+
+Establish hierarchy within a page or document.
+
+There are six rankings:
+
+```html
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+```
+
+
+---
+
+# Headings
+
+Your headings should always follow their order.
+
+ie, an `h4` should follow an `h3` not an `h2`
+
+
+---
+
+# Blockquotes
+
+Used to wrap an extended quotation.
+.text-smaller[
+```html
+<blockquote cite="http://www.jeanettewinterson.com/book/art-objects/">
+  <p>When was the last time you looked at anything, solely, and concentratedly, and for its own sake? Ordinary life passes in a near blur. If we go to the theatre or the cinema, the images before us change constantly, and there is the distraction of language. Our loved ones are so well known to us that there is no need to look at them, and one of the gentle jokes of married life is that we do not.</p>
+  <cite>&ndash;Jeanette Winterson, <a href="http://www.jeanettewinterson.com/book/art-objects/">Art Objects</a>, 1996</cite>
+</blockquote>
+```
+]
+
+
+---
+
+# Emphasis & Strong
+
+There are HTML elements that, by default, result in text that is bold (`b`, `strong`) or italicized (`i`, `em`) in the user's browser.
+
+These elements, however, are intended to be **meaningful** and should **not** be used just to achieve these typographic styles.
+
+👉🏻 [Learn more](http://html5doctor.com/i-b-em-strong-element/)
+
+
+---
+
+# Comments
+
+It's very common in programming languages to want to have some text that is ignored by the browser and not visible to users.
+
+We do this to share information and, informally, to mark out bits of code that we tried and maybe didn't work or wasn't right.
+
+
+---
+
+# Comments
+
+HTML comments look like this:
+
+```html
+<!-- This text won't show up in a proper HTML file -->
+```
+
+If you copy the text above and put it in a CodePen, you'll see that it doesn't show up in the preview pane.
+
+</textarea>
+  <script src="/js/remark-latest.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    var slideshow = remark.create();
+  </script>
+</body>
+
+</html>
