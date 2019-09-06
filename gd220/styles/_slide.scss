@@ -81,6 +81,7 @@ a {
 
 .remark-code,
 .remark-inline-code {
+  background-color: rgba($color-yellow, 0.2);
   @include font-mono();
   text-transform: initial;
 }

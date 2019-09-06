@@ -297,6 +297,7 @@ a:visited {
 
 .remark-code,
 .remark-inline-code {
+  background-color: rgba(246, 249, 48, 0.2);
   font-family: Native-Regular;
   font-weight: normal;
   font-style: normal;
