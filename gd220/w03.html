@@ -14,7 +14,7 @@ count: false
 # While you're waiting
 
 - Do you have your questions, comments/insights, and quotes for the assigned reading?
-- Consider what ❓s you might have about Slack
+- Consider what ❓s you might have about Slack and/or HTML
 
 
 ---
@@ -22,12 +22,12 @@ count: false
 
 # Agenda
 
-1. Slack Q&A
-1. Discuss W2 reading on history of web design
-1. HTML Q&A
-1. HTML5
+1. Q&A
+  - Slack
+  - HTML
 1. Discuss W3 reading
-1. Style tiles
+1. More HTML
+1. Intro to CSS
 1. Proj 1 overview
 
 
@@ -38,44 +38,7 @@ class: center, middle, title
 
 ???
 - emoji reactions, use 'em
-- @timer=5m
-
-
----
-
-# Reading
-
-### A brief history of web design for designers
-
-
-???
-- quotes
-- questions
-- commments/insights
-- addendums
-- @timer=10m/15m
-
-
---
-count: false
-
-### Git and GitHub in Plain English
-
-
-???
-- We'll revisit this one next week
-- Sorry for the delay inbetween reading and discussing, but necessary impact of snow day ❄️
-
----
-count: false
-
-# Agenda
-
-1. ~~Slack Q&A~~
-1. ~~Discuss W2 reading~~
-1. HTML Q&A
-1. Discuss W3 reading
-1. HTML5
+- @timer=
 
 
 ---
@@ -83,20 +46,60 @@ class: center, middle, title
 
 # HTML Q&A
 
-
 ???
-- @timer=10m/25m
+- @timer=
 
 
 ---
 
-# HTML notes
+# Conversations with Robots
 
-## CodePen
+> ...design efforts that focus on creating visually effective pages are no longer sufficient to ensure the integrity or accuracy of content published on the web.
+
+
+---
+count: false
+
+# Conversations with Robots
+
+> "You don’t get to decide which platform or device your customers use to access your content: they do." -- Karen McGrane
+
+---
+count: false
+
+# Conversations with Robots
+
+> ...providing access to information in a structured, systematic way that is legible to both humans and machines.
+
 
 ???
-- skip unnecessary markup
-- can check analyze HTML (it's not perfect, tho)
+- ready for any interface
+- smarter search results, including voice
+- meaningful
+- semantic headings
+
+schema.org ... like data attributes for search and other services
+like cite attribute, no visual changes
+
+any of the examples not make sense?
+
+
+---
+
+# More HTML
+
+## CodePen vs. VS Code
+
+???
+- CodePen
+  - sketchpad
+  - skips markup; don't need body, etc.
+  - can check analyze HTML (it's not perfect, tho)
+- VS Code
+  - for final projects
+  - more closely duplicates working enviro
+  - allows you to use more files, assets
+    - this will be more relevant when you add images to your projects 
 
 
 --
@@ -105,394 +108,158 @@ count: false
 ## Keep markup lowercase
 
 ???
-- Exception: filenames
 - Note that I sometimes ALLCAPS elements when I'm writing about them (in slides or feedback), but this is to make the code stand out from the text and should not be copied over into actual markup.
-- Feedback, I often eliminate some things to simplify what we're looking at. (eg of UL)
-- @timer=3m/28m
+- Exception: filenames; should match capitalization you see in Finder/Explorer
+- @timer=
 
 
 ---
 count: false
 
-# HTML notes
+# More HTML
 
 ## Semantic headings
 
 
+???
+- Semantic - convey content/meaning, not appearance
+
+
 --
 count: false
 
-1. Yes, the Octopus Is Smart as Heck. But Why?
-1. It has eight arms, three hearts — and a plan. Scientists aren’t sure how the cephalopods got to be so intelligent.
-1. By Carl Zimmer
-1. Nov. 30, 2018
+- The Crane Wife
+- By CJ Hauser
+- July 16, 2019
 
 
 ???
-Slack polls about what should be what
-- @timer=5m/33m
+- @timer=
 
 
 ---
-count: false
 
-# HTML notes
+# More HTML
 
-## Semantic headings
+## Lists
 
-[![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pen/zeddpz?editors=1000)
+[![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/eYOrYpE)
 
-### https://codepen.io/angeliquejw/pen/zeddpz?editors=1000
-
-
-???
-Semantic - convey content/meaning, not appearance
-- @timer=5m/38m
-
-
----
-count: false
-
-# HTML notes
-
-## Nested lists
-
-[![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pen/WPEEaQ?editors=1000)
-
-### https://codepen.io/angeliquejw/pen/WPEEaQ?editors=1000
+### http://bit.ly/gd2-list-challenge
 
 
 ???
-- @timer=5m/43m
+- @timer=
+
 
 
 ---
 class: center, middle, title
+count: false
 
-# Further HTML ❓s
-
-
-???
-- @timer=5m/48m
+# Intro to CSS
 
 
 ---
 
-# HTML5 organizational elements
+# Intro to CSS
+
+**CSS** stands for
+
+**C**ascading **S**tyle**S**heets
+
+CSS modifies the **appearance** of a web page.
+
 
 ???
--  to date, mostly one-to-one elements to content
-- `ul`, `ol` exceptions as they aren't visible and wrap list items
-- going to explore some more elements that are like that; unlike lists, these elements can hold practically any other HTML elements
-- @timer=2m/50m
+- The word "cascading" is pretty poetic and evocative.
+- We'll come back to what it means in this context and how it affects us after we cover some other basics.
+- CSS defines the design of a web page, determines things like font size, margins, and colors
+- Uses a language entirely separate from HTML
 
 
---
-count: false
+---
 
-- `header`
+# What does it look like?
 
-
---
-count: false
-
-- `footer`
+![example ruleset](img/04_cssruleset1.png)
 
 
---
-count: false
-
-- `main`
-
-
---
-count: false
-
-- `nav`
+???
+- selector: the thing the styles should be applied to
+- declarations: style rules we want to apply to the selector
+- many declarations can be made against a single selector
 
 
 ---
 count: false
 
-# Structural analysis
+# What does it look like?
 
-.cf[.left-float[
-- `header`
-- `footer`
-]
-.right-float[
-- `main`
-- `nav`
-]]
-
---
-count: false
-
-- Identity structural elements
-- Note elements you struggle to label
+![example ruleset](img/04_cssruleset2.png)
 
 
 ???
-- @timer=3m/53m
-- partner up and take 10m to explore some web sites with these elements in mind
-  - content-heavy sites vs ones _only_ visual
-- what structural elements can you identify?
-    - don't look at the markup yet!
-- which elements do you struggle to label?
-    - check markup: ⬅️ make sure everyone knows how to do this
-      - agree/disagree?
-      - if element is unfamiliar, look it up in MDN
-- send me a link via DM in Slack to a site you want to present and discuss
-- will post these instructions to the #general channel of Slack
-- @timer=10m/63m
-
-
----
-
-# HTML5 organizational elements
-
-
-???
-- We'll dive more deeply into the sites you reviewed in a few, but first: how hard was it to identify the elements that make up the page?
-- What made it difficult?
-- Did you learn any new HTML elements?
-
-
---
-count: false
-
-## `header`
-
-???
-- Describe in your own words
-- Can there be more than 1 header per page?
-
-
---
-count: false
-
-## `footer`
-
-
---
-count: false
-
-## `nav`
-
-
-???
-- purpose is to provide navigation LINKS within this document and to other documents; menu, indexes, table of contents
-- more than one `nav` per page?
-    - site nav/menu, pagination, ToC links like Wikipedia uses
-
-
---
-count: false
-
-## `main`
-
-
-???
-- dominant content and subject of the page
-- unique content; should not include repeated elements like site header, nav or sidebars
-- only one `main` per page
-- @timer=5m/83m
-
-
----
-
-# Structural analysis, part II
-
-- Recreate the site layout structure using no text, no images
-    - Only colors and simple geometric shapes
-
-
-???
-- Using the software of your choice (e.g., InDesign, Illustrator or Sketch), recreate the layout structure of the site you explored
-- Express the structure only using simple geometric shapes for the contents (e.g., header with thick black line, body text with thin grey line, image with green rectangular box, etc)
-- Do not write any text or use any images
-- Send me a DM with a a screenshot of the site you're working from and upload a JPG/PNG/GIF of your version of its layout structure
-- https://github.com/cdaein/mica-gd220/blob/spring2019/lectures/w1-structure-analysis.md
-- @timer=25m/108m
-- take an additional 10-15m to go through examples and discuss
-  - what does the site do design-wise to communicate these elements and its hierarchy?
-  - what does the abstraction/wireframe make more clear about the site?
-- @timer=10-15m/123m
-- @break for dinner?
-
---
-count: false
-
-![layout structure examples](img/03_layout-structure.png)
-
+- each declaration made up of a property and value
+- properties are limited by what properties exist in the CSS standard and that are recognized by your current browser
+- values are constrained by the property they refer to; 18px, fr'ex, is not an acceptable value for color
 
 ---
 count: false
 
-# Agenda
+# What does it look like?
 
-1. ~~Slack Q&A~~
-1. ~~Discuss W2 reading on history of web design~~
-1. ~~HTML Q&A~~
-1. HTML5 👈🏻
-1. Discuss W3 reading
-1. Style tiles
-1. Proj 1 overview
-
-
----
-# HTML5 organizational elements
-
---
-count: false
-
-## `section`
+![example ruleset](img/04_cssruleset3.png)
 
 
 ???
-- standalone content
-- usually has a heading
+- Whole kit and caboodle--selector, curly braces, declarations--is called a ruleset
+- @timer = 
+
+---
 
 
---
-count: false
+# CSS properties: Typography
 
-## `aside`
+## `font-size`
+## `font-style`
+## `font-weight`
+## `letter-spacing`
+## `line-height`
+## `text-align`
+## `text-transform`
 
 ???
-- indirectly related to main content
+- demo in codepen: https://codepen.io/angeliquejw/pen/eYOrYPK?editors=0100
+- font-size: for now, use pixels
+- font-style: normal
+- other possible font-weight values: normal, lighter; 100-900
+- line-height, leave off the unit to make it relative to current font size
+- @timer = 
 
---
-count: false
 
-## `div`
+---
 
+# CSS properties: Color
+
+## `background-color`
+## `color`
+## `keywords`
+## `hex`
+## `rgb`
+## `hsl`
+## `opacity`
+## `rgb(a)` and `hsl(a)`
+## `/* comments */`
 
 ???
-- most generic container element
-- consider if there are any other options
-- this doesn't mean it needs to be avoided, just that it's generic enough and therefore too easy to default to
-
---
-count: false
-
-## `span`
-
-???
-- generic inline container
-- add others based on discussion of structural analysis?
-- @timer=5m/128m
-
-
----
-class: center, middle, title
-
-# HTML structure Q&A
-
-
-???
-- Anything left unsaid?
-- Anything remain confusing?
-
-
----
-
-# Reading
-
-### Conversations with robots
-
-???
-- quotes
-- questions
-- commments/insights
-- @timer=10m/138m
-
-
----
-count: false
-
-# Agenda
-
-1. ~~Slack Q&A~~
-1. ~~Discuss W2 reading on history of web design~~
-1. ~~HTML Q&A~~
-1. ~~HTML5~~
-1. ~~Discuss W3 reading~~
-1. Style tiles
-1. Proj 1 overview
-
-
----
-
-# Style tiles
-
-
-???
-Have folks used moodboards in design before? Experiences? Pros? confusing?
-
-
---
-count: false
-
-
-![style tiles explained](img/03_styletiles.png)
-
-
-???
-- like a moodboard for web design
-- but collage nature of moodboard is more informal
-- selection of visual components in a design
-- building blocks for complete design
-- initial representation of brand feel: old fashioned vs trendy, quirky vs minimal
-- iterative without having to do a complete comp, able to dial in
-
-
----
-count: false
-
-# Style tiles
-
-![example style tile](img/03_styletile1.jpg)
-
-
----
-count: false
-
-# Style tiles
-
-![example style tile](img/03_styletile2.png)
-
-
----
-count: false
-
-# Style tiles
-
-![example style tile](img/03_styletile3.png)
-
-
----
-count: false
-
-# Style tiles
-
-## Learn more
-
-### http://styletil.es/
-
-
----
-count: false
-
-# Agenda
-
-1. ~~Slack Q&A~~
-1. ~~Discuss W2 reading on history of web design~~
-1. ~~HTML Q&A~~
-1. ~~HTML5~~
-1. ~~Discuss W3 reading~~
-1. ~~Style tiles~~
-1. Proj 1 overview
+- demo in codepen: https://codepen.io/angeliquejw/pen/XWrqWyP?editors=0100
+- demo of cascade in action
+- https://github.com/cdaein/mica-gd220/blob/spring2019/lectures/w2-css-colors.md
+- keywords simplest to use, but not very specific and can even vary between browsers
+- hue goes from 0 360 (color wheel); saturation and lightness 0 - 100%
+- example of why opacity can be crappy
+- @timer = 
 
 
 </textarea>
