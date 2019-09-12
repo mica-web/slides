@@ -14,7 +14,8 @@ count: false
 # While you're waiting
 
 - Do you have your questions, comments/insights, and quotes for the assigned reading?
-- Consider what ❓s you might have about Slack and/or HTML
+    - Everyone in the class should have at least one of each to discuss
+- Additionally, consider what ❓s you might have about Slack and/or HTML
 
 
 ---
@@ -28,6 +29,7 @@ count: false
 1. Discuss W3 reading
 1. More HTML
 1. Intro to CSS
+1. Even more HTML
 1. Proj 1 overview
 
 
@@ -35,6 +37,7 @@ count: false
 class: center, middle, title
 
 # Slack Q&A
+
 
 ???
 - emoji reactions, use 'em
@@ -45,6 +48,7 @@ class: center, middle, title
 class: center, middle, title
 
 # HTML Q&A
+
 
 ???
 - @timer=
@@ -57,12 +61,23 @@ class: center, middle, title
 > ...design efforts that focus on creating visually effective pages are no longer sufficient to ensure the integrity or accuracy of content published on the web.
 
 
+???
+- if you're responsible for coding designs on the web, it's not enough to be pixel perfect
+- even if you're not coding the web site, you can still ask these questions about your projects
+
+
 ---
 count: false
 
 # Conversations with Robots
 
 > "You don’t get to decide which platform or device your customers use to access your content: they do." -- Karen McGrane
+
+
+???
+- if you are designing for the web, you are designing for empowered users; to me, this is exciting and awesome
+- have you ever been handed something in physical format -- a paper, a brochure, a business card -- and thought, "I'd rather just look this up online" -- you, too, are an empowered web user who designers need to contend with (Amazon brochure)
+
 
 ---
 count: false
@@ -73,7 +88,7 @@ count: false
 
 
 ???
-- ready for any interface
+- not one or the other, but ready for any interface
 - smarter search results, including voice
 - meaningful
 - semantic headings
@@ -86,9 +101,22 @@ any of the examples not make sense?
 
 ---
 
+# Agenda
+
+1. ~~Q&A~~
+1. ~~Discuss W3 reading~~
+1. More HTML
+1. Intro to CSS
+1. Even more HTML
+1. Proj 1 overview
+
+
+---
+
 # More HTML
 
 ## CodePen vs. VS Code
+
 
 ???
 - CodePen
@@ -99,13 +127,15 @@ any of the examples not make sense?
   - for final projects
   - more closely duplicates working enviro
   - allows you to use more files, assets
-    - this will be more relevant when you add images to your projects 
+    - this will be more relevant when you add CSS today and later when you add images to your projects 
+- Before we go further, does anyone have questions about CodePen? We're going to use it some more today, so best to get those out and resolved now.
 
 
 --
 count: false
 
 ## Keep markup lowercase
+
 
 ???
 - Note that I sometimes ALLCAPS elements when I'm writing about them (in slides or feedback), but this is to make the code stand out from the text and should not be copied over into actual markup.
@@ -134,7 +164,26 @@ count: false
 
 
 ???
-- @timer=
+- These were the bits of text at the top of your assignment, lets explore how you handled them
+
+
+---
+count: false
+
+# More HTML
+
+## Semantic headings
+
+- The Crane Wife -- yellow
+- By CJ Hauser -- pink
+- July 16, 2019 -- blue
+
+
+???
+- Get one postit note of each color: yellow, pink, blue
+- Write on it the tag you used for each of these snippets of text
+- Organize the postits and discuss
+- @timer= 
 
 
 ---
@@ -143,7 +192,7 @@ count: false
 
 ## Lists
 
-[![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/eYOrYpE)
+[![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/eYOrYpE?editors=1000)
 
 ### http://bit.ly/gd2-list-challenge
 
@@ -152,12 +201,27 @@ count: false
 - @timer=
 
 
+---
+
+# Agenda
+
+1. ~~Q&A~~
+1. ~~Discuss W3 reading~~
+1. ~~More HTML~~
+1. Intro to CSS
+1. Even more HTML
+1. Proj 1 overview
+
 
 ---
 class: center, middle, title
 count: false
 
 # Intro to CSS
+
+
+???
+- You'll want to keep CodePen up to follow along with this, just like we did last week with HTML
 
 
 ---
@@ -204,6 +268,7 @@ count: false
 - properties are limited by what properties exist in the CSS standard and that are recognized by your current browser
 - values are constrained by the property they refer to; 18px, fr'ex, is not an acceptable value for color
 
+
 ---
 count: false
 
@@ -216,8 +281,8 @@ count: false
 - Whole kit and caboodle--selector, curly braces, declarations--is called a ruleset
 - @timer = 
 
----
 
+---
 
 # CSS properties: Typography
 
@@ -228,6 +293,7 @@ count: false
 ## `line-height`
 ## `text-align`
 ## `text-transform`
+
 
 ???
 - demo in codepen: https://codepen.io/angeliquejw/pen/eYOrYPK?editors=0100
@@ -252,6 +318,7 @@ count: false
 ## `rgb(a)` and `hsl(a)`
 ## `/* comments */`
 
+
 ???
 - demo in codepen: https://codepen.io/angeliquejw/pen/XWrqWyP?editors=0100
 - demo of cascade in action
@@ -261,6 +328,134 @@ count: false
 - example of why opacity can be crappy
 - @timer = 
 
+
+---
+
+# HTML organizational elements
+
+
+???
+- to date, mostly one-to-one elements to content
+- `ul`, `ol` exceptions as they aren't visible and wrap list items
+- going to explore some more elements that are like that; unlike lists, these elements can hold practically any other HTML elements
+- @timer=
+
+
+--
+count: false
+
+## `header`
+
+
+???
+- Describe in your own words
+- Can there be more than 1 header per page?
+
+
+--
+count: false
+
+## `footer`
+
+
+???
+- Describe in your own words
+- Can there be more than 1 footer per page?
+
+
+--
+count: false
+
+## `main`
+
+
+???
+- dominant content and subject of the page
+- unique content; should not include repeated elements like site header, nav or sidebars
+- only one `main` per page
+- @timer=
+
+
+--
+count: false
+
+## `section`
+
+
+???
+- standalone content
+- usually has a heading
+
+
+--
+count: false
+
+## `aside`
+
+
+???
+- indirectly related to main content
+
+
+--
+count: false
+
+## `div`
+
+
+???
+- most generic container element
+- consider if there are any other options
+- this doesn't mean it needs to be avoided, just that it's generic enough and therefore too easy to default to
+
+--
+count: false
+
+## `span`
+
+
+???
+- generic inline container
+- add others based on discussion of structural analysis?
+- @timer=
+
+
+---
+
+# HTML organizational elements
+
+## CodePen Demo
+
+[![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/ExYLOgo?editors=1000)
+
+
+---
+class: center, middle, title
+
+# HTML structure Q&A
+
+
+???
+- Anything left unsaid?
+- Anything remain confusing?
+
+
+---
+
+# Agenda
+
+1. ~~Q&A~~
+1. ~~Discuss W3 reading~~
+1. ~~More HTML~~
+1. ~~Intro to CSS~~
+1. ~~Even more HTML~~
+1. Proj 1 overview
+
+
+---
+# Project 1
+
+## http://mica-web.github.io/gd-220/proj1.html
 
 </textarea>
   <script src="/js/remark-latest.min.js" type="text/javascript">
