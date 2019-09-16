@@ -13,485 +13,128 @@ count: false
 
 # Agenda
 
-- PR Q&A
-- CSS Q&A
-- 4 things to work on
-- Code review and assistance
-- More about CSS
-- Review Project 1 rubric
+- On Critiques
+- Present your designs
 
-
----
-
-# Q&A
-
-- PRs and git workflow
-
-
-???
-- Do not merge PRs while we are still working on a project; you will only merge _after_ final grading
-
-
---
-count: false
-
-- CSS
-
-
----
-
-# 4 things
-### to consider & work on
-### followed by 
-### code review & assistance
-
-
----
-
-# Thing #1: `q` _vs._ `blockquote` _vs._ pull quote
-
-
---
-count: false
-
-## `q`
-
-
-???
-used for an inline quote
-
-
---
-count: false
-
-```html
-<p><q>“It suggests the octopus is carrying these tools around because it has some understanding they may be useful in the future,”</q> said <cite>Mr. Amodio, a graduate student studying animal intelligence at the University of Cambridge in Britain</cite>.</p>
-```
-
-
-???
-- quote stays in the flow of the p tag; inline
-- nice to have, but you'll see it's pretty optional and not commonly used
-
-
----
-
-# Thing #1: `q` _vs._ `blockquote` _vs._ pull quote
-
-## `q`
-## `blockquote`
-
-
-???
-An _extended_ quotation, usually indented or set aside from the body
-
-
---
-count: false
-
-.text-smaller[
-```html
-<p>One is known as the ecological intelligence hypothesis. It holds that intelligence evolves as an adaptation for finding food. While some animals have a reliable food supply, others have to cope with unpredictability.</p>
-
-<blockquote><p>“If you eat fruit, you have to remember where the fruiting trees are and when they’re ripe,” said <cite>Mr. Amadio</cite>. “It can be much more cognitively challenging than eating leaves.”</p></blockquote>
-
-<p>Tools allow animals to get to food that they couldn’t reach otherwise. And if they can make plans for the future, they can store food to survive hard times.</p>
-```
-]
-
-
----
-count: false
-
-# Thing #1: `q` _vs._ `blockquote` _vs._ pull quote
-
-## `blockquote`
-
-![blockquote example](img/05_blockquote.png)
-### https://cdpn.io/pen/pGGRar
-
-
----
-count: false
-
-# Thing #1: `q` _vs._ `blockquote` _vs._ pull quote
-
-## `q`
-## `blockquote`
-## pull quote
-
-
-???
-- q and blockquote are both HTML elements; pull quote is not
-- block quotation and pull quote are _also_ graphic design concepts
-- a blockquote is in the flow of the document and usually set off by indenting
-- a pull quote is lifted from the flow of the document to highlight a concept or otherwise be a lure for the reader
-- the original quote is still in the flow of the document and the pull quote may be abbreviated
-
-
----
-count: false
-
-# Thing #1: Pull quote examples
-
-![an example pull quote](img/05_pullquote1.png)
-
-
-???
-- Simplest design wise
-- But also a bit confusing b/c it's laid out more like a blockquote, but as you can see from the highlight, it is actually pulling a quote from earlier in the text
-- Also, it's not actually a quote from a source -- it's quoting the article author
-
-
----
-count: false
-
-# Thing #1: Pull quote examples
-
-![an example pull quote](img/05_pullquote2.png)
-
-
----
-count: false
-
-# Thing #1: Pull quote examples
-
-![an example pull quote](img/05_pullquote3.png)
-
-
-???
-- Since pull quote _isn't_ an HTML element, how should we mark it up?
-
-
----
-count: false
-
-# Thing #1: Pull quote markup
-
-```html
-<aside>
-  <blockquote>
-    <p>There's a big part of me that's like, would I have made it in this career if I had student loans?</p>
-  </blockquote>
-</aside>
-```
-
-
-???
-- aside is a hint that this isn't necessary to the main content
-- blockquote
-- optional p tag
-
-
----
-count: false
-
-# Thing #1: Pull quote markup
-
-```html
-<aside>
-  <blockquote>There's a big part of me that's like, would I have made it in this career if I had student loans?</blockquote>
-</aside>
-```
-
-
-???
-- Why use the extra markup?
-- If you have styles on your p element that you want to also use for your blockquote, this saves you repeating those styles or dealing with conflicts
-
-
----
-# Thing #2: Specifying fonts
-
-
---
-count: false
-
-- `font-size`
-- `font-style`
-- `font-weight`
-
-
-???
-Already discussed last week; font size is the most obvious, font style controls if the font should be normal or italic; font weight controls how bold or thin the font displays
-
-
---
-count: false
-
-- `font-family`
-
-
---
-count: false
-
-### https://cdpn.io/pen/VggjgZ
-[![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/VggjgZ?editors=0100)
-
-
----
-count: false
-
-# Thing #2: Specifying fonts
-
-- `font-size`
-- `font-style`
-- `font-weight`
-- `font-family`
-  - font stacks
-  - web fonts: https://fonts.google.com/
-
-
----
-
-# Thing #3: `i` vs. `em` vs. `b` vs. `strong`
-
-
-???
-While you may think to yourself that b stands for bold, i for italic, none of these should be used simply to achieve those font styles and weights.
-1. Markup should be used for a _reason_.
-2. If you rely on these tags, you generally have less control over the font vs specifying something in CSS -- ie, b may give you bold, but maybe you actually want the black font weight.
-
-
---
-count: false
-
-### `i`
-
-
-???
-- set off from the text for some reason:
-  - technical terms
-  - foreign language phrases
-  - fictional character's thoughts
-
-
----
-count: false
-
-# Thing #3: `i` vs. `em` & `b` vs. `strong`
-
-### `i` vs. `em`
-
-
-???
-- em is for stress emphasis
-
-
----
-count: false
-
-# Thing #3: `i` vs. `em` & `b` vs. `strong`
-
-### `i` vs. `em`
-### `b`
-
-
-???
-- text you want to draw attention to but doesn't have the importance of, say, a heading tag
-- keywords, first sentence (lede) in an article, product names
-
-
----
-count: false
-
-# Thing #3: `i` vs. `em` & `b` vs. `strong`
-
-### `i` vs. `em`
-### `b` vs `strong`
-
-
-???
-- seriousness or urgency
-
-
----
-count: false
-
-# Thing #3: Solve for `X`
-
-### Example #1
-
-```html
-Dinosaurs <X>eat</X> man...woman inherits the earth.
-```
-
-![Ellie Sattler in Jurassic Park](img/05_jp1.gif)
-
-
-???
-`em` : represents stress emphasis on the content
-
-
----
-count: false
-
-# Thing #3: Solve for `X`
-
-### Example #2
-
-```html
-<X>Lex Murphy:</X> It's a UNIX system, I know this!
-```
-
-![Lex Murphy in Jurassic Park](img/05_jp2.jpg)
-
-
-???
-`b` : represents character name in dialog
-
-
----
-count: false
-
-# Thing #3: Solve for `X`
-
-### Example #3
-
-```html
-You see a <X>Tyrannosaur</X> doesn't follow a set pattern or park schedules, the essence of chaos.
-```
-
-![Ian Malcolm in Jurassic Park](img/05_jp3.png)
-
-
-???
-`i` : represents scientific name
-
-
----
-count: false
-
-# Thing #3: Solve for `X`
-
-### Example #4
-
-```html
-Shoot her! <X>SHOOT HER!!</X>
-```
-
-![Jurassic Park velociraptor](img/05_jp4.webp)
-
-
-???
-`strong` : represents seriousness, urgency
-
-
----
-
-# Thing #4: Consistent color values
-
-```css
-h1 {
-  color: #B11C00;
-}
-h2 {
-  color: rgb(177, 28, 0);
-}
-h3 {
-  color: hsl(9.5, 100%, 34.7%);
-}
-```
-
----
-count: false
-
-# Thing #4: Consistent color values
-
-![they're all the same color, yo](img/05_color-values.png)
-
-
-???
-If you use an assortment of color values, it becomes very difficult to tell when a color is repeated or reused or which color is which. We'll delve into this more later today.
-
-
----
-count: false
-
-# Troubleshooting & assistance
-
-.text-smaller[
-**1. Review your current code:**
-  - Are you using `blockquote` for your pull quotes?
-  - Are your pull quotes _true_ pull quotes?
-  - Are you using `b`, `em`, `i`, `strong` with good reason?
-    - If not, replace with a span and we'll learn how to use those for applying italics and varied font weights later today.
-  - Are you using a consistent type of color value?
-
-**2. Add web fonts, if you haven't already.**
-  - If you already have a web font in place, do you have the weights and styles you need?
-
-**3. Continue to work on styling your article.**
-]
 
 ---
 class: center, middle, title
 
-# More about CSS
+# On Critiques
+
+
+???
+- Definitely don't have perspective of how things are done in other GD classes
+- Bringing perspective of how we handle feedback on my team
+- How we treat each other, how we treat each other's ideas
+
+
+---
+class: center, middle, title
+count: false
+
+# Radical Candor
+
+
+???
+- book about building teams called radical candor
+- RC != brutal honesty
+- Requires that care first and care enough to give folks direct feedback
+- b/c this is a classroom environment, I cannot force you to care about one another's development and progression, but know that I'm treating you as members of my team and, at the very least, my feedback is rooted in caring
+- as such, I go into critiques expecting them to be a teambuilding exercise, not about tearing anyone down; feedback, to me, is a form of collaboration
 
 
 ---
 
-# CSS: More about selectors
+# Your Responsibilities 
 
-### https://cdpn.io/pen/JxvVJe
-[![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/JxvVJe?editors=0100)
+## Giving feedback
+
+
+???
+- has its own responsibilities; and not just in a "do unto others as you would have done unto you" sort of way
 
 
 --
 count: false
 
-# CSS: Guidelines for creating class names
-
-https://mica-web.github.io/gd-220/hints/naming-classes
-
-
-???
-- Multiple selectors and classnames
-- Naming things
-
-
----
-
-# CSS: Organization & specificity
-
-1. Base elements on top, followed by classnames
-1. Alphabetized properties
-
-Examples of comment headings to organize your CSS:
-.text-smaller[
-- https://css-tricks.com/snippets/css/comments-in-css/#comments
-- https://perishablepress.com/obsessive-css-code-formatting-organization-comments-and-signatures/
-]
-
-
----
-
-# CSS: Box model
-
-
-### https://cdpn.io/pen/xapWpg
-[![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/xapWpg?editors=0100)
-
-### https://cdpn.io/pen/MLRbdY
-[![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/MLRbdY?editors=0100)
-
-
----
-
-# Proj 1 Grading Rubric
-
-.text-smaller[https://docs.google.com/spreadsheets/d/14OvRJcowtc2IpjVv1EGY4tRlp3xSzL0Yzvn0urztFks/edit?usp=sharing]
-
-# Proj 2 Info
-
-https://mica-web.github.io/gd-220/proj2
+- Understand the context
+- Communicate the **WHY**
 
 
 ???
-- For this assignment, will only get "in development" mark on HTML and CSS if you fail to correct something I have already pointed out in your code review
-- This, unfortunately, cannot apply to you if you did not give me a PR checkin to review this weekend
 
+- understand the context and audience that is being designed for; you may not be in that audience, so be prepared to check your personal preferences
+- not about what you like or do not; your favorite colors don't play into this at all
+- figure out the _why_ before you share your feedback
+- make statements about what's effective and _why_
+
+
+--
+count: false
+
+- Be descriptive about any problems _without_ being prescriptive about the solution
+
+
+???
+- Folks must specifically ask for prescriptive feedback.
+- I will cut you off if you head in this direction; I won't like it, but I'll do it.
+
+
+---
+
+# Your Responsibilities
+
+## Receiving feedback
+
+- Learn your tell
+- Set your expectations
+- Ownership
+
+
+???
+- learn what you, personally, do when you are feeling defensive
+- spot that and squash it
+- going to forever be getting feedback on your work, recommend learning how to be receptive to feedback as early as possible
+- don't go into a critique or feedback session expecting to walk out without actionable feedback; you're in school, you're here to learn and shouldn't be setting yourself up with the expectations of knocking something out of the park in a first draft
+- have your own questions, own the things you are strugging with or uncertain about (but don't lead with them)
+- you own the design, you own the process and will make the final call about what feedback to respond to and attempt to resolve
+
+
+---
+
+# During presentations + critiques
+
+## Shared understanding + agreements
+
+1. Be present and undistracted
+1. Listen before speaking
+1. Ask questions, don't rely only on statements
+1. Know the **WHY**
+
+
+???
+- For all involved: giving and receiving feedback
+- Students read each one and interpret
+- questions or objections?
+- @timer=
+- X critiques @ 8m each = @timer 
+- @break = 10m/
+
+
+---
+
+- discuss workflows
+    - design in browser
+    - pixel perfect comps
+    - style tiles
+    - wireframes
+      - can be design program or code
+    - paper sketches
+
+
+
+- discuss proj2
 
 </textarea>
   <script src="/js/remark-latest.min.js" type="text/javascript">
