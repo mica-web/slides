@@ -1,14 +1,3 @@
-# Agenda
-
-1. Q&A
-    - Slack
-    - HTML
-1. Discuss W3 reading
-1. More HTML
-1. Intro to CSS
-1. Proj 1 overview
-
-
 What are the benefits of a text editor? Name at least two.
 What is git?
 What is GitHub?
