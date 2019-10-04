@@ -14,16 +14,7 @@ count: false
 
 # Agenda
 
-- Discuss reading
-- Troubleshooting
-- Learn about:
-    - CSS variables
-    - Image formats + considerations
-- Wrapping  up Project 2
-
-
-???
-Before we start, any general questions about grading & proj 1?
+- Discuss readings
 
 
 ---
@@ -44,44 +35,104 @@ count: false
 
 
 ---
+background-image: url(img/06_boxmodel.jpg)
 
-# Troubleshooting
+# Box model
+
+
+???
+- we previously talked about the box model: that each HTML element is a rectangle that is influenced by its margins, border, padding and content size
+- keep this in mind as we move on to coding layouts
+
+
+---
+# Box model
+
+![box model diagram of a generic site layout](img/06_boxmodel-sitelayout.png)
+
+
+???
+- layouts are built out of these same blocks
+
+
+---
+# Box model
+
+![box model diagram of a photo gallery](img/06_boxmodel-gallery.png)
+
+
+---
+# CSS Layout
+
+
+???
+Let's move on to learning the CSS to handle multiple components and how they relate to each other
 
 
 --
 count: false
 
-- Slack
+- `display`
+- `position`
+- `z-index`
 
 
 ???
-This is the primary way I will reach out to you outside of class and expect you to be responsive.
-Responsive doesn't mean you reply in 10, 30 mins. But within a day or two feels reasonable?
-Make sure you are getting Slack notifications, via app or email.
+- display
+- block
+- takes up 100% of its parent element unless that's overridden in some other way
+- they are laid out on their own line
+- inline
+- only takes up as much space as its content, padding and border need
+- width and height calculated by browsers based on content; you can not declare a height and width on an inline element
+- inline-block
+- like above, but with more control
+- can declare height, width, margins, padding
+
+https://codepen.io/angeliquejw/pen/YgKwGe?editors=1100
+@timer = 10m / 15
+
+- position
+- static (default)
+- relative to its normal position
+- absolute
+- containers
+- example: https://codepen.io/angeliquejw/pen/bZbEvP?editors=1100
+@timer = 10m / 25
 
 
---
-count: false
+---
+background-image: url(img/06_examples.png)
+class: bkgd-contain
 
-- In-class pushes
+# Try it
 
 
 ???
-When we all push a branch and PR to GitHub in class, everyone does that thing.
-This prevents you from having issues with your PR outside of class and being unable to resolve them.
-Since PRs are what is graded, you must create them in class with everyone else.
+- start here: https://codepen.io/angeliquejw/pen/a75364461e08496b5a1750f5fb77de89?editors=1100
+- solution: https://codepen.io/angeliquejw/pen/b536d0410e38e54052f883363d8fa503?editors=1100
+@timer = 20m / 45
 
 
---
-count: false
-
-Questions or issues?
-
+---
 
 ???
-@timer 5m / 25
-@timer 60m / 85
+- z-index
+- Use example 5 above
+- @timer = 5m / 50
 
+- avoid float now if anything else will work
+- and remember to use clearfix if you use floats
+- @timer = 5m / 55
+- explicit vs relative sizing
+- vertical-align
+- @timer = 10m / 65
+- min- and max- height and width
+- vh, vw
+- @timer = 10m / 75
+
+
+---
 
 ---
 
@@ -122,11 +173,22 @@ reduce repetition, reduce errors
 --color-crimson: hsl(360, 90%, 15%);
 ```
 
+--
+count: false
+
+```css
+--font-serif: 'Merriweather', 'Georgia', serif;
+```
+
 
 ???
 - two dashes in front of name
 - no spaces in name
 - variable name is case sensitive
+- my examples are for color and font names, but can be used elsewhere
+- I recommend starting with these things, however
+- Limitations: Can only be used as property values NOT property names
+
 
 
 ---
@@ -138,7 +200,7 @@ count: false
 
 ```css
 :root {
-  --color-crimson: hsl(360, 90%, 15%);
+--color-crimson: hsl(360, 90%, 15%);
 }
 ```
 
@@ -155,23 +217,38 @@ count: false
 
 
 ---
+
+# CSS variables
+
+## Using CSS variables
+
+### Before
+
+```css
+p {
+color: hsl(360, 90%, 15%);
+}
+```
+
+
+---
 count: false
 
 # CSS variables
 
-## Using your variable
+## Using CSS variables
 
-.text-smaller[
+### After
+
 ```css
 :root {
-  --color-crimson: hsl(360, 90%, 15%);
+--color-crimson: hsl(360, 90%, 15%);
 }
 ```
-]
 
 ```css
 p {
-  color: var(--color-crimson);
+color: var(--color-crimson);
 }
 ```
 
@@ -181,48 +258,20 @@ replaces traditional value
 
 like CSS classes -- you have to create them in the HTML, then attach styles to them in your stylesheet -- here you have to create and define the variable before you can use it
 
-@timer 10m / 10
-
-
----
-count: false
-
-# CSS variables
-
-## Referencing
-
-.text-smaller[
-```css
-:root {
-  --font-bold: 'NeueAlteGrotesk-Bold', sans-serif;
-  --color-crimson: hsl(360, 90%, 15%);
-}
-```
-]
-
-```css
-p {
-  color: var(--color-crimson);
-  font-family: var(--font-bold);
-}
-```
-
-
-???
-My examples were all around color and this or font names is how I recommend starting to use varibles, but they are not limited to these things!
-
-Limitations: Can only be used as property values NOT property names
+@timer 10m
 
 
 ---
 # CSS variables
+
+## CodePen demo
 
 [![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/drpgJx?editors=1100#0)
 
-### https://cdpn.io/drpgJx
 
 
 ???
+### https://cdpn.io/pen/drpgJx
 - cascade
 @timer 10m / 20
 
@@ -238,237 +287,8 @@ class: center, middle, title
 
 
 ---
-count: false
 
-# Agenda
-
-- ~~Discuss reading~~
-- ~~Troubleshooting~~
-- Learn about:
-  - ~~CSS variables~~
-  - Image formats + considerations
-- Wrapping up Project 2
-
-
-
----
-
-# Web Style Guide on Images
-
-![screenshot of reading](img/07_reading.png)
-
-
-???
-anyone remember this reading?
-bit lengthy, but let's dive into 3 specific bits: image types, image formats and image size
-
-
----
-
-# Image types
-
-- raster _vs._ vector
-
-
-???
-raster, fine grid of pixels; used for photos, artwork
-vector, mathematical; used for diagrams, charts, icons
-
-
---
-count: false
-
-# Image formats
-
-- GIF
-- JPG
-- PNG
-
-
-???
-What do they have in common? (raster)
-When to use which?
-- GIF
-  - pros: animated, flat expanses of a single color field, can remove colors not in use
-  - cons: weak concept of transparency (based on single color, not area), shading/gradients/photography (256 colors)
-    - interlaced vs non-interlaced?
-- JPG
-    - pros: great for photos (16.8m colors)
-    - cons: lossy, no transparency
-- PNG
-    - pros: designed for the web, sophisticated transparency
-    - cons: lossless (yay data, boo file size)
-
-    
---
-count: false
-
-- SVG
-
-
-???
-- SVG
-  - pros: scaleable, transparency, works simply on retina and other displays
-  - cons: more complicated to integrate, more choices, accessibility (no `alt` text)
-@timer 10m / 35
-
----
-
-# Image size
-
-- width + height
-- resolution
-- file size
-
-
-???
-- resize images to be a reasonable width relative to your layout
-  - for proj 2, max-width of 640px so no reason for any images to be wider than that
-- resolution; generally a nonissue, but can set it 96ppi if you're just looking for an answer
-- file size, the most important
-    - even after "save/export for web" use additional compression tools
-    - aim for 100k or lower
-
-@timer 5m / 40
-
----
-
-# Project 1 Images: Originals
-
-![proj 1 image file sizes](img/07_p1-filesize.png)
-
-
-???
-top 5 largest images from project 1; largest over 7mb and nearly 5k pixel wide
-
-
----
-
-# Project 1 Images: Resized
-
-![proj 1 images resized](img/07_p1-resized.png)
-
-
-???
-resized each to 600px wide and ran through compressor
-only one still over limit (sneaky, 107.6kb, but still a 95%-plus decrease from the original)
-
-
----
-
-# Why does this matter?
-
-[![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/KEgebo?editors=1100)
-
-### https://cdpn.io/pen/KEgebo
-
-
-???
-show network tab and throttle to 4g
-@timer 5m / 45
-
-
----
-# Compressing images
-
-![tinypng](img/07_tinypng.png)
-
-### https://tinypng.com/
-
-
----
-
-# Inline images
-
-[![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/BbLrgG)
-
-### https://cdpn.io/pen/BbLrgG
-
-
----
-
-# Background images
-
-CSS properties
-
-- `background-repeat`
-- `background-size`
-
-[![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/BbLrgG)
-
-### https://cdpn.io/pen/BbLrgG
-
-
-???
-@timer 10m / 55
-
-
----
-class: center, middle, title
-
-# Images Q&A
-
-
-???
-@break 10m / 65
-
-
----
-
-# SVGs
-
-[![codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/eXdLgz)
-
-### https://cdpn.io/pen/eXdLgz
-
-
-???
-@timer 15m / 95
-
-
----
-# Compressing SVGs
-
-![SVG OMG](img/07_svgomg.png)
-
-### https://jakearchibald.github.io/svgomg/
-
-
----
-# Icon fonts
-
-[![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/EMgLaN)
-
-### https://cdpn.io/pen/EMgLaN
-
-### https://fontawesome.com/
-
-
-???
-@timer 10m / 105
-
-
----
-class: center, middle
-
-## Browser support
-
-
-### https://caniuse.com/
-
-
-???
-@timer 5m / 110
-
-
----
-class: center, middle, title
-
-# SVGs & Icons Q&A
-
-
-???
-@timer 5m / 115
+# Troubleshooting CSS
 
 
 ---
@@ -486,7 +306,7 @@ class: center, middle, title
 count: false
 
 ## 2. Due date
-Sunday, March 10 @ EOD
+Thursday, October 24
 
 
 ???
@@ -496,18 +316,6 @@ Sunday, March 10 @ EOD
 
 
 --
-count: false
-
-_plus_ 2 readings for next week
-
---
-count: false
-
-_and_ 1-2 example web sites ✨designed well✨ for mobile users
-
-
-???
-8:30? rest of the time to work in class
 
 
 </textarea>
