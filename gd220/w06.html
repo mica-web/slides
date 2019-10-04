@@ -13,7 +13,8 @@ count: false
 
 # First things first
 
-1. Add style tiles to Google Drive
+Add your style tiles and comps to the assignments Google Drive
+- link in #general Slack channel 👍
 - must be in PDF, PNG or JPG
 - see notes about naming your file(s) (`_README` document in the project folder)
 
@@ -26,10 +27,9 @@ count: false
 - Notes from project 1
 - Merging project 1
 - Feedback on style tiles and comps
-- CSS layout + troubleshooting
-- Hands-on with CSS layout
+- Image formats + considerations
 - Set up project 2
-
+- Creating markup from comps
 
 ---
 
@@ -65,10 +65,17 @@ count: false
 # Q&A
 
 
+???
+@timer 10m
+
+
 ---
 class: center, middle, title
 
 # Merging PR 1
+
+???
+@timer 10 / 20m
 
 
 ---
@@ -79,9 +86,22 @@ count: false
 - ~~Notes from project 1~~
 - ~~Merging project 1~~
 - Feedback on style tiles and comps
-- CSS layout + troubleshooting
-- Hands-on with CSS layout
+- Image formats + considerations
 - Set up project 2
+- Creating markup from comps
+
+
+---
+
+# Design feedback
+
+## First
+
+Read [6 principles of visual hierarchy for designers](https://99designs.com/blog/tips/6-principles-of-visual-hierarchy/)
+
+
+???
+@timer 15 / 35m
 
 
 ---
@@ -89,7 +109,7 @@ count: false
 # Design feedback
 
 
-## First
+## Now
 
 ### 10 minutes
 reviewing group members' designs
@@ -100,6 +120,19 @@ reviewing group members' designs
 discussing _each_ person's work as a group
 
 
+???
+@timer 20 / 55m
+
+
+---
+class: center, middle, title
+count: false
+
+# Q&A
+
+## STYLE TILES + COMPS
+
+
 ---
 count: false
 
@@ -108,109 +141,193 @@ count: false
 - ~~Notes from project 1~~
 - ~~Merging project 1~~
 - ~~Feedback on style tiles and comps~~
-- CSS layout + troubleshooting
-- Hands-on with CSS layout
+- Image formats + considerations
 - Set up project 2
+- Creating markup from comps
+
 
 ---
-background-image: url(img/06_boxmodel.jpg)
 
-# Box model
+# Image types
+
+- raster _vs._ vector
 
 
 ???
-- we previously talked about the box model: that each HTML element is a rectangle that is influenced by its margins, border, padding and content size
-- keep this in mind as we move on to coding layouts
-
-
----
-# Box model
-
-![box model diagram of a generic site layout](img/06_boxmodel-sitelayout.png)
-
-
-???
-- layouts are built out of these same blocks
-
-
----
-# Box model
-
-![box model diagram of a photo gallery](img/06_boxmodel-gallery.png)
-
-
----
-# CSS Layout
-
-
-???
-Let's move on to learning the CSS to handle multiple components and how they relate to each other
+- raster, fine grid of pixels; used for photos, artwork
+- vector, mathematical; used for diagrams, charts, icons
 
 
 --
 count: false
 
-- `display`
-- `position`
-- `z-index`
+# Image formats
+
+- GIF
+- JPG
+- PNG
 
 
 ???
-- display
-    - block
-      - takes up 100% of its parent element unless that's overridden in some other way
-      - they are laid out on their own line
-    - inline
-      - only takes up as much space as its content, padding and border need
-      - width and height calculated by browsers based on content; you can not declare a height and width on an inline element
-    - inline-block
-      - like above, but with more control
-      - can declare height, width, margins, padding
-
-    https://codepen.io/angeliquejw/pen/YgKwGe?editors=1100
-    @timer = 10m / 15
-
-- position
-    - static (default)
-    - relative to its normal position
-    - absolute
-    - containers
-    - example: https://codepen.io/angeliquejw/pen/bZbEvP?editors=1100
-    @timer = 10m / 25
+What do they have in common? (raster)
+When to use which?
+- GIF
+- pros: animated, flat expanses of a single color field, can remove colors not in use
+- cons: weak concept of transparency (based on single color, not area), shading/gradients/photography (256 colors)
+- JPG
+- pros: great for photos (16.8m colors)
+- cons: lossy (degrades as compressed), no transparency
+- PNG
+- pros: designed for the web, sophisticated transparency
+- cons: lossless (yay data, boo file size)
 
 
----
-background-image: url(img/06_examples.png)
-class: bkgd-contain
+--
+count: false
 
-# Try it
+- SVG
 
 
 ???
-- start here: https://codepen.io/angeliquejw/pen/a75364461e08496b5a1750f5fb77de89?editors=1100
-- solution: https://codepen.io/angeliquejw/pen/b536d0410e38e54052f883363d8fa503?editors=1100
-@timer = 20m / 45
+- Scalable Vector Graphic
+- pros: scaleable, transparency, works simply on retina and other displays
+- cons: more complicated to integrate, more choices, accessibility (no `alt` text)
+@timer 10 / 65m
 
 
 ---
 
-???
-- z-index
-    - Use example 5 above
-    - @timer = 5m / 50
+# Image size
 
-- avoid float now if anything else will work
-- and remember to use clearfix if you use floats
-- @timer = 5m / 55
-- explicit vs relative sizing
-- vertical-align
-- @timer = 10m / 65
-- min- and max- height and width
-- vh, vw
-- @timer = 10m / 75
+- width + height
+- resolution
+- file size
+
+
+???
+- resize images to be a reasonable width relative to your layout
+- for proj 2, max-width of 640px so no reason for any images to be wider than that
+- resolution; generally a nonissue, but can set it 96ppi if you're just looking for an answer
+- file size, the most important
+- even after "save/export for web" use additional compression tools
+- aim for 100k or lower
+
+@timer 5 / 70m
 
 
 ---
+
+# Why does this matter?
+
+[![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/KEgebo?editors=1100)
+
+### https://cdpn.io/pen/KEgebo
+
+
+???
+show network tab and throttle to 4g
+
+@timer 5 / 75m
+
+
+---
+# Compressing images
+
+![tinypng](img/07_tinypng.png)
+
+### https://tinypng.com/
+
+
+---
+
+# Inline images
+
+[![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/7d442395dcfa3d92c6a587235a623649?editors=1100)
+
+
+---
+
+# Background images
+
+CSS properties
+
+- `background-repeat`
+- `background-size`
+
+
+???
+@timer 10 / 85m
+
+
+---
+class: center, middle, title
+
+# Images Q&A
+
+
+???
+@timer 10 / 95m
+
+
+---
+
+# SVGs
+
+[![codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/eXdLgz)
+
+### https://cdpn.io/pen/eXdLgz
+
+
+???
+@timer 15 / 110m
+
+
+---
+# Compressing SVGs
+
+![SVG OMG](img/07_svgomg.png)
+
+### https://jakearchibald.github.io/svgomg/
+
+
+---
+# Icon fonts
+
+[![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/EMgLaN)
+
+### https://cdpn.io/pen/EMgLaN
+
+### https://fontawesome.com/
+
+
+???
+@timer 10 / 120m
+
+
+---
+class: center, middle, title
+
+# SVGs & Icons Q&A
+
+
+???
+@timer 5 / 125m
+@break dinner
+
+---
+count: false
+
+# Agenda
+
+- ~~Notes from project 1~~
+- ~~Merging project 1~~
+- ~~Feedback on style tiles and comps~~
+- ~~Image formats + considerations~~
+- Set up project 2
+- Creating markup from comps
+
+
+--
 
 # Project 2 set up
 
@@ -221,53 +338,50 @@ count: false
 1. Open VS Code
 1. Switch branch to master
 1. Create a new branch ➡️ `project2`
-    - Remember there can be no spaces in branch names
-    - Make sure the `origin` is master
+- Remember there can be no spaces in branch names
+- Make sure the `origin` is master
 1. Switch to the new `project2` branch
-1. Create a `project2` directory for your card markup, styles and assets 
+1. Create a `project2` directory for your card markup, styles and assets
 1. Create an `index.html` inside the `project2` directory
 1. Commit and push changes of new branch to GH
 1. Verify your changes on GH
-  - Should see an option to create a new PR; do so 🎉
+- Should see an option to create a new PR; do so 🎉
 ]
 
 
 ???
-- @timer = 10m / 100
+- @timer = 10m
+
+
+---
+count: false
+
+# Agenda
+
+- ~~Notes from project 1~~
+- ~~Merging project 1~~
+- ~~Feedback on style tiles and comps~~
+- ~~Image formats + considerations~~
+- ~~Set up project 2~~
+- Creating markup from comps
 
 
 ---
 
-# Troubleshooting CSS
+# Creating markup from comps
 
 
 ---
-
-# Remainder of class
-
-.text-smaller[
-- Work on markup for your card
-- Start styles for card
-]
-
-
-???
-- Other than `html`, `body`, `*` everything should have a classname?
-- Always declare a background-color and font color for your body
-
-
---
 count: false
 
 # Next week
 
-.text-smaller[
-- Two homework readings
-- Checkin on progress + troubleshooting
-- Project will be due next Sunday, March 10
-]
+2 readings -- links on class site
 
-💡.text-smaller[Remember to use HTML and CSS comments to note any questions or problems]
+- questions, comments/insights, quotes
+
+HTML for your card
+
 
 </textarea>
   <script src="/js/remark-latest.min.js" type="text/javascript">
