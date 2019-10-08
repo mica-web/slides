@@ -35,17 +35,37 @@ count: false
 
 
 ---
+class: center, middle, title
+count: false
+
+# Box model
+
+
+???
+- Explains how things are sized, spaced and positioned in CSS.
+- The more you understand this, the less code and trial and error you'll have to write.
+- Three things to keep in mind re: box model
+
+
+---
+
+# Box model
+
+![display vs inline elements](img/07_block-inline.png)
+
+
+---
 background-image: url(img/06_boxmodel.jpg)
 
 # Box model
 
 
 ???
-- we previously talked about the box model: that each HTML element is a rectangle that is influenced by its margins, border, padding and content size
-- keep this in mind as we move on to coding layouts
+- each HTML element is a rectangle that is influenced by its margins, border, padding and content size
 
 
 ---
+
 # Box model
 
 ![box model diagram of a generic site layout](img/06_boxmodel-sitelayout.png)
@@ -56,9 +76,32 @@ background-image: url(img/06_boxmodel.jpg)
 
 
 ---
+
 # Box model
 
 ![box model diagram of a photo gallery](img/06_boxmodel-gallery.png)
+
+
+---
+
+# Box model
+
+```CSS
+box-sizing: border-box;
+```
+
+
+---
+
+# Box model
+
+- Block-level _vs._ inline elements
+- Box model
+- Box sizing
+
+
+???
+- keep these three things in mind as we move on to coding layouts
 
 
 ---
@@ -69,52 +112,108 @@ background-image: url(img/06_boxmodel.jpg)
 Let's move on to learning the CSS to handle multiple components and how they relate to each other
 
 
+---
+
+# CSS Layout
+
+- `display`
+
+
+???
+- block
+  - takes up 100% of its parent element unless that's overridden in some other way
+  - they are laid out on their own line
+- inline
+  - only takes up as much space as its content, padding and border need
+  - width and height calculated by browsers based on content; you can not declare a height and width on an inline element
+
+
 --
-count: false
+
+## https://cdpn.io/pen/YgKwGe
+[![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/YgKwGe?editors=1100)
+
+
+???
+- inline-block
+  - like above, but with more control
+  - can declare height, width, margins, padding
+
+@timer = 10m / 15
+
+
+---
+
+# CSS Layout
+
+- `display`
+- `position`
+
+
+???
+
+- static (default)
+- relative to its normal position
+- absolute
+- fixed
+  - containers
+
+
+--
+## https://cdpn.io/pen/bZbEvP
+[![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/bZbEvP?editors=1100)
+
+
+???
+@timer = 10m / 25
+
+
+---
+
+# CSS Layout
 
 - `display`
 - `position`
 - `z-index`
 
 
-???
-- display
-- block
-- takes up 100% of its parent element unless that's overridden in some other way
-- they are laid out on their own line
-- inline
-- only takes up as much space as its content, padding and border need
-- width and height calculated by browsers based on content; you can not declare a height and width on an inline element
-- inline-block
-- like above, but with more control
-- can declare height, width, margins, padding
-
-https://codepen.io/angeliquejw/pen/YgKwGe?editors=1100
-@timer = 10m / 15
-
-- position
-- static (default)
-- relative to its normal position
-- absolute
-- containers
-- example: https://codepen.io/angeliquejw/pen/bZbEvP?editors=1100
-@timer = 10m / 25
-
-
 ---
-background-image: url(img/06_examples.png)
-class: bkgd-contain
 
 # Try it
 
+![example images to recreate using display and position](img/07_examples1-2.png)
+
+## Remember to FORK and RENAME your CodePen
 
 ???
 - start here: https://codepen.io/angeliquejw/pen/a75364461e08496b5a1750f5fb77de89?editors=1100
 - solution: https://codepen.io/angeliquejw/pen/b536d0410e38e54052f883363d8fa503?editors=1100
-@timer = 20m / 45
+
+@timer = 8m /
 
 
 ---
+
+# Try it
+
+![example images to recreate using display and position](img/07_examples3-5.png)
+
+## Remember to FORK and RENAME your CodePen
+
+???
+- start here: https://codepen.io/angeliquejw/pen/a75364461e08496b5a1750f5fb77de89?editors=1100
+- solution: https://codepen.io/angeliquejw/pen/b536d0410e38e54052f883363d8fa503?editors=1100
+
+@timer = 12m / 
+
+
+---
+
+# CSS Layout: Real World Edition
+
+![social media links](img/07_social-media-example.png)
+![basic layout](img/07_layout-example.png)
+
 
 ???
 - z-index
