@@ -1,0 +1,3 @@
+- better commits
+- body styles (background-color, font, color)
+- organizing styles
