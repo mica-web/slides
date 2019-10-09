@@ -14,25 +14,12 @@ count: false
 
 # Agenda
 
+- Box model review
+- CSS layout
+- CSS variables
+- Your layout questions
 - Discuss readings
-
-
----
-
-# Discuss on readings
-
-## Beyond the interface
-
-
---
-count: false
-
-## Make it boring
-
-
-???
-@timer 10m ea / 20
-
+- Proj 2 HTML review + work time
 
 ---
 class: center, middle, title
@@ -52,6 +39,13 @@ count: false
 # Box model
 
 ![display vs inline elements](img/07_block-inline.png)
+
+
+???
+- First: what kind of element are you dealing with -- block or inline?
+- We've discussed this before:
+  - block elements are full-width, start a new line
+  - inline elements only take up as much width as the content, can appear on the same line as other elements or other inline elements; vertical padding, margin and border don't push surrounding elements away
 
 
 ---
@@ -82,6 +76,10 @@ background-image: url(img/06_boxmodel.jpg)
 ![box model diagram of a photo gallery](img/06_boxmodel-gallery.png)
 
 
+???
+- so, every step of the way, you need to be considering these properties: especially margin and padding
+
+
 ---
 
 # Box model
@@ -91,17 +89,27 @@ box-sizing: border-box;
 ```
 
 
+???
+- box sizing alters the default CSS box model
+- default is "content-box" where border and padding increase the width/height even after you've set them explicitly
+- preferred is "border-box" which tells the browser to account for any border and padding in the values you specify for an element's width and height
+
+
 ---
 
 # Box model
 
-- Block-level _vs._ inline elements
+- Block _vs._ inline elements
 - Box model
+  - margin, border, padding + content
 - Box sizing
+    - go for `border-box`
 
 
 ???
 - keep these three things in mind as we move on to coding layouts
+
+@ timer 10m
 
 
 ---
@@ -113,6 +121,7 @@ Let's move on to learning the CSS to handle multiple components and how they rel
 
 
 ---
+count: false
 
 # CSS Layout
 
@@ -129,6 +138,7 @@ Let's move on to learning the CSS to handle multiple components and how they rel
 
 
 --
+count: false
 
 ## https://cdpn.io/pen/YgKwGe
 [![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/YgKwGe?editors=1100)
@@ -139,7 +149,7 @@ Let's move on to learning the CSS to handle multiple components and how they rel
   - like above, but with more control
   - can declare height, width, margins, padding
 
-@timer = 10m / 15
+@timer = 10m / 25
 
 
 ---
@@ -160,21 +170,14 @@ Let's move on to learning the CSS to handle multiple components and how they rel
 
 
 --
+count: false
+
 ## https://cdpn.io/pen/bZbEvP
 [![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/bZbEvP?editors=1100)
 
 
 ???
-@timer = 10m / 25
-
-
----
-
-# CSS Layout
-
-- `display`
-- `position`
-- `z-index`
+@timer = 10m / 35
 
 
 ---
@@ -189,10 +192,11 @@ Let's move on to learning the CSS to handle multiple components and how they rel
 - start here: https://codepen.io/angeliquejw/pen/a75364461e08496b5a1750f5fb77de89?editors=1100
 - solution: https://codepen.io/angeliquejw/pen/b536d0410e38e54052f883363d8fa503?editors=1100
 
-@timer = 8m /
+@timer = 8m / 43
 
 
 ---
+count: false
 
 # Try it
 
@@ -204,8 +208,45 @@ Let's move on to learning the CSS to handle multiple components and how they rel
 - start here: https://codepen.io/angeliquejw/pen/a75364461e08496b5a1750f5fb77de89?editors=1100
 - solution: https://codepen.io/angeliquejw/pen/b536d0410e38e54052f883363d8fa503?editors=1100
 
-@timer = 12m / 
+@timer = 12m / 55
 
+
+---
+
+# CSS Layout
+
+- `display`
+- `position`
+- `z-index`
+
+
+???
+- z-index
+- Use example 5 above
+- @timer = 5m / 60
+
+
+---
+
+# CSS Layout
+
+- `display`
+- `position`
+- `z-index`
+- `float`
+
+--
+count: false
+
+## https://cdpn.io/pen/oNNXEpa
+[![go to codepen](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/oNNXEpa?editors=1100)
+
+
+???
+- Reminder to avoid `float` for layouts -- okay for elements like photos and captions
+- and MUST use clearfix if you use floats
+- @timer = 10m / 70 (5:15?)
+- @break? = 10m / 80
 
 ---
 
@@ -216,22 +257,23 @@ Let's move on to learning the CSS to handle multiple components and how they rel
 
 
 ???
-- z-index
-- Use example 5 above
-- @timer = 5m / 50
-
-- avoid float now if anything else will work
-- and remember to use clearfix if you use floats
-- @timer = 5m / 55
-- explicit vs relative sizing
+- https://codepen.io/angeliquejw/pres/BaaNKQB
+- https://codepen.io/angeliquejw/pres/NWWqNdq
 - vertical-align
-- @timer = 10m / 65
-- min- and max- height and width
-- vh, vw
-- @timer = 10m / 75
+- @timer = 15m / 95 
 
 
 ---
+class: center, middle, title
+count: false
+
+
+# Layout Q&A
+
+
+???
+- @timer = 10m / 105
+
 
 ---
 
@@ -357,7 +399,7 @@ replaces traditional value
 
 like CSS classes -- you have to create them in the HTML, then attach styles to them in your stylesheet -- here you have to create and define the variable before you can use it
 
-@timer 10m
+- @timer = 10m / 115
 
 
 ---
@@ -365,56 +407,64 @@ like CSS classes -- you have to create them in the HTML, then attach styles to t
 
 ## CodePen demo
 
-[![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/drpgJx?editors=1100#0)
+[![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/drpgJx)
 
 
 
 ???
-### https://cdpn.io/pen/drpgJx
+### https://codepen.io/angeliquejw/pres/drpgJx
 - cascade
-@timer 10m / 20
+- @timer = 10m / 125
 
 
 ---
 class: center, middle, title
+count: false
 
 # CSS Variables Q&A
 
 
 ???
-@timer 5m / 25
+@timer 5m / 135
+
+
+---
+count: false
+
+# Agenda
+
+- ~~Box model review~~
+- ~~CSS layout~~
+- ~~CSS variables~~
+- Your layout questions
+- Discuss readings
+- Proj 2 HTML review + work time
+
+
+---
+class: center, middle, title
+count: false
+
+# Your layout questions
 
 
 ---
 
-# Troubleshooting CSS
+# Discuss on readings
 
-
----
-
-# Project 2
-
-## 1. Rubric
-
-
-???
-@timer 5m / 120
+## Beyond the interface
 
 
 --
 count: false
 
-## 2. Due date
-Thursday, October 24
+## Make it boring
 
 
 ???
-- requirements
-- best practices
-- rubric
+@timer 10m ea / 20
 
 
---
 
 
 </textarea>
