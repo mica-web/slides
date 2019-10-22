@@ -13,4 +13,14 @@
     transform: scale(1) !important;
     width: 100% !important;
   }
+
+  .remark-slide::before {
+    content: unset;
+  }
+
+  .remark-slide-content:not(.title)>h1 {
+    background-image: none;
+    background-position: unset;
+    background-size: unset;
+  }
 }
