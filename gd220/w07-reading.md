@@ -15,8 +15,14 @@
 
 > how can we use digital to evoke feelings?
 
+Do you have examples where a brand brought you delight? comfort? 
+
 
 # Make it boring
+
+> so I churned out Frankenstein monsters that stitched together every new thing I learned.
+
+> Every interaction you simplify, every boondoggle you can remove, represents a benefit to the person who uses what you make.
 
 Limitations around accessibility and bandwidth aren't hinderances to your great design, they are your users' reality
 
