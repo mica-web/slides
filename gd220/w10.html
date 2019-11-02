@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Week 10 // GD 220</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <base target="_blank">
+  <link rel='stylesheet' href='styles/styles.css'>
+</head>
+
+<body>
+  <textarea id="source">
+count: false
+
+# Agenda
+
+- Discuss readings
+- Questions about comps
+- Merging project 2
+- Setting up project 3
+- Form markup
+- CSS variables
+
+
+---
+
+# Readings
+
+## Creating More Inclusive and Culturally Sensitive Forms
+
+
+--
+count: false
+
+## Styling Forms Accessibly
+
+---
+
+# Form Comps
+
+
+---
+
+# Project 2
+## Wrapping up
+
+# Project 3
+## Getting started
+
+
+---
+---
+
+# CSS variables
+
+
+???
+First thing's first...
+
+
+--
+count: false
+
+- What's a **variable**?
+
+
+???
+shorthand, alias, nickname
+
+
+--
+count: false
+
+- Why would we use variables?
+
+
+???
+reduce repetition, reduce errors
+
+
+---
+
+# CSS variables
+
+- What do they look like?
+
+```css
+--color-crimson: hsl(360, 90%, 15%);
+```
+
+--
+count: false
+
+```css
+--font-serif: 'Merriweather', 'Georgia', serif;
+```
+
+
+???
+- two dashes in front of name
+- no spaces in name
+- variable name is case sensitive
+- my examples are for color and font names, but can be used elsewhere
+- I recommend starting with these things, however
+- Limitations: Can only be used as property values NOT property names
+
+
+
+---
+count: false
+
+# CSS variables
+
+## Global
+
+```css
+:root {
+--color-crimson: hsl(360, 90%, 15%);
+}
+```
+
+--
+count: false
+
+## Scoped
+
+```css
+.your-class {
+--color-crimson: hsl(360, 90%, 15%);
+}
+```
+
+
+---
+
+# CSS variables
+
+## Using CSS variables
+
+### Before
+
+```css
+p {
+color: hsl(360, 90%, 15%);
+}
+```
+
+
+---
+count: false
+
+# CSS variables
+
+## Using CSS variables
+
+### After
+
+```css
+:root {
+--color-crimson: hsl(360, 90%, 15%);
+}
+```
+
+```css
+p {
+color: var(--color-crimson);
+}
+```
+
+
+???
+replaces traditional value
+
+like CSS classes -- you have to create them in the HTML, then attach styles to them in your stylesheet -- here you have to create and define the variable before you can use it
+
+- @timer = 10m / 115
+
+
+---
+# CSS variables
+
+## CodePen demo
+
+[![codepen link](img/logo_codepen.png)](https://codepen.io/angeliquejw/pres/drpgJx)
+
+
+
+???
+### https://codepen.io/angeliquejw/pres/drpgJx
+- cascade
+- @timer = 10m / 125
+
+
+---
+class: center, middle, title
+count: false
+
+# CSS Variables Q&A
+
+
+???
+@timer 5m / 135
+
+
+---
+
+# Homework
+
+## For next week
+- 🎉 no class 🎉
+- proj 4 competitor analysis due
+- proj 4 content due
+- work on your markup and styles for proj 3 (nothing to turn in, tho)
+
+
+---
+
+# Homework
+
+## For 11/14
+- proj 3 due
+  - we will spend the first half of the class doing some troubleshooting proj 3, but you should show up with the project as close to done as possible
+- proj 4 sketches and designs due
+
+</textarea>
+  <script src="/js/remark-latest.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    var slideshow = remark.create();
+  </script>
+</body>
+
+</html>
