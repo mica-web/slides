@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Week 13 // GD 220</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <base target="_blank">
+  <link rel='stylesheet' href='styles/styles.css'>
+</head>
+
+<body>
+  <textarea id="source">
+count: false
+
+# Agenda
+
+- Submitting Proj 3
+- Accessibility + Inclusive Design
+- Proj 4
+    - starting proj 4 code
+    - nav markup
+    - work on proj 4 markup
+
+
+---
+
+# Submitting Proj 3
+
+1. All changes from VS Code saved and committed
+1. All local code pushed up to GitHub
+1. Verify you have an open pull request for project 3.
+1. Update the pull request description using my template
+### https://github.com/mica-web/gd2/pull/3
+
+---
+
+# What do we know
+
+???
+- What have you feel you already know about accessibile web design?
+- Expect: alt text, screen readers, color contrast?
+
+
+--
+count: false
+
+- `alt` text
+- color contrast
+- screen readers
+
+
+???
+What makes good `alt` text?
+
+
+---
+
+# Accessible by Default
+
+## Be ASAP
+
+### As
+### Semantic
+### As
+### Possible
+
+
+???
+This is why I've dialed in and commented on overuse of DIVs or misusing heading elements
+
+
+---
+
+# Accessible by Default
+
+## Headings
+
+???
+Using headings semantically, H1, H2, H3 creates a readable and useful table of contents for screenreaders
+
+
+--
+count: false
+
+## Links _vs._ buttons
+
+
+--
+count: false
+
+.text-smaller[
+```html
+<a href="https://mica.edu">MICA</a>
+```
+]
+
+.text-smaller[
+```html
+<button type="button">Next</button>
+```
+]
+
+
+---
+
+# Readability
+
+## Body font size
+
+### 14-20px
+
+
+--
+count: false
+
+## Underline
+
+### Use only for links
+
+
+---
+# Color contrast
+
+### contrastchecker.com
+
+
+???
+- be super thoughtful about text in light grey
+
+
+---
+count: false
+
+# Color contrast
+
+- Avoid cues that are based on color only
+
+--
+count: false
+
+![Amazon color picker](img/14_red-green1.jpg)
+
+
+???
+someone with and without protanopia (red–green color blindness)
+
+
+---
+count: false
+
+# Color contrast
+
+- Avoid cues that are based on color only
+
+![Gap color picker](img/14_red-green2.jpg)
+
+
+???
+someone with and without protanopia (red–green color blindness)
+
+
+---
+count: false
+
+# Color contrast
+
+![Use text or icons to convey info too](img/14_color-cues.jpg)
+
+
+---
+
+# Use labels on forms
+
+![example of using labels as placeholders -- don't do this](img/14_use-labels.jpeg)
+
+
+???
+Explain placeholders and labels; placeholder intended to show **example input** not replace label
+
+---
+
+# Focus states
+
+--
+count: false
+
+![example of focus state](img/14_focus-input.png)
+
+
+???
+- communicates where someone is on the page
+- esp beneficial for those who use keyboard to navigate
+
+--
+count: false
+
+```css
+:focus {
+outline: 0;
+}
+```
+
+
+???
+Used to be common to see this, don't do this
+
+
+---
+class: center, middle, title
+
+# What else should we think about when we think about accessibility?
+
+
+???
+So far, we've considered and discussed how our choices might improve or hinder how folks with a vision impairment -- from color blindness to true blindness -- experience a web site and talked about folks using keyboard navigation, which could be related to a mobility impairment or be out of personal preference.
+
+This, in my mind, is a very narrow scope and expectation about what it means to make the information and experiences of the  web accessibile.
+
+
+---
+
+# Inclusive Design
+
+![Microsoft inclusive design toolkit](img/14_inclusive-design.png)
+
+
+???
+Let's expand the parameters of the convo together
+- 15m to read, make notes about anything that surprises you/feels new/like an A HA or any examples you can come up with related to the reading
+- Discuss reading and examples
+
+
+---
+
+# Designing inclusively
+
+- thinking of impairments as permanent _and_ situational _and_ temporary
+
+
+---
+count: false
+
+# Designing inclusively
+
+- your site works in multiple browsers
+
+
+---
+count: false
+
+# Designing inclusively
+
+- your site works in a variety of network situations or without connectivity
+
+
+---
+count: false
+
+# Designing inclusively
+
+- your content is written in an understandable, approachable way
+
+
+---
+
+# Designing for touch
+
+
+???
+- 44x44px per Apple guidelines
+- 45-57px square per MIT Touch Lab; 72px for thumb
+- https://www.smashingmagazine.com/2012/02/finger-friendly-design-ideal-mobile-touchscreen-target-sizes/
+
+
+--
+count: false
+
+![touch guidelines examle](img/14_touch-target-57.jpg)
+
+
+???
+  - smaller requires more accuracy, forces user to change their finger position
+  - target is hidden when we touch it
+  - time to hit target is longer if target is smaller
+
+  
+---
+
+# Workflow
+
+## Don't assume someone is thinking about accessibility of your web projects
+
+### Be that person
+
+
+???
+accessibility is an attribute, while inclusive design is a method
+
+
+Accessibility, not sprinkled on, not added on later; not nice to have
+Needs to be baked into the process
+
+
+Every decision we make can raise or lower barriers to participation in society.
+
+
+---
+
+# ADA + WCAG
+
+--
+count: false
+
+![beyonce sued re: accessibility](img/14_beyonce.png)
+![dominos supreme court case](img/13_dominos.png)
+
+???
+
+ADA Lawsuits (Americans with Disablities Act, 1990 civil rights law)
+- Dominos 2019 -- blind man sued Dominos; Supreme Court refused to hear case, meaning case will go to trial at lower court re: screenreader-unfriendly Dominos app
+  - cost for Dominos to fix its app ~$38k
+- Beyonce 2019 -- shopping portion of site not accessible 
+- Apple 2018 -- "engaged in acts of intentional discrimination" by not being fully accessible to blind or visually-impaired consumers
+- Hulu 2016 by Natl Assoc of the Deaf for lack of closed captions
+- Target 2006
+
+
+
+---
+count: false
+
+# ADA + WCAG
+
+## Web Content and Accessibility Guides
+
+
+???
+- Web Content And Accessibility Guides 2.0, or WCAG 2.0 for short
+
+
+--
+count: false
+
+- Perceivable
+- Operable
+- Understandable
+- Robust
+
+
+???
+- 4 main tenets: POUR - Perceivable, Operable, Understandable, and Robust
+- perceivable means different stress cases don't stop users from reading, watching, or listening to your content
+- operable, which means different stress cases don't keep users from getting to all the pages and filling out the forms
+- Stress cases don't prevent users from understanding the sites' intended meaning
+- Robust basically means stress cases don't prevent users from accessing the content from a wide variety of devices
+
+But, legit, we shouldn't do good out of fear
+
+Elevators, curb cuts, Braille
+
+As designers, you can endeavor to make things pretty
+Or you can do so much more
+
+
+
+- ARIA (Accessible Rich Internet Applications)
+- https://lkopacz.github.io/aria-presentation/
+- https://benrobertson.io/accessibility/principles-getting-started-website-accessibility#principle-4-talk-to-your-computer
+
+      
+
+</textarea>
+  <script src="/js/remark-latest.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    var slideshow = remark.create();
+  </script>
+</body>
+
+</html>
