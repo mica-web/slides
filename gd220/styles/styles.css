@@ -203,6 +203,17 @@ ol + .remark-slide-content p {
   font-weight: normal;
   font-style: normal;
   font-size: 4rem;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 14ch;
+}
+
+.remark-slide-content.title > h1 + h2 {
+  margin-top: -2.5rem;
+}
+
+.remark-slide-content.title--short > h1 {
+  max-width: 12ch;
 }
 
 .remark-slide-content .text-larger {
@@ -260,6 +271,10 @@ ol + .remark-slide-content p {
   font-weight: normal;
   font-style: normal;
   font-size: 1rem;
+}
+
+.no-slide-numbers .remark-slide-number {
+  display: none;
 }
 
 a {

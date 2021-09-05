@@ -84,11 +84,26 @@ $leading: $scale * $base-font-size * $line-height;
     >h1 {
       @include font-grotesk('Black');
       font-size: 4rem;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 14ch;
+
+      +h2 {
+        margin-top: -2.5rem;
+      }
     }
   }
+
+  &.title--short {
+    >h1 {
+      max-width: 12ch;
+    }
+  }
+
   .text-larger {
     font-size: 130%;
   }
+
   .text-smaller {
     font-size: 65%;
   }

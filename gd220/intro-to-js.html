@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Intro to JS</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Cormorant+Garamond:700i|Fira+Mono:400|Fira+Sans'>
+  <link rel='stylesheet' href='styles/styles.css'>
+</head>
+
+<body>
+  <textarea id="source">
+
+class: center, middle, title, no-slide-numbers
+
+# Intro to JavaScript
+
+---
+class: center, middle, no-slide-numbers
+
+.cf[.left-float[
+
+![](intro-js/java.jpg)
+
+This is Java
+
+]
+.right-float[
+
+![](intro-js/js.png)
+
+This is JavaScript
+
+]
+]
+
+---
+class: center, middle, no-slide-numbers
+
+## Java is to JavaScript as...
+
+
+.cf[.left-float[
+
+![](intro-js/cat.jpg)
+
+cat is...
+]
+.right-float[
+
+![](intro-js/catfish.jpg)
+
+...to catfish!
+]
+]
+
+???
+Both programming languages, but you wouldn't want to mistake 'em!
+
+---
+class: center, middle, title, no-slide-numbers
+
+# More about JavaScript
+
+![](intro-js/js.png)
+
+???
+- used by every web browser -- only programming language you can use directly in browser
+- use things you've already worked with/seen:
+  - variables
+  - loops and if/else statements
+
+---
+class: center, middle, title, no-slide-numbers
+
+# Writing variables
+## Introduction to JS
+
+---
+class: center, middle, title, no-slide-numbers
+
+# Writing variables
+## Introduction to JS
+
+???
+- key: value pair
+- variable names:
+  - start with letter
+  - underscore, lowercase, uppercase, numbers valid
+- console.log
+- overwriting
+
+---
+class: center, middle, title, no-slide-numbers
+
+# Using variables + into to types
+## Intro to JS
+
+???
+VID 2
+- concatenation
+- numbers/strings
+- typeof
+- math add vs concatenation
+- browser log, typing in there, too; up arrow repeats code
+
+---
+class: center, middle, title, no-slide-numbers
+
+# Interacting with HTML
+## Introduction to JS
+
+???
+- select HTML elements
+  - document dot
+  - body
+  - url
+- .innerHTML/.innerText
+- page source vs DOM
+- getElementById
+- store innerHTML, console.log
+
+---
+class: center, middle, title, no-slide-numbers
+
+# Basic logic
+## Introduction to JS
+
+???
+- comparsion
+  - if
+    - single (assignment) vs double (comparison) equal signs
+- else
+    - touppercase, lowercase, length
+    - boolean
+    - loosely typed
+    - strict comparison (===)
+      "3" === 3
+    - NaN
+      "3" * 3
+- else if (vs nested ifs)
+- conditionals: https://github.com/Asabeneh/JavaScript-for-Everyone#conditionals + ternary
+
+---
+class: center, middle, title, no-slide-numbers
+
+# Arrays
+## Introduction to JS
+
+???
+- []
+- index value
+  - starts counting at zero 🤷🏻‍♀️
+- length (property of object)
+  - does not start at zero
+- push to array
+- loops
+- typeof array is object
+  - has several components in it
+  - dot list of properties: sort
+
+---
+class: center, middle, title, no-slide-numbers
+
+# Functions
+## Introduction to JS
+
+???
+- repeat/reuse code
+
+STEP ONE: function declaration
+```
+function beJudgey() {
+  var faveTopping = "PINEAPPLE";
+  var isPineapple = faveTopping.toLowerCase() == "pineapple";
+  if (isPineapple) {
+    console.log("Yum");
+  } else {
+    console.log("So sad");
+  }
+}
+beJudgey();
+```
+
+STEP TWO: self-executing functions
+```
+(function () {
+  var faveTopping = "PINEAPPLE";
+  var isPineapple = faveTopping.toLowerCase() == "pineapple";
+  if (isPineapple) {
+    console.log("Yum");
+  } else {
+    console.log("So sad");
+  }
+})();
+```
+
+STEP THREE: declaration w/ params
+```
+function beJudgey(faveTopping) {
+  var isPineapple = faveTopping.toLowerCase() == "pineapple";
+  if (isPineapple) {
+    console.log("Yum");
+  } else {
+    console.log("So sad");
+  }
+}
+```
+
+STEP FOUR: expression w/ arrow function
+
+```
+  var beJudgey = (faveTopping) => {
+    var isPineapple = faveTopping.toLowerCase() == "pineapple";
+    if (isPineapple) {
+      console.log("Yum");
+    } else {
+      console.log("So sad");
+    }
+  }
+beJudgey("PINEAPPLE");
+beJudgey("sausage");
+```
+
+- default params
+
+STEP FIVE: return values (only returns once, ends function)
+- return value; only return once ends function
+```
+var title = document.getElementById("intro");
+var beJudgey = (faveTopping = "cheese") => {
+  var isPineapple = faveTopping.toLowerCase() == "pineapple";
+  if (isPineapple) {
+    return "Yum";
+     console.log("YAY");
+  } else {
+    return "Too bad";
+  }
+}
+title.innerText = beJudgey("pineapple");
+```
+
+---
+class: center, middle, title, no-slide-numbers
+
+# Using JS in your projects
+## Introduction to JS
+
+???
+- inline, internal, external
+- above body closing tag for performance reasons and to help the JS
+- comments (single, multiline)
+
+---
+class: center, middle, title, no-slide-numbers
+
+# Interacting with HTML: Advanced
+## Introduction to JS
+
+???
+- query selector
+  - grab by class name, element name
+  - only grabs first
+- search within (vs document)
+- search all
+  - node list -> array
+
+```
+var toppings = document.querySelector("li");
+console.log(toppings.innerText);
+
+var toppings = document.querySelectorAll("li");
+console.log(toppings);
+for (topping of toppings) {
+  console.log(topping.innerText);
+}
+toppings = Array.from(toppings);
+toppings.push("Sausage");
+console.log(toppings);
+```
+
+- siblings, tree traversal
+
+```
+var topping1 = document.querySelector("li");
+console.log("Topping 1:", topping1.innerText);
+var topping2 = topping1.nextElementSibling;
+console.log("Topping 2:",topping2.innerText);
+var topping3 = topping2.nextElementSibling;
+console.log("Topping 3:", topping3.innerText);
+var demo = topping3.previousElementSibling.innerText;
+console.log(demo);
+var parent = topping3.closest("ul");
+console.log(parent);
+```
+
+---
+class: center, middle, title, no-slide-numbers
+
+# Events
+## Introduction to JS
+
+???
+- let, const, var
+
+Next resources:
+- https://javascriptforeverybody.com/free-javascript-tutorials/
+- https://alistapart.com/article/javascript-for-web-designers/
+- http://jsforcats.com/
+
+  </textarea>
+  <script src="/js/remark-latest.min.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    var slideshow = remark.create();
+
+  </script>
+</body>
+
+</html>
